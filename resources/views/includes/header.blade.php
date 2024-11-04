@@ -16,6 +16,10 @@
 <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/perfect-scrollbar.min.css') }}">
 
 <!-- Main CSS File -->
+<link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/perfect-scrollbar.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/highlight.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
+<link defer="" rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/animate.css') }}">
 <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/style.css') }}">
 
 <!-- CSS Animate -->

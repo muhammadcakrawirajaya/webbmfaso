@@ -1,5 +1,5 @@
 <div x-data="invoiceList">
-    <script src="assets/js/simple-datatables.js"></script>
+    <script src="{{ asset('assets/js/simple-datatables.js') }}"></script>
 
     <div class="panel border-[#e0e6ed] px-0 dark:border-[#1b2e4b]">
         <div class="px-5">

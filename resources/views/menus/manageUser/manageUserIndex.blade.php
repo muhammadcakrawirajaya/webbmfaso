@@ -31,7 +31,7 @@
     <div class="main-container min-h-screen text-black dark:text-white-dark" :class="[$store.app.navbar]">
 
         <!-- ======= Sidebar ======= -->
-        @include('menus.manageUser.manageUserSidebar')
+        @include('includes.sidebar')
         <!-- End of Sidebar Section -->
 
         <div class="main-content flex flex-col min-h-screen">
@@ -54,13 +54,13 @@
         </div>
     </div>
 
-    <script src="assets/js/alpine-collaspe.min.js"></script>
-    <script src="assets/js/alpine-persist.min.js"></script>
-    <script defer="" src="assets/js/alpine-ui.min.js"></script>
-    <script defer="" src="assets/js/alpine-focus.min.js"></script>
-    <script defer="" src="assets/js/alpine.min.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <!-- ======= Scripts ======= -->
+    @include('includes.scripts')
+    <!-- End of Scripts -->
 
+    <!-- ======= Content Scripts ======= -->
+    @include('includes.footer')
+    <!-- End of Content Scripts -->
     <script>
         document.addEventListener('alpine:init', () => {
             // main section
@@ -273,7 +273,7 @@
                 },
             }));
 
-            //invoice list
+            //Manage User Tabel
             Alpine.data('invoiceList', () => ({
                 selectedRows: [],
                 items: [{
@@ -421,12 +421,12 @@
                         data: {
                             headings: [
                                 '<input type="checkbox" class="form-checkbox" :checked="checkAllCheckbox" :value="checkAllCheckbox" @change="checkAll($event.target.checked)"/>',
-                                'Invoice',
+                                'Username',
                                 'Name',
-                                'Email',
-                                'Date',
-                                'Amount',
-                                'Status',
+                                'Division',
+                                'E-mail',
+                                'Telegram',
+                                'Role',
                                 'Actions',
                             ],
                             data: this.dataArr,

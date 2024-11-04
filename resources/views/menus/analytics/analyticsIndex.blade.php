@@ -34,7 +34,7 @@
     <div class="main-container min-h-screen text-black dark:text-white-dark" :class="[$store.app.navbar]">
 
         <!-- ======= Sidebar ======= -->
-        @include('menus.analytics.analyticsSidebar')
+        @include('includes.sidebar')
         <!-- End of Sidebar -->
 
         <div class="main-content flex min-h-screen flex-col">
@@ -56,9 +56,14 @@
         </div>
     </div>
 
+
     <!-- ======= Scripts ======= -->
-    @include('menus.analytics.analyticsContentScripts')
+    @include('includes.scripts')
     <!-- End of Scripts -->
+
+    <!-- ======= Content Scripts ======= -->
+    @include('menus.analytics.analyticsContentScripts')
+    <!-- End of Content Scripts -->
 
 </body>
 

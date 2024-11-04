@@ -4,10 +4,9 @@
         <div class="h-full bg-white dark:bg-[#0e1726]">
             <div class="flex items-center justify-between px-4 py-3">
                 <a href="index.html" class="main-logo flex shrink-0 items-center">
-                    <img class="ml-[5px] w-8 flex-none" src="assets/images/logo.png" alt="image">
+                    <img class="ml-[5px] w-8 flex-none" src="{{ asset('assets/images/logo.png') }}" alt="image">
                     <span
-                        class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">StarCode
-                        Kh</span>
+                        class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">Telescout</span>
                 </a>
                 <a href="javascript:;"
                     class="collapse-icon flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180 dark:text-white-light dark:hover:bg-dark-light/10"
@@ -22,7 +21,7 @@
                 </a>
             </div>
             <ul class="perfect-scrollbar relative h-[calc(100vh-80px)] space-y-0.5 overflow-y-auto overflow-x-hidden p-4 py-0 font-semibold"
-                x-data="{ activeDropdown: 'invoice' }">
+                x-data="{ activeDropdown: 'dashboard' }">
                 <li class="menu nav-item">
                     <button type="button" class="nav-link group" :class="{ 'active': activeDropdown === 'dashboard' }"
                         @click="activeDropdown === 'dashboard' ? activeDropdown = null : activeDropdown = 'dashboard'">
@@ -51,10 +50,10 @@
                     <ul x-cloak="" x-show="activeDropdown === 'dashboard'" x-collapse=""
                         class="sub-menu text-gray-500">
                         <li>
-                            <a href="{{ route('sales') }}">Sales</a>
+                            <a href="{{ route('sales') }}" class="{{ request()->routeIs('sales') ? 'active' : '' }}">Sales</a>
                         </li>
                         <li>
-                            <a href="{{ route('analytics') }}">Analytics</a>
+                            <a href="{{ route('analytics') }}" class="{{ request()->routeIs('analytics') ? 'active' : '' }}">Analytics</a>
                         </li>
                         <li>
                             <a href="finance.html">Finance</a>
@@ -196,7 +195,7 @@
                             </a>
                         </li>
                         <li class="menu nav-item">
-                            <button type="button" class="nav-link active group"
+                            <button type="button" class="nav-link group"
                                 :class="{ 'active': activeDropdown === 'invoice' }"
                                 @click="activeDropdown === 'invoice' ? activeDropdown = null : activeDropdown = 'invoice'">
                                 <div class="flex items-center">
@@ -223,7 +222,7 @@
                             <ul x-cloak="" x-show="activeDropdown === 'invoice'" x-collapse=""
                                 class="sub-menu text-gray-500">
                                 <li>
-                                    <a href="{{ route('manageUser') }}" class="active">Manage User</a>
+                                    <a href="{{ route('manageUser') }}" class="{{ request()->routeIs('manageUser') ? 'active' : '' }}">Manage User</a>
                                 </li>
                                 <li>
                                     <a href="apps-invoice-preview.html">Preview</a>
@@ -232,7 +231,7 @@
                                     <a href="apps-invoice-add.html">Add</a>
                                 </li>
                                 <li>
-                                    <a href="apps-invoice-edit.html">Edit</a>
+                                    <a href="">Edit</a>
                                 </li>
                             </ul>
                         </li>
@@ -341,8 +340,7 @@
                 </li>
 
                 <li class="menu nav-item">
-                    <button type="button" class="nav-link group"
-                        :class="{ 'active': activeDropdown === 'elements' }"
+                    <button type="button" class="nav-link group" :class="{ 'active': activeDropdown === 'elements' }"
                         @click="activeDropdown === 'elements' ? activeDropdown = null : activeDropdown = 'elements'">
                         <div class="flex items-center">
                             <svg width="24" height="24" viewbox="0 0 24 24" fill="none"

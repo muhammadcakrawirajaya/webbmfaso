@@ -45,7 +45,7 @@
 
             <div class="animate__animated p-6" :class="[$store.app.animation]">
 
-                <!-- start main content section -->
+                <!-- ======= Main Content ======= -->
                 @include('menus.sales.salesMainContent')
                 <!-- End of Main Content -->
             </div>

@@ -1,12 +1,13 @@
 <div :class="{ 'dark text-white-dark': $store.app.semidark }">
     <nav x-data="sidebar"
-        class="sidebar fixed bottom-0 top-0 z-50 h-full min-h-screen w-[260px] shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-all duration-300">
+        class="sidebar fixed top-0 bottom-0 z-50 h-full min-h-screen w-[260px] shadow-[5px_0_25px_0_rgba(94,92,154,0.1)] transition-all duration-300">
         <div class="h-full bg-white dark:bg-[#0e1726]">
             <div class="flex items-center justify-between px-4 py-3">
                 <a href="index.html" class="main-logo flex shrink-0 items-center">
-                    <img class="ml-[5px] w-8 flex-none" src="{{ asset('assets/images/logo.png') }}" alt="image">
+                    <img class="ml-[5px] w-8 flex-none" src="assets/images/logo.png" alt="image">
                     <span
-                        class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">TELESCOUT</span>
+                        class="align-middle text-2xl font-semibold ltr:ml-1.5 rtl:mr-1.5 dark:text-white-light lg:inline">StarCode
+                        Kh</span>
                 </a>
                 <a href="javascript:;"
                     class="collapse-icon flex h-8 w-8 items-center rounded-full transition duration-300 hover:bg-gray-500/10 rtl:rotate-180 dark:text-white-light dark:hover:bg-dark-light/10"
@@ -21,7 +22,7 @@
                 </a>
             </div>
             <ul class="perfect-scrollbar relative h-[calc(100vh-80px)] space-y-0.5 overflow-y-auto overflow-x-hidden p-4 py-0 font-semibold"
-                x-data="{ activeDropdown: 'dashboard' }">
+                x-data="{ activeDropdown: 'invoice' }">
                 <li class="menu nav-item">
                     <button type="button" class="nav-link group" :class="{ 'active': activeDropdown === 'dashboard' }"
                         @click="activeDropdown === 'dashboard' ? activeDropdown = null : activeDropdown = 'dashboard'">
@@ -50,7 +51,7 @@
                     <ul x-cloak="" x-show="activeDropdown === 'dashboard'" x-collapse=""
                         class="sub-menu text-gray-500">
                         <li>
-                            <a href="{{ route('sales') }}" class="active">Sales</a>
+                            <a href="{{ route('sales') }}">Sales</a>
                         </li>
                         <li>
                             <a href="{{ route('analytics') }}">Analytics</a>
@@ -65,7 +66,7 @@
                 </li>
 
                 <h2
-                    class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                    class="-mx-4 mb-1 flex items-center bg-white-light/30 py-3 px-7 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                     <svg class="hidden h-5 w-4 flex-none" viewbox="0 0 24 24" stroke="currentColor" stroke-width="1.5"
                         fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -195,7 +196,7 @@
                             </a>
                         </li>
                         <li class="menu nav-item">
-                            <button type="button" class="nav-link group"
+                            <button type="button" class="nav-link active group"
                                 :class="{ 'active': activeDropdown === 'invoice' }"
                                 @click="activeDropdown === 'invoice' ? activeDropdown = null : activeDropdown = 'invoice'">
                                 <div class="flex items-center">
@@ -222,7 +223,7 @@
                             <ul x-cloak="" x-show="activeDropdown === 'invoice'" x-collapse=""
                                 class="sub-menu text-gray-500">
                                 <li>
-                                    <a href="{{ route('manageUser') }}">Manage User</a>
+                                    <a href="{{ route('manageUser') }}" class="active">Manage User</a>
                                 </li>
                                 <li>
                                     <a href="apps-invoice-preview.html">Preview</a>
@@ -256,7 +257,7 @@
                 </li>
 
                 <h2
-                    class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                    class="-mx-4 mb-1 flex items-center bg-white-light/30 py-3 px-7 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                     <svg class="hidden h-5 w-4 flex-none" viewbox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -513,7 +514,7 @@
                 </li>
 
                 <h2
-                    class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                    class="-mx-4 mb-1 flex items-center bg-white-light/30 py-3 px-7 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                     <svg class="hidden h-5 w-4 flex-none" viewbox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -704,7 +705,7 @@
                 </li>
 
                 <h2
-                    class="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                    class="-mx-4 mb-1 flex items-center bg-white-light/30 py-3 px-7 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                     <svg class="hidden h-5 w-4 flex-none" viewbox="0 0 24 24" stroke="currentColor"
                         stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -897,6 +898,7 @@
                         </li>
                     </ul>
                 </li>
+
 
             </ul>
         </div>

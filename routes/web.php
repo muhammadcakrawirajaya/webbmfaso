@@ -10,3 +10,7 @@ Route::get('/analytics', function () {
     return view('menus.analytics.analyticsIndex');
 })->name('analytics');
 
+Route::get('/manageUser', function () {
+    return view('menus.manageUser.manageUserIndex');
+})->name('manageUser');
+

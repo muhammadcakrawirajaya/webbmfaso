@@ -1,3 +1,8 @@
+<ol class="flex text-gray-500 font-semibold dark:text-white-dark mb-5">
+    <li><a href="javascript:;" class="hover:text-gray-500/70 dark:hover:text-white-dark/70">Home</a></li>
+    <li class="before:w-1 before:h-1 before:rounded-full before:bg-primary before:inline-block before:relative before:-top-0.5 before:mx-4"><a href="javascript:;" class="text-primary">Manage Users</a></li>
+</ol>
+
 <div x-data="invoiceList">
     <script src="{{ asset('assets/js/simple-datatables.js') }}"></script>
 

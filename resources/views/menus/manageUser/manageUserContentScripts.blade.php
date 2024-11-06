@@ -1,4 +1,12 @@
 <script>
+    async function showAlert() {
+        new window.Swal({
+            icon: 'success',
+            title: 'The user information has been saved',
+            padding: '3em',
+        });
+    }
+
     document.addEventListener('alpine:init', () => {
         // main section
         Alpine.data('scrollToTop', () => ({
@@ -220,7 +228,7 @@
                     email: 'lauriefox@company.com',
                     date: '15 Dec 2020',
                     amount: '2275.45',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 1,
                 },
                 {
@@ -230,7 +238,7 @@
                     email: 'alexGray3188@gmail.com',
                     date: '20 Dec 2020',
                     amount: '1044.00',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 2,
                 },
                 {
@@ -240,7 +248,7 @@
                     email: 'jamestaylor468@gmail.com',
                     date: '27 Dec 2020',
                     amount: '20.00',
-                    status: 'Pending',
+                    status: 'Admin',
                     action: 3,
                 },
                 {
@@ -250,7 +258,7 @@
                     email: 'graceRoberts@company.com',
                     date: '31 Dec 2020',
                     amount: '344.00',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 4,
                 },
                 {
@@ -260,7 +268,7 @@
                     email: 'donnaRogers@hotmail.com',
                     date: '03 Jan 2021',
                     amount: '405.15',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 5,
                 },
                 {
@@ -270,7 +278,7 @@
                     email: 'amy968@gmail.com',
                     date: '14 Jan 2020',
                     amount: '100.00',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 6,
                 },
                 {
@@ -280,7 +288,7 @@
                     email: 'niahillyer666@comapny.com',
                     date: '20 Jan 2021',
                     amount: '59.21',
-                    status: 'Pending',
+                    status: 'Admin',
                     action: 7,
                 },
                 {
@@ -290,7 +298,7 @@
                     email: 'maryDonald007@gamil.com',
                     date: '25 Jan 2021',
                     amount: '79.00',
-                    status: 'Pending',
+                    status: 'Admin',
                     action: 8,
                 },
                 {
@@ -300,7 +308,7 @@
                     email: 'kingandy07@company.com',
                     date: '28 Jan 2021',
                     amount: '149.00',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 9,
                 },
                 {
@@ -310,7 +318,7 @@
                     email: 'vincentcarpenter@gmail.com',
                     date: '30 Jan 2021',
                     amount: '400',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 10,
                 },
                 {
@@ -320,7 +328,7 @@
                     email: 'youngkelly@hotmail.com',
                     date: '06 Feb 2021',
                     amount: '49.00',
-                    status: 'Pending',
+                    status: 'Admin',
                     action: 11,
                 },
                 {
@@ -330,7 +338,7 @@
                     email: 'alma.clarke@gmail.com',
                     date: '10 Feb 2021',
                     amount: '234.40',
-                    status: 'Paid',
+                    status: 'Team Leader',
                     action: 12,
                 },
             ],
@@ -358,12 +366,12 @@
                     data: {
                         headings: [
                             '<input type="checkbox" class="form-checkbox" :checked="checkAllCheckbox" :value="checkAllCheckbox" @change="checkAll($event.target.checked)"/>',
-                            'Invoice',
+                            'Username',
                             'Name',
-                            'Email',
-                            'Date',
-                            'Amount',
-                            'Status',
+                            'E-mail',
+                            'Telegram',
+                            'Division',
+                            'Role',
                             'Actions',
                         ],
                         data: this.dataArr,
@@ -381,7 +389,7 @@
                             select: 1,
                             render: function(data, cell, row) {
                                 return (
-                                    '<a href="apps-invoice-preview.html" class="text-primary underline font-semibold hover:no-underline">#' +
+                                    '<a href="apps-invoice-preview.html" class="text-info underline font-semibold hover:no-underline">#' +
                                     data +
                                     '</a>'
                                 );
@@ -405,9 +413,9 @@
                         {
                             select: 6,
                             render: function(data, cell, row) {
-                                let styleClass = data == 'Paid' ?
+                                let styleClass = data == 'Team Leader' ?
                                     'badge-outline-success' :
-                                    'badge-outline-danger';
+                                    'badge-outline-primary';
                                 return '<span class="badge ' + styleClass + '">' +
                                     data + '</span>';
                             },
@@ -417,7 +425,7 @@
                             sortable: false,
                             render: function(data, cell, row) {
                                 return `<div class="flex gap-4 items-center" x-data="modal">
-                                    <button type="button" class="hover:text-primary" @click="toggle">
+                                    <button type="button" class="hover:text-primary" @click="toggle" @mouseenter="$popovers('Edit User')" data-trigger="mouseenter">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5">
                                             <path
                                                 opacity="0.5"
@@ -439,13 +447,15 @@
                                             ></path>
                                         </svg>
                                     </button>
+
+    <!-- modal -->
     <div class="fixed inset-0 bg-[black]/60 z-[999] hidden overflow-y-auto" :class="open && '!block'">
         <div class="flex items-center justify-center min-h-screen px-4" @click.self="open = false">
             <div x-show="open" x-transition x-transition.duration.300
                 class="panel border-0 p-0 rounded-lg overflow-hidden w-full max-w-lg my-8">
                 <div class="p-5">
                     {{-- Section Title --}}
-                    <h1 class="mb-3" style="font-size: 15px"><b>Edit User</b></h1>
+                    <label for="Photo">Photo</label>
                     {{-- Photo --}}
                     <div class="flex">
                         <img class="mb-3 w-20 h-20 rounded-md overflow-hidden object-cover"
@@ -454,62 +464,62 @@
                     {{-- Form --}}
                     <form class="space-y-2">
                         <div>
+                            <label for="Username">Username</label>
                             <input type="text" placeholder="Username" class="form-input" readonly
                                 style="background: lightgrey" />
                         </div>
                         <div>
+                            <label for="Name">Name</label>
                             <input type="text" placeholder="Name" class="form-input" readonly
                                 style="background: lightgrey" />
                         </div>
                         <div>
+                            <label for="email">E-mail</label>
                             <input type="text" placeholder="E-mail" class="form-input" readonly
                                 style="background: lightgrey" />
                         </div>
                         <div>
+                            <label for="telegram">Telegram</label>
                             <input type="text" placeholder="Telegram" class="form-input" readonly
                                 style="background: lightgrey" />
                         </div>
                     </form>
-                                        {{-- Division Dropdown --}}
-                    <div class="dropdown inline-flex mt-2" x-data="dropdown" @click.outside="open = false">
-                        <button type="button" class="btn btn-dark ltr:rounded-r-none rtl:rounded-l-none">Division</button>
-                        <button type="button"
-                            class="btn dropdown-toggle btn-dark ltr:rounded-l-none rtl:rounded-r-none border-l-[#4468fd] before:border-[5px] before:border-l-transparent before:border-r-transparent before:border-t-inherit before:border-b-0 before:inline-block before:border-t-white-light"
-                            @click="toggle">
-                            <span class="sr-only">Toggle dropdown</span>
-                        </button>
-                        <ul role="menu" x-cloak x-show="open" x-transition x-transition.duration.300ms
-                            class="ltr:right-10 rtl:left-0 top-full whitespace-nowrap">
-                            <li><a href="javascript:;" @click="toggle">Optima</a></li>
-                            <li><a href="javascript:;" @click="toggle">ASO</a></li>
-                            <li><a href="javascript:;" @click="toggle">PSB</a></li>
-                        </ul>
-                    </div>
+
+                    {{-- Divison Dropdown --}}
+                    <form class="mt-2 mb-2">
+                        <label for="division">Division</label>
+                        <div>
+                            <select class="form-select text-white-dark">
+                                <option>Optima</option>
+                                <option>ASO</option>
+                                <option>PSB</option>
+                                <option>MDF</option>
+                                <option>BMF</option>
+                            </select>
+                        </div>
+                    </form>
+
                     {{-- Role Dropdown --}}
-                    <div class="dropdown inline-flex mt-2" x-data="dropdown" @click.outside="open = false">
-                        <button type="button" class="btn btn-dark ltr:rounded-r-none rtl:rounded-l-none">Role</button>
-                        <button type="button"
-                            class="btn dropdown-toggle btn-dark ltr:rounded-l-none rtl:rounded-r-none border-l-[#4468fd] before:border-[5px] before:border-l-transparent before:border-r-transparent before:border-t-inherit before:border-b-0 before:inline-block before:border-t-white-light"
-                            @click="toggle">
-                            <span class="sr-only">Toggle dropdown</span>
-                        </button>
-                        <ul role="menu" x-cloak x-show="open" x-transition x-transition.duration.300ms
-                            class="ltr:right-10 rtl:left-0 top-full whitespace-nowrap">
-                            <li><a href="javascript:;" @click="toggle">Team Leader</a></li>
-                            <li><a href="javascript:;" @click="toggle">Admin</a></li>
-                        </ul>
-                    </div>
+                    <form class="mt-2 mb-2">
+                        <label for="Role">Role</label>
+                        <div>
+                            <select class="form-select text-white-dark">
+                                <option>Team Leader</option>
+                                <option>Admin</option>
+                            </select>
+                        </div>
+                    </form>
+
                     {{-- Submit Button --}}
                     <div class="flex justify-end items-center mt-8">
                         <button type="button" class="btn btn-outline-danger" @click="toggle">Discard</button>
-                        <button type="button" class="btn btn-primary ltr:ml-4 rtl:mr-4" @click="toggle">Save</button>
+                        <button type="button" class="btn btn-primary ltr:ml-4 rtl:mr-4" @click="showAlert()">Save</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-                                    <button type="button" class="hover:text-danger" @click="deleteRow(${data})">
+                                    <button type="button" class="hover:text-danger" @click="deleteRow(${data})" @mouseenter="$popovers('Delete User')" data-trigger="mouseenter">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
                                             <path d="M20.5001 6H3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
                                             <path

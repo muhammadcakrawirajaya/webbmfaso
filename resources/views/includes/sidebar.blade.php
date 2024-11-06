@@ -871,7 +871,7 @@
                     <ul x-cloak="" x-show="activeDropdown === 'authentication'" x-collapse=""
                         class="sub-menu text-gray-500">
                         <li>
-                            <a href="auth-boxed-signin.html" target="_blank">Login Boxed</a>
+                            <a href="{{ route('login') }}" target="_blank">Login Boxed</a>
                         </li>
                         <li>
                             <a href="auth-boxed-signup.html" target="_blank">Register Boxed</a>

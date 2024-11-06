@@ -4,7 +4,7 @@
   <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-  <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('assets/images/logo-brand.png') }}">
 
   <!-- CSS Assets -->
   <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">

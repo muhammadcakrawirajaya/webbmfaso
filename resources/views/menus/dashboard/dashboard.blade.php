@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>Dashboard - Telescout</title>
-  @include('includes.head')
+    <title>Dashboard - Telescout</title>
+    @include('includes.head')
 </head>
 
 <body x-data="" class="is-header-blur" x-bind="$store.global.documentBody">
@@ -13,16 +13,13 @@
   <!-- Page Wrapper -->
   <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900" x-cloak="">
     <!-- Sidebar -->
-    @include('includes.sidebar')
+    @include('menus.dashboard.dashboardMenus')
 
     <!-- App Header Wrapper-->
-    <nav class="header before:bg-white dark:before:bg-navy-750 print:hidden">
-      <!-- App Header  -->
-      @include('includes.navbar')
-    </nav>
+    @include('includes.navbar')
 
     <!-- Mobile Searchbar -->
-    @include('includes.searchbar')
+    @include('includes.searchBar')
 
     <!-- Right Sidebar -->
     @include('includes.rightSidebar')
@@ -1599,7 +1596,10 @@
       </div>
     </main>
   </div>
-  <!-- This is a place for Alpine.js Teleport feature -->
+  <!--
+        This is a place for Alpine.js Teleport feature
+        @see https://alpinejs.dev/directives/teleport
+      -->
   <div id="x-teleport-target"></div>
   <script>
     window.addEventListener("DOMContentLoaded", () => Alpine.start());

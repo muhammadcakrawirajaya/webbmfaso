@@ -54,7 +54,7 @@
               </a>
               <ul x-collapse="" x-show="expanded">
                 <li>
-                  <a x-data="navLink" href="dashboards-crypto-1.html"
+                  <a x-data="navLink" href="{{ route('crypto') }}"
                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">
                     <div class="flex items-center space-x-2">
@@ -64,7 +64,7 @@
                   </a>
                 </li>
                 <li>
-                  <a x-data="navLink" href="dashboards-crypto-2.html"
+                  <a x-data="navLink" href="{{ route('crypto2') }}"
                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' : 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">
                     <div class="flex items-center space-x-2">

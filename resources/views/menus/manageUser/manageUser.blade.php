@@ -72,185 +72,238 @@
                                 </button>
                             </div>
 
-                            <div x-data="{showModal:false}">
-                                <button
-                                    x-tooltip.duration.500="'Add New'"
-                                    @click="showModal = true"
-                                class="btn size-9 bg-success p-0 font-medium text-white hover:bg-success-focus hover:shadow-lg hover:shadow-success/50 focus:bg-success-focus focus:shadow-lg focus:shadow-success/50 active:bg-success-focus/90"
-                              >
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
-                                <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
-                              </svg>
+                            <div x-data="{ showModal: false }">
+                                <button x-tooltip.duration.500="'Add New'" @click="showModal = true"
+                                    class="btn size-9 bg-success p-0 font-medium text-white hover:bg-success-focus hover:shadow-lg hover:shadow-success/50 focus:bg-success-focus focus:shadow-lg focus:shadow-success/50 active:bg-success-focus/90">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                        class="size-4">
+                                        <path fill-rule="evenodd"
+                                            d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                                            clip-rule="evenodd" />
+                                    </svg>
 
-                              </button>
-                              <template x-teleport="#x-teleport-target">
-                                <div
-                                  class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
-                                  x-show="showModal"
-                                  role="dialog"
-                                  @keydown.window.escape="showModal = false"
-                                >
-                                  <div
-                                    class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
-                                    @click="showModal = false"
-                                    x-show="showModal"
-                                    x-transition:enter="ease-out"
-                                    x-transition:enter-start="opacity-0"
-                                    x-transition:enter-end="opacity-100"
-                                    x-transition:leave="ease-in"
-                                    x-transition:leave-start="opacity-100"
-                                    x-transition:leave-end="opacity-0"
-                                  ></div>
-                                  <div
-                                    class="relative w-full max-w-lg origin-top rounded-lg bg-white transition-all duration-300 dark:bg-navy-700"
-                                    x-show="showModal"
-                                    x-transition:enter="easy-out"
-                                    x-transition:enter-start="opacity-0 scale-95"
-                                    x-transition:enter-end="opacity-100 scale-100"
-                                    x-transition:leave="easy-in"
-                                    x-transition:leave-start="opacity-100 scale-100"
-                                    x-transition:leave-end="opacity-0 scale-95"
-                                  >
-                                    <div
-                                      class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5"
-                                    >
-                                      <h3 class="text-base font-medium text-slate-700 dark:text-navy-100">
-                                        Add New
-                                      </h3>
-                                      <button
-                                        @click="showModal = !showModal"
-                                        class="btn -mr-1.5 size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25"
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          class="size-4.5"
-                                          fill="none"
-                                          viewBox="0 0 24 24"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                        >
-                                          <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            d="M6 18L18 6M6 6l12 12"
-                                          ></path>
-                                        </svg>
-                                      </button>
-                                    </div>
-                                    <div class="px-4 py-4 sm:px-5">
-                                      <div class=" space-y-4">
-                                        <label class="block">
-                                            <span>Name:</span>
-                                            <input
-                                              class="form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                              placeholder="Enter Name"
-                                              type="text"
-                                            />
-                                          </label>
-                                        <label class="block">
-                                            <span>Username:</span>
-                                            <input
-                                              class="form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                              placeholder="Enter Username"
-                                              type="text"
-                                            />
-                                          </label>
-                                        <label class="block">
-                                            <span>Telegram:</span>
-                                            <input
-                                              class="form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                              placeholder="Enter Username"
-                                              type="text"
-                                            />
-                                          </label>
+                                </button>
+                                <template x-teleport="#x-teleport-target">
+                                    <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                        x-show="showModal" role="dialog" @keydown.window.escape="showModal = false">
+                                        <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                            @click="showModal = false" x-show="showModal" x-transition:enter="ease-out"
+                                            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                            x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
+                                            x-transition:leave-end="opacity-0"></div>
+                                        <div class="relative w-full max-w-lg origin-top rounded-lg bg-white transition-all duration-300 dark:bg-navy-700"
+                                            x-show="showModal" x-transition:enter="easy-out"
+                                            x-transition:enter-start="opacity-0 scale-95"
+                                            x-transition:enter-end="opacity-100 scale-100" x-transition:leave="easy-in"
+                                            x-transition:leave-start="opacity-100 scale-100"
+                                            x-transition:leave-end="opacity-0 scale-95">
+                                            <div
+                                                class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5">
+                                                <h3 class="text-base font-medium text-slate-700 dark:text-navy-100">
+                                                    Add New
+                                                </h3>
+                                                <button @click="showModal = !showModal"
+                                                    class="btn -mr-1.5 size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4.5"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M6 18L18 6M6 6l12 12"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="px-4 py-4 sm:px-5">
+                                                <div class=" space-y-4">
+                                                    <div>
+                                                        <span>Name</span>
+                                                        <label class="mt-1.5 flex -space-x-px">
+                                                            <div
+                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                <span class="-mt-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none" viewBox="0 0 24 20"
+                                                                        stroke-width="1.5" stroke="currentColor"
+                                                                        class="size-3">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                                                                    </svg>
 
-                                        <label class="block">
-                                          <span>Choose Division :</span>
-                                          <select
-                                            class="form-select mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent"
-                                          >
-                                            <option>BMF</option>
-                                            <option>ASO</option>
-                                            <option>PSB</option>
-                                            <option>MDF</option>
-                                            <option>OPTIMA</option>
-                                          </select>
-                                        </label>
+                                                                </span>
+                                                            </div>
+                                                            <input
+                                                                class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                placeholder="Enter Name" type="text" />
+                                                        </label>
+                                                    </div>
 
-                                        <label class="block">
-                                            <span>Password:</span>
-                                            <input
-                                              class="form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                              placeholder="Enter Username"
-                                              type="password"
-                                            />
-                                          </label>
+                                                    <div>
+                                                        <span>Username</span>
+                                                        <label class="mt-1.5 flex -space-x-px">
+                                                            <div
+                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                <span class="-mt-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none" viewBox="0 0 24 20"
+                                                                        stroke-width="1.5" stroke="currentColor"
+                                                                        class="size-3">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M16.5 12a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0Zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 1 0-2.636 6.364M16.5 12V8.25" />
+                                                                    </svg>
 
-                                        <label class="block">
-                                            <span>Confirm Password :</span>
-                                            <input
-                                              class="form-input mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                              placeholder="Enter Password"
-                                              type="password"
-                                            />
-                                          </label>
+                                                                </span>
+                                                            </div>
+                                                            <input
+                                                                class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                placeholder="Enter Username" type="text" />
+                                                        </label>
+                                                    </div>
 
-                                          <label class="block">
-                                              <label class="inline-flex items-center space-x-1 mr-3">
-                                                <input
-                                                checked
-                                                  class="form-radio is-basic size-5 rounded-full border-slate-400/70 checked:!border-success checked:bg-success hover:!border-success focus:!border-success dark:border-navy-400"
-                                                  name="basic"
-                                                  type="radio"
-                                                />
-                                                <p>Admin</p>
-                                              </label>
+                                                    <div>
+                                                        <span>Telegram</span>
+                                                        <label class="mt-1.5 flex -space-x-px">
+                                                            <div
+                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                <span class="-mt-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none" viewBox="0 0 24 20"
+                                                                        stroke-width="1.5" stroke="currentColor"
+                                                                        class="size-3">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                            <input
+                                                                class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                placeholder="Enter Telegram" type="text" />
+                                                        </label>
+                                                    </div>
 
-                                              <label class="inline-flex items-center space-x-1">
-                                                <input
-                                                  class="form-radio is-basic size-5 rounded-full border-slate-400/70 checked:border-secondary checked:bg-secondary hover:border-secondary focus:border-secondary dark:border-navy-400 dark:checked:border-secondary-light dark:checked:bg-secondary-light dark:hover:border-secondary-light dark:focus:border-secondary-light"
-                                                  name="basic"
-                                                  type="radio"
-                                                />
-                                                <p>Super Admin</p>
-                                              </label>
+                                                    <div>
+                                                        <span>Choose Division</span>
+                                                        <label class="mt-1.5 flex -space-x-px">
+                                                            <div
+                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                <span class="-mt-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none" viewBox="0 0 24 20"
+                                                                        stroke-width="1.5" stroke="currentColor"
+                                                                        class="size-3">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                                                    </svg>
 
-                                          </label>
+                                                                </span>
+                                                            </div>
+                                                            <select
+                                                                class="form-select w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                                <option>BMF</option>
+                                                                <option>ASO</option>
+                                                                <option>PSB</option>
+                                                                <option>MDF</option>
+                                                                <option>OPTIMA</option>
+                                                                <option>WOC</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
 
-                                          <label
-                                          class="btn relative bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 mr-3"
-                                        >
-                                          <input
-                                            tabindex="-1"
-                                            type="file"
-                                            class="pointer-events-none absolute inset-0 h-full w-full opacity-0"
-                                          />
-                                          <div class="flex items-center space-x-2">
-                                            <i class="fa-solid fa-cloud-arrow-up text-base"></i>
-                                            <span>Choose Photo</span>
-                                          </div>
-                                        </label>
-                                        <span>photo_file_name.jpg</span>
+                                                    <div>
+                                                        <span>Password</span>
+                                                        <label class="mt-1.5 flex -space-x-px">
+                                                            <div
+                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                <span class="-mt-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none" viewBox="0 0 24 20"
+                                                                        stroke-width="1.5" stroke="currentColor"
+                                                                        class="size-3">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                                                                    </svg>
 
-                                        <div class="space-x-2 text-right">
-                                          <button
-                                            @click="showModal = false"
-                                            class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90"
-                                          >
-                                            Cancel
-                                          </button>
-                                          <button
-                                            @click="showModal = false"
-                                            class="btn min-w-[7rem] rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90"
-                                          >
-                                            Apply
-                                          </button>
+
+                                                                </span>
+                                                            </div>
+                                                            <input
+                                                                class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                placeholder="Enter Password" type="password" />
+                                                        </label>
+                                                    </div>
+
+                                                    <div>
+                                                        <span>Confirm Password</span>
+                                                        <label class="mt-1.5 flex -space-x-px">
+                                                            <div
+                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                <span class="-mt-1">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none" viewBox="0 0 24 20"
+                                                                        stroke-width="1.5" stroke="currentColor"
+                                                                        class="size-3">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                            <input
+                                                                class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                placeholder="Confirm Password" type="password" />
+                                                        </label>
+                                                    </div>
+
+
+                                                    <label class="block">
+                                                        <label class="inline-flex items-center space-x-1 mr-3">
+                                                            <input checked
+                                                                class="form-radio is-basic size-5 rounded-full border-slate-400/70 checked:!border-success checked:bg-success hover:!border-success focus:!border-success dark:border-navy-400"
+                                                                name="basic" type="radio" />
+                                                            <p>Admin</p>
+                                                        </label>
+
+                                                        <label class="inline-flex items-center space-x-1">
+                                                            <input
+                                                                class="form-radio is-basic size-5 rounded-full border-slate-400/70 checked:border-secondary checked:bg-secondary hover:border-secondary focus:border-secondary dark:border-navy-400 dark:checked:border-secondary-light dark:checked:bg-secondary-light dark:hover:border-secondary-light dark:focus:border-secondary-light"
+                                                                name="basic" type="radio" />
+                                                            <p>Super Admin</p>
+                                                        </label>
+
+                                                    </label>
+
+                                                    <label
+                                                        class="btn relative bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90 mr-3">
+                                                        <input tabindex="-1" type="file"
+                                                            class="pointer-events-none absolute inset-0 h-full w-full opacity-0" />
+                                                        <div class="flex items-center space-x-2">
+                                                            <i class="fa-solid fa-cloud-arrow-up text-base"></i>
+                                                            <span>Choose Photo</span>
+                                                        </div>
+                                                    </label>
+                                                    <span class="text-error"> *Photo must be under 5 MB </span>
+
+                                                    <div class="space-x-2 text-right">
+                                                        <button @click="showModal = false"
+                                                            class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                            Cancel
+                                                        </button>
+                                                        <div class="inline-flex"    @click="$notification({text:'The user has been saved',variant:'success',position:'center-top'})">
+                                                            <button @click="showModal = false"
+                                                                class="btn min-w-[7rem] rounded-full bg-success font-medium text-white hover:bg-success-focus focus:bg-success-focus">
+                                                                Submit
+                                                            </button>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                              </template>
+                                </template>
                             </div>
                         </div>
                     </div>
@@ -321,7 +374,8 @@
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                         <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })"
-                                            @click.outside="isShowPopper && (isShowPopper = false)" class="inline-flex">
+                                            @click.outside="isShowPopper && (isShowPopper = false)"
+                                            class="inline-flex">
                                             <button x-ref="popperRef" @click="isShowPopper = !isShowPopper"
                                                 class="btn size-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none"
@@ -337,8 +391,9 @@
                                                 <div
                                                     class="popper-box rounded-md border border-slate-150 bg-white py-1.5 font-inter dark:border-navy-500 dark:bg-navy-700">
                                                     <ul>
-                                                        <li>
-                                                            <a href="#"
+                                                        <li x-data="{ showModal: false }" x-ref="popperRef"
+                                                            @click="isShowPopper = !isShowPopper">
+                                                            <button @click="showModal = true"
                                                                 class="flex h-8 items-center space-x-3 px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                     class="size-4.5" fill="none"
@@ -348,11 +403,122 @@
                                                                         stroke-linejoin="round"
                                                                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                                 </svg>
-                                                                <span> Edit</span></a>
+                                                                <span> Modify User </span>
+                                                            </button>
+                                                            <template x-teleport="#x-teleport-target">
+                                                                <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                                                    x-show="showModal" role="dialog"
+                                                                    @keydown.window.escape="showModal = false">
+                                                                    <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                                                        @click="showModal = false" x-show="showModal"
+                                                                        x-transition:enter="ease-out"
+                                                                        x-transition:enter-start="opacity-0"
+                                                                        x-transition:enter-end="opacity-100"
+                                                                        x-transition:leave="ease-in"
+                                                                        x-transition:leave-start="opacity-100"
+                                                                        x-transition:leave-end="opacity-0"></div>
+                                                                    <div class="relative max-w-md rounded-lg bg-white pt-10 pb-4 text-center transition-all duration-300 dark:bg-navy-700"
+                                                                        x-show="showModal"
+                                                                        x-transition:enter="easy-out"
+                                                                        x-transition:enter-start="opacity-0 [transform:translate3d(0,1rem,0)]"
+                                                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave="easy-in"
+                                                                        x-transition:leave-start="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave-end="opacity-0 [transform:translate3d(0,1rem,0)]">
+                                                                        <div class="avatar size-20">
+                                                                            <img class="rounded-full"
+                                                                                src="{{ asset('assets/images/avatar/avatar-3.jpg') }}"
+                                                                                alt="avatar" />
+                                                                            <div
+                                                                                class="absolute right-0 m-1 size-4 rounded-full border-2 border-white bg-secondary dark:border-navy-700">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mt-1 px-4 sm:px-12">
+                                                                            <h3
+                                                                                class="text-lg text-slate-800 dark:text-navy-50">
+                                                                                John Doe
+                                                                            </h3>
+
+                                                                            <div class="text-left mt-5">
+                                                                                <span>Modify Division</span>
+                                                                                <label class="mt-1.5 flex -space-x-px">
+                                                                                    <div
+                                                                                        class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                                        <span class="-mt-1">
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                fill="none" viewBox="0 0 24 20"
+                                                                                                stroke-width="1.5" stroke="currentColor"
+                                                                                                class="size-3">
+                                                                                                <path stroke-linecap="round"
+                                                                                                    stroke-linejoin="round"
+                                                                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                                                                            </svg>
+
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <select
+                                                                                        class="form-select w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                                                        <option>BMF</option>
+                                                                                        <option>ASO</option>
+                                                                                        <option>PSB</option>
+                                                                                        <option>MDF</option>
+                                                                                        <option>OPTIMA</option>
+                                                                                        <option>WOC</option>
+                                                                                    </select>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="text-left mt-5">
+                                                                                <span>Modify Role</span>
+                                                                                <label class="mt-1.5 flex -space-x-px">
+                                                                                    <div
+                                                                                        class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                                        <span class="-mt-1">
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-3">
+                                                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                                                                              </svg>
+
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <select
+                                                                                        class="form-select w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                                                        <option>Admin</option>
+                                                                                        <option>Super Admin</option>
+                                                                                    </select>
+                                                                                </label>
+                                                                            </div>
+
+                                                                            <p
+                                                                                class="mt-8 text-slate-500 dark:text-navy-200">
+                                                                                Are you sure you want to <b class="text-info">modify </b> this
+                                                                                user ?
+                                                                                <br>
+                                                                                this action cannot be undone.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div
+                                                                            class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500">
+                                                                        </div>
+
+                                                                        <div class="space-x-3">
+                                                                            <button @click="showModal = false"
+                                                                                class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                                                Cancel
+                                                                            </button>
+                                                                            <div class="inline-flex" @click="$notification({text:'The user information has been modified',variant:'info',position:'center-top'})">
+                                                                                <button @click="showModal = false"
+                                                                                    class="btn min-w-[7rem] rounded-full bg-info font-medium text-white hover:bg-info-focus focus:bg-info-focus active:bg-info-focus/90 dark:hover:bg-info-focus dark:focus:bg-info-focus">
+                                                                                    Modify
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </template>
                                                         </li>
-                                                        <li>
-                                                            <a href="#"
-                                                                class="flex h-8 items-center space-x-3 px-3 pr-8 font-medium tracking-wide text-error outline-none transition-all hover:bg-error/20 focus:bg-error/20">
+                                                        <li x-data="{ showModal: false }" x-ref="popperRef"
+                                                            @click="isShowPopper = !isShowPopper">
+                                                            <button @click="showModal = true"
+                                                                class="flex h-8 items-center space-x-4 px-3 pr-8 font-medium tracking-wide text-error outline-none transition-all hover:bg-error/20 focus:bg-error/20">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                     class="size-4.5" fill="none"
                                                                     viewBox="0 0 24 24" stroke="currentColor"
@@ -361,7 +527,68 @@
                                                                         stroke-linejoin="round"
                                                                         d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                                 </svg>
-                                                                <span> Delete item</span></a>
+                                                                <span> Delete User</span>
+                                                            </button>
+                                                            <template x-teleport="#x-teleport-target">
+                                                                <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                                                    x-show="showModal" role="dialog"
+                                                                    @keydown.window.escape="showModal = false">
+                                                                    <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                                                        @click="showModal = false" x-show="showModal"
+                                                                        x-transition:enter="ease-out"
+                                                                        x-transition:enter-start="opacity-0"
+                                                                        x-transition:enter-end="opacity-100"
+                                                                        x-transition:leave="ease-in"
+                                                                        x-transition:leave-start="opacity-100"
+                                                                        x-transition:leave-end="opacity-0"></div>
+                                                                    <div class="relative max-w-md rounded-lg bg-white pt-10 pb-4 text-center transition-all duration-300 dark:bg-navy-700"
+                                                                        x-show="showModal"
+                                                                        x-transition:enter="easy-out"
+                                                                        x-transition:enter-start="opacity-0 [transform:translate3d(0,1rem,0)]"
+                                                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave="easy-in"
+                                                                        x-transition:leave-start="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave-end="opacity-0 [transform:translate3d(0,1rem,0)]">
+                                                                        <div class="avatar size-20">
+                                                                            <img class="rounded-full"
+                                                                                src="{{ asset('assets/images/avatar/avatar-3.jpg') }}"
+                                                                                alt="avatar" />
+                                                                            <div
+                                                                                class="absolute right-0 m-1 size-4 rounded-full border-2 border-white bg-secondary dark:border-navy-700">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mt-1 px-4 sm:px-12">
+                                                                            <h3
+                                                                                class="text-lg text-slate-800 dark:text-navy-50">
+                                                                                John Doe
+                                                                            </h3>
+                                                                            <p
+                                                                                class="mt-8 text-slate-500 dark:text-navy-200">
+                                                                                Are you sure you want to <b class="text-error">delete </b> this
+                                                                                user ?
+                                                                                <br>
+                                                                                this action cannot be undone.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div
+                                                                            class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500">
+                                                                        </div>
+
+                                                                        <div class="space-x-3">
+                                                                            <button @click="showModal = false"
+                                                                                class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                                                Cancel
+                                                                            </button>
+                                                                            <div class="inline-flex" @click="$notification({text:'The user has been deleted',variant:'error',position:'center-top'})">
+                                                                                <button @click="showModal = false"
+                                                                                    class="btn min-w-[7rem] rounded-full bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:hover:bg-error-focus dark:focus:bg-error-focus">
+                                                                                    Delete
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </template>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -382,7 +609,7 @@
                                     </td>
                                     <td
                                         class="whitespace-nowrap px-4 py-3 font-medium text-slate-700 dark:text-navy-100 sm:px-5">
-                                        John Doe
+                                        Adam Levine
                                     </td>
                                     <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                         443-893-2316
@@ -416,8 +643,9 @@
                                                 <div
                                                     class="popper-box rounded-md border border-slate-150 bg-white py-1.5 font-inter dark:border-navy-500 dark:bg-navy-700">
                                                     <ul>
-                                                        <li>
-                                                            <a href="#"
+                                                        <li x-data="{ showModal: false }" x-ref="popperRef"
+                                                            @click="isShowPopper = !isShowPopper">
+                                                            <button @click="showModal = true"
                                                                 class="flex h-8 items-center space-x-3 px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                     class="size-4.5" fill="none"
@@ -427,12 +655,123 @@
                                                                         stroke-linejoin="round"
                                                                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                                 </svg>
-                                                                <span> Edit</span></a>
+                                                                <span> Modify User </span>
+                                                            </button>
+                                                            <template x-teleport="#x-teleport-target">
+                                                                <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                                                    x-show="showModal" role="dialog"
+                                                                    @keydown.window.escape="showModal = false">
+                                                                    <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                                                        @click="showModal = false" x-show="showModal"
+                                                                        x-transition:enter="ease-out"
+                                                                        x-transition:enter-start="opacity-0"
+                                                                        x-transition:enter-end="opacity-100"
+                                                                        x-transition:leave="ease-in"
+                                                                        x-transition:leave-start="opacity-100"
+                                                                        x-transition:leave-end="opacity-0"></div>
+                                                                    <div class="relative max-w-md rounded-lg bg-white pt-10 pb-4 text-center transition-all duration-300 dark:bg-navy-700"
+                                                                        x-show="showModal"
+                                                                        x-transition:enter="easy-out"
+                                                                        x-transition:enter-start="opacity-0 [transform:translate3d(0,1rem,0)]"
+                                                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave="easy-in"
+                                                                        x-transition:leave-start="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave-end="opacity-0 [transform:translate3d(0,1rem,0)]">
+                                                                        <div class="avatar size-20">
+                                                                            <img class="rounded-full"
+                                                                                src="{{ asset('assets/images/avatar/avatar-4.jpg') }}"
+                                                                                alt="avatar" />
+                                                                            <div
+                                                                                class="absolute right-0 m-1 size-4 rounded-full border-2 border-white bg-success dark:border-navy-700">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mt-1 px-4 sm:px-12">
+                                                                            <h3
+                                                                                class="text-lg text-slate-800 dark:text-navy-50">
+                                                                                Adam Levine
+                                                                            </h3>
+
+                                                                            <div class="text-left mt-5">
+                                                                                <span>Modify Division</span>
+                                                                                <label class="mt-1.5 flex -space-x-px">
+                                                                                    <div
+                                                                                        class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                                        <span class="-mt-1">
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                fill="none" viewBox="0 0 24 20"
+                                                                                                stroke-width="1.5" stroke="currentColor"
+                                                                                                class="size-3">
+                                                                                                <path stroke-linecap="round"
+                                                                                                    stroke-linejoin="round"
+                                                                                                    d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                                                                            </svg>
+
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <select
+                                                                                        class="form-select w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                                                        <option>BMF</option>
+                                                                                        <option>ASO</option>
+                                                                                        <option>PSB</option>
+                                                                                        <option>MDF</option>
+                                                                                        <option>OPTIMA</option>
+                                                                                        <option>WOC</option>
+                                                                                    </select>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="text-left mt-5">
+                                                                                <span>Modify Role</span>
+                                                                                <label class="mt-1.5 flex -space-x-px">
+                                                                                    <div
+                                                                                        class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                                        <span class="-mt-1">
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-3">
+                                                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                                                                              </svg>
+
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <select
+                                                                                        class="form-select w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                                                        <option>Admin</option>
+                                                                                        <option>Super Admin</option>
+                                                                                    </select>
+                                                                                </label>
+                                                                            </div>
+
+                                                                            <p
+                                                                                class="mt-8 text-slate-500 dark:text-navy-200">
+                                                                                Are you sure you want to <b class="text-info">modify</b> this
+                                                                                user ?
+                                                                                <br>
+                                                                                this action cannot be undone.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div
+                                                                            class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500">
+                                                                        </div>
+
+                                                                        <div class="space-x-3">
+                                                                            <button @click="showModal = false"
+                                                                                class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                                                Cancel
+                                                                            </button>
+                                                                            <div class="inline-flex" @click="$notification({text:'The user information has been modified',variant:'info',position:'center-top'})">
+                                                                                <button @click="showModal = false"
+                                                                                    class="btn min-w-[7rem] rounded-full bg-info font-medium text-white hover:bg-info-focus focus:bg-info-focus active:bg-info-focus/90 dark:hover:bg-info-focus dark:focus:bg-info-focus">
+                                                                                    Modify
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </template>
                                                         </li>
 
-                                                        <li>
-                                                            <a href="#"
-                                                                class="flex h-8 items-center space-x-3 px-3 pr-8 font-medium tracking-wide text-error outline-none transition-all hover:bg-error/20 focus:bg-error/20">
+                                                        <li x-data="{ showModal: false }" x-ref="popperRef"
+                                                            @click="isShowPopper = !isShowPopper">
+                                                            <button @click="showModal = true"
+                                                                class="flex h-8 items-center space-x-4 px-3 pr-8 font-medium tracking-wide text-error outline-none transition-all hover:bg-error/20 focus:bg-error/20">
                                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                                     class="size-4.5" fill="none"
                                                                     viewBox="0 0 24 24" stroke="currentColor"
@@ -441,7 +780,68 @@
                                                                         stroke-linejoin="round"
                                                                         d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                                 </svg>
-                                                                <span> Delete item</span></a>
+                                                                <span> Delete User</span>
+                                                            </button>
+                                                            <template x-teleport="#x-teleport-target">
+                                                                <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                                                    x-show="showModal" role="dialog"
+                                                                    @keydown.window.escape="showModal = false">
+                                                                    <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                                                        @click="showModal = false" x-show="showModal"
+                                                                        x-transition:enter="ease-out"
+                                                                        x-transition:enter-start="opacity-0"
+                                                                        x-transition:enter-end="opacity-100"
+                                                                        x-transition:leave="ease-in"
+                                                                        x-transition:leave-start="opacity-100"
+                                                                        x-transition:leave-end="opacity-0"></div>
+                                                                    <div class="relative max-w-md rounded-lg bg-white pt-10 pb-4 text-center transition-all duration-300 dark:bg-navy-700"
+                                                                        x-show="showModal"
+                                                                        x-transition:enter="easy-out"
+                                                                        x-transition:enter-start="opacity-0 [transform:translate3d(0,1rem,0)]"
+                                                                        x-transition:enter-end="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave="easy-in"
+                                                                        x-transition:leave-start="opacity-100 [transform:translate3d(0,0,0)]"
+                                                                        x-transition:leave-end="opacity-0 [transform:translate3d(0,1rem,0)]">
+                                                                        <div class="avatar size-20">
+                                                                            <img class="rounded-full"
+                                                                                src="{{ asset('assets/images/avatar/avatar-4.jpg') }}"
+                                                                                alt="avatar" />
+                                                                            <div
+                                                                                class="absolute right-0 m-1 size-4 rounded-full border-2 border-white bg-success dark:border-navy-700">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="mt-1 px-4 sm:px-12">
+                                                                            <h3
+                                                                                class="text-lg text-slate-800 dark:text-navy-50">
+                                                                                Adam Levine
+                                                                            </h3>
+                                                                            <p
+                                                                                class="mt-8 text-slate-500 dark:text-navy-200">
+                                                                                Are you sure you want to <b class="text-error">delete </b>this
+                                                                                user ?
+                                                                                <br>
+                                                                                this action cannot be undone.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div
+                                                                            class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500">
+                                                                        </div>
+
+                                                                        <div class="space-x-3">
+                                                                            <button @click="showModal = false"
+                                                                                class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                                                Cancel
+                                                                            </button>
+                                                                            <div class="inline-flex" @click="$notification({text:'The user has been deleted',variant:'error',position:'center-top'})">
+                                                                                <button @click="showModal = false"
+                                                                                    class="btn min-w-[7rem] rounded-full bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:hover:bg-error-focus dark:focus:bg-error-focus">
+                                                                                    Delete
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </template>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -515,8 +915,6 @@
                         </div>
                     </div>
                 </div>
-
-            </div>
         </main>
     </div>
     <!--

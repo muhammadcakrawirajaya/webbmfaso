@@ -1,6 +1,6 @@
 <div class="sidebar print:hidden">
     <!-- Main Sidebar -->
-    @include('includes.mainSidebar')
+    @include('telkomsel.includes.mainSidebar')
 
     <!-- Sidebar Panel -->
     <div class="sidebar-panel">
@@ -8,7 +8,7 @@
             <!-- Sidebar Panel Header -->
             <div class="flex h-18 w-full items-center justify-between pl-4 pr-1">
                 <p class="text-base tracking-wider text-slate-800 dark:text-navy-100">
-                    Dashboard Telkom
+                    Dashboard - Telkomsel
                 </p>
                 <button @click="$store.global.isSidebarExpanded = false"
                     class="btn h-7 w-7 rounded-full p-0 text-primary hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:text-accent-light/80 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25 xl:hidden">
@@ -25,7 +25,7 @@
                 <ul class="flex flex-1 flex-col px-4 font-inter">
 
                     <li>
-                        <a x-data="navLink" href="{{ route('order') }}"
+                        <a x-data="navLink" href="{{ route('telkomsel') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -42,7 +42,7 @@
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboard') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu2') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboard') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu3') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -72,7 +72,7 @@
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboard') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu4') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -89,7 +89,7 @@
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboard') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu5') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -121,7 +121,7 @@
                         </a>
                         <ul x-collapse="" x-show="expanded">
                             <li>
-                                <a x-data="navLink" href="{{ route('crypto') }}"
+                                <a x-data="navLink" href="{{ route('dashboardMenu6') }}"
                                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                         'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">
@@ -132,7 +132,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a x-data="navLink" href="{{ route('crypto2') }}"
+                                <a x-data="navLink" href="{{ route('dashboardMenu7') }}"
                                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                         'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">

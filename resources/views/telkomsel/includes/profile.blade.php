@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="{{ route('telkomsel') }}"
+                <a href="{{ route('telkom') }}"
                     class="group flex items-center space-x-3 py-2 px-4 tracking-wide outline-none transition-all hover:bg-slate-100 focus:bg-slate-100 dark:hover:bg-navy-600 dark:focus:bg-navy-600">
                     <div class="flex size-8 items-center justify-center rounded-lg bg-info text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4.5">
@@ -57,11 +57,11 @@
                     <div>
                         <h2
                             class="font-medium text-slate-700 transition-colors group-hover:text-primary group-focus:text-primary dark:text-navy-100 dark:group-hover:text-accent-light dark:group-focus:text-accent-light">
-                            <img class="rounded-full w-5 h-5 mr-0.5 mb-1 inline-flex" src="{{ asset('assets/images/logo-brand.svg') }}"
-                            alt="avatar">Telkomsel
+                            <img class="rounded-full w-5 h-5 mr-0.5 mb-1 inline-flex" src="{{ asset('assets/images/logo-brand.png') }}"
+                            alt="avatar">Telkom
                         </h2>
                         <div class="text-xs text-slate-400 line-clamp-1 dark:text-navy-300">
-                            Switch to Telkomsel
+                            Switch to Telkom
                         </div>
                     </div>
                 </a>

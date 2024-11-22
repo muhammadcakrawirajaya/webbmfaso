@@ -84,6 +84,7 @@
                 <div x-data="{ isFilterExpanded: false }">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
+                            {{-- Import Button --}}
                             <label
                                 class="mr-4 btn relative bg-success font-medium text-white hover:bg-success-focus focus:bg-success-focus active:bg-success-focus/90 dark:active:bg-accent/90">
                                 <input tabindex="-1" type="file"
@@ -93,8 +94,9 @@
                                     <span>Import Excel</span>
                                 </div>
                             </label>
+                            {{-- Generate Button --}}
                             <label
-                                class="btn relative bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+                                class="mr-4 btn relative bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
                                 <input tabindex="-1" type="file"
                                     class="pointer-events-none absolute inset-0 h-full w-full opacity-0" />
                                 <div class="flex items-center space-x-2">
@@ -102,9 +104,85 @@
                                     <span>Generate File</span>
                                 </div>
                             </label>
-                        </div>
-                        <div class="flex">
+                            {{-- Delete Button --}}
+                            <div x-data="{showModal:false}">
+                                <button
+                                  @click="showModal = true"
+                                  class="btn relative bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:active:bg-accent/90"
+                                >
+                                <div class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete</span>
+                                </div>
+                                </button>
+                                <template x-teleport="#x-teleport-target">
+                                  <div
+                                    class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                    x-show="showModal"
+                                    role="dialog"
+                                    @keydown.window.escape="showModal = false"
+                                  >
+                                    <div
+                                      class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                      @click="showModal = false"
+                                      x-show="showModal"
+                                      x-transition:enter="ease-out"
+                                      x-transition:enter-start="opacity-0"
+                                      x-transition:enter-end="opacity-100"
+                                      x-transition:leave="ease-in"
+                                      x-transition:leave-start="opacity-100"
+                                      x-transition:leave-end="opacity-0"
+                                    ></div>
+                                    <div
+                                      class="relative max-w-lg rounded-lg bg-white px-4 py-10 text-center transition-opacity duration-300 dark:bg-navy-700 sm:px-5"
+                                      x-show="showModal"
+                                      x-transition:enter="ease-out"
+                                      x-transition:enter-start="opacity-0"
+                                      x-transition:enter-end="opacity-100"
+                                      x-transition:leave="ease-in"
+                                      x-transition:leave-start="opacity-100"
+                                      x-transition:leave-end="opacity-0"
+                                    >
+                                      <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 24 24"
+                                      fill="currentColor"
+                                      class="inline size-28 text-error">
+                                        <path
+                                        fill-rule="evenodd"
+                                        d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                                        clip-rule="evenodd" />
+                                      </svg>
 
+
+                                      <div class="mt-4">
+                                        <h2 class="text-2xl text-slate-700 dark:text-navy-100">
+                                          Delete Data ?
+                                        </h2>
+                                        <p class="mt-2">
+                                            Are you sure you want to <b class="text-error">delete</b> the selected data?
+                                             <br> this action cannot be undone!
+                                        </p>
+                                        <button
+                                          @click="showModal = false"
+                                          class="btn mr-4 mt-6 bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"
+                                        >
+                                          Cancel
+                                        </button>
+                                        <button
+                                          @click="showModal = false"
+                                          class="btn mt-6 bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90"
+                                        >
+                                          Delete
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                        </div>
+
+                        <div class="flex">
                             {{-- Search Button --}}
                             <div class="flex items-center" x-data="{ isInputActive: false }">
                                 <label class="block">
@@ -123,7 +201,7 @@
                                 </button>
                             </div>
 
-                            {{-- Import Button --}}
+                            {{-- Multiple Button --}}
                             <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })" @click.outside="isShowPopper && (isShowPopper = false)"
                                 class="inline-flex">
                                 <button x-ref="popperRef" @click="isShowPopper = !isShowPopper"
@@ -309,6 +387,15 @@
                                     <tr>
                                         <th
                                             class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input
+                                                  class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                  type="checkbox"
+                                                />
+                                              </label>
+                                        </th>
+                                        <th
+                                            class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                             #
                                         </th>
                                         <th
@@ -343,6 +430,14 @@
                                 </thead>
                                 <tbody x-data="{ expanded: false }">
                                     <tr class="border-y border-transparent">
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input
+                                                  class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                  type="checkbox"
+                                                />
+                                              </label>
+                                        </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">1</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <div class="avatar flex">
@@ -731,6 +826,14 @@
                                 </tbody>
                                 <tbody x-data="{ expanded: false }">
                                     <tr class="border-y border-transparent">
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input
+                                                  class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                  type="checkbox"
+                                                />
+                                              </label>
+                                        </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">2</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <div class="avatar flex">

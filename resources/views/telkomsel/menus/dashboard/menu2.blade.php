@@ -28,7 +28,7 @@
         <main class="main-content w-full px-[var(--margin-x)] pb-8">
             <div class="flex items-center space-x-4 py-5 lg:py-6">
                 <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
-                    User Management
+                    MENU 2
                 </h2>
                 <div class="hidden h-full py-1 sm:flex">
                     <div class="h-full w-px bg-slate-300 dark:bg-navy-600"></div>
@@ -105,81 +105,57 @@
                                 </div>
                             </label>
                             {{-- Delete Button --}}
-                            <div x-data="{showModal:false}">
-                                <button
-                                  @click="showModal = true"
-                                  class="btn relative bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:active:bg-accent/90"
-                                >
-                                <div class="flex items-center space-x-2">
-                                    <i class="fa-solid fa-trash"></i>
-                                    <span>Delete</span>
-                                </div>
+                            <div x-data="{ showModal: false }">
+                                <button @click="showModal = true"
+                                    class="btn relative bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:active:bg-accent/90">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-trash"></i>
+                                        <span>Delete</span>
+                                    </div>
                                 </button>
                                 <template x-teleport="#x-teleport-target">
-                                  <div
-                                    class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
-                                    x-show="showModal"
-                                    role="dialog"
-                                    @keydown.window.escape="showModal = false"
-                                  >
-                                    <div
-                                      class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
-                                      @click="showModal = false"
-                                      x-show="showModal"
-                                      x-transition:enter="ease-out"
-                                      x-transition:enter-start="opacity-0"
-                                      x-transition:enter-end="opacity-100"
-                                      x-transition:leave="ease-in"
-                                      x-transition:leave-start="opacity-100"
-                                      x-transition:leave-end="opacity-0"
-                                    ></div>
-                                    <div
-                                      class="relative max-w-lg rounded-lg bg-white px-4 py-10 text-center transition-opacity duration-300 dark:bg-navy-700 sm:px-5"
-                                      x-show="showModal"
-                                      x-transition:enter="ease-out"
-                                      x-transition:enter-start="opacity-0"
-                                      x-transition:enter-end="opacity-100"
-                                      x-transition:leave="ease-in"
-                                      x-transition:leave-start="opacity-100"
-                                      x-transition:leave-end="opacity-0"
-                                    >
-                                      <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      viewBox="0 0 24 24"
-                                      fill="currentColor"
-                                      class="inline size-28 text-error">
-                                        <path
-                                        fill-rule="evenodd"
-                                        d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
-                                        clip-rule="evenodd" />
-                                      </svg>
+                                    <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                        x-show="showModal" role="dialog" @keydown.window.escape="showModal = false">
+                                        <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                            @click="showModal = false" x-show="showModal" x-transition:enter="ease-out"
+                                            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                            x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
+                                            x-transition:leave-end="opacity-0"></div>
+                                        <div class="relative max-w-lg rounded-lg bg-white px-4 py-10 text-center transition-opacity duration-300 dark:bg-navy-700 sm:px-5"
+                                            x-show="showModal" x-transition:enter="ease-out"
+                                            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                                            x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
+                                            x-transition:leave-end="opacity-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="inline size-28 text-error">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
 
 
-                                      <div class="mt-4">
-                                        <h2 class="text-2xl text-slate-700 dark:text-navy-100">
-                                          Delete Data ?
-                                        </h2>
-                                        <p class="mt-2">
-                                            Are you sure you want to <b class="text-error">delete</b> the selected data?
-                                             <br> this action cannot be undone!
-                                        </p>
-                                        <button
-                                          @click="showModal = false"
-                                          class="btn mr-4 mt-6 bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"
-                                        >
-                                          Cancel
-                                        </button>
-                                        <button
-                                          @click="showModal = false"
-                                          class="btn mt-6 bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90"
-                                        >
-                                          Delete
-                                        </button>
-                                      </div>
+                                            <div class="mt-4">
+                                                <h2 class="text-2xl text-slate-700 dark:text-navy-100">
+                                                    Delete ?
+                                                </h2>
+                                                <p class="mt-2">
+                                                    Are you sure you want to <b class="text-error">delete</b> the
+                                                    selected data?
+                                                    <br> this action cannot be undone!
+                                                </p>
+                                                <button @click="showModal = false"
+                                                    class="btn mr-4 mt-6 bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                    Cancel
+                                                </button>
+                                                <button @click="showModal = false"
+                                                    class="btn mt-6 bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </div>
                                 </template>
-                              </div>
+                            </div>
                         </div>
 
                         <div class="flex">
@@ -217,27 +193,295 @@
                                     <div
                                         class="popper-box rounded-md border border-slate-150 bg-white py-1.5 font-inter dark:border-navy-500 dark:bg-navy-700">
                                         <ul>
-                                            <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Action</a>
+                                            <li x-data="{ showModal: false }" x-ref="popperRef"
+                                                @click="isShowPopper = !isShowPopper">
+                                                <button @click="showModal = true"
+                                                    class="flex h-8 items-center space-x-3 px-3 pr-9 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-4.5">
+                                                        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+                                                        <path fill-rule="evenodd"
+                                                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                    <span> View Log Info</span>
+                                                </button>
+                                                <template x-teleport="#x-teleport-target">
+                                                    <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
+                                                        x-show="showModal" role="dialog"
+                                                        @keydown.window.escape="showModal = false">
+                                                        <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
+                                                            @click="showModal = false" x-show="showModal"
+                                                            x-transition:enter="ease-out"
+                                                            x-transition:enter-start="opacity-0"
+                                                            x-transition:enter-end="opacity-100"
+                                                            x-transition:leave="ease-in"
+                                                            x-transition:leave-start="opacity-100"
+                                                            x-transition:leave-end="opacity-0"></div>
+                                                        <div class="relative w-full max-w-2xl origin-bottom rounded-lg bg-white pb-4 transition-all duration-300 dark:bg-navy-700"
+                                                            x-show="showModal" x-transition:enter="easy-out"
+                                                            x-transition:enter-start="opacity-0 scale-95"
+                                                            x-transition:enter-end="opacity-100 scale-100"
+                                                            x-transition:leave="easy-in"
+                                                            x-transition:leave-start="opacity-100 scale-100"
+                                                            x-transition:leave-end="opacity-0 scale-95">
+                                                            <div
+                                                                class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5">
+                                                                <h3
+                                                                    class="text-base font-medium text-slate-700 dark:text-navy-100">
+                                                                    Log Info
+                                                                </h3>
+                                                                <button @click="showModal = !showModal"
+                                                                    class="btn -mr-1.5 size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        class="size-4.5" fill="none"
+                                                                        viewBox="0 0 24 24" stroke="currentColor"
+                                                                        stroke-width="2">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="M6 18L18 6M6 6l12 12"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            <div
+                                                                class="is-scrollbar-hidden min-w-full overflow-x-auto">
+                                                                <table class="w-full text-left">
+                                                                    <thead>
+                                                                        <tr
+                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                            <th
+                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                #
+                                                                            </th>
+                                                                            <th
+                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                Name
+                                                                            </th>
+                                                                            <th
+                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                Role
+                                                                            </th>
+                                                                            <th
+                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                Status
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr
+                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                1</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Cy Ganderton
+                                                                            </td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Admin</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                <div
+                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
+                                                                                    <div
+                                                                                        class="size-2 rounded-full bg-current">
+                                                                                    </div>
+                                                                                    <span>Online</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr
+                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                2</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                StarCodeKh
+                                                                            </td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Teacher</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                <div
+                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
+                                                                                    <div
+                                                                                        class="size-2 rounded-full bg-current">
+                                                                                    </div>
+                                                                                    <span>Online</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr
+                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                3</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Konnor Guzman
+                                                                            </td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Moderator</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                <div
+                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
+                                                                                    <div
+                                                                                        class="size-2 rounded-full bg-current">
+                                                                                    </div>
+                                                                                    <span>Online</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr
+                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                4</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Alfredo Elliott
+                                                                            </td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Admin</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                <div
+                                                                                    class="badge space-x-2.5 rounded-full bg-warning/10 text-warning dark:bg-warning/15">
+                                                                                    <div
+                                                                                        class="size-2 rounded-full bg-current">
+                                                                                    </div>
+                                                                                    <span>Offline</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr
+                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                5</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Derrick Simmons
+                                                                            </td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                Teacher</td>
+                                                                            <td
+                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                                                <div
+                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
+                                                                                    <div
+                                                                                        class="size-2 rounded-full bg-current">
+                                                                                    </div>
+                                                                                    <span>Offline</span>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div
+                                                                class="flex flex-col justify-between space-y-4 px-4 py-4 sm:flex-row sm:items-center sm:space-y-0 sm:px-5">
+                                                                <div class="flex items-center space-x-2 text-xs+">
+                                                                    <span>Show</span>
+                                                                    <label class="block">
+                                                                        <select
+                                                                            class="form-select rounded-full border border-slate-300 bg-white px-2 py-1 pr-6 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                                            <option>5</option>
+                                                                            <option>10</option>
+                                                                            <option>15</option>
+                                                                        </select>
+                                                                    </label>
+                                                                    <span>entries</span>
+                                                                </div>
+
+                                                                <ol class="pagination">
+                                                                    <li
+                                                                        class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                class="size-4" fill="none"
+                                                                                viewbox="0 0 24 24"
+                                                                                stroke="currentColor"
+                                                                                stroke-width="2">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    d="M15 19l-7-7 7-7">
+                                                                                </path>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">1</a>
+                                                                    </li>
+                                                                    <li class="bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg bg-primary px-3 leading-tight text-white transition-colors hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">2</a>
+                                                                    </li>
+                                                                    <li class="bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">3</a>
+                                                                    </li>
+                                                                    <li class="bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">4</a>
+                                                                    </li>
+                                                                    <li class="bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">5</a>
+                                                                    </li>
+                                                                    <li
+                                                                        class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
+                                                                        <a href="#"
+                                                                            class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                class="size-4" fill="none"
+                                                                                viewbox="0 0 24 24"
+                                                                                stroke="currentColor">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    stroke-width="2" d="M9 5l7 7-7 7">
+                                                                                </path>
+                                                                            </svg>
+                                                                        </a>
+                                                                    </li>
+                                                                </ol>
+
+                                                                <div class="text-xs+">1 - 5 of 5 entries</div>
+                                                            </div>
+                                                            <div class="text-center">
+                                                                <button
+                                                                    class="btn mt-4 border border-primary/30 bg-primary/10 font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:border-accent-light/30 dark:bg-accent-light/10 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
+                                                                    Show All
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </template>
                                             </li>
-                                            <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Another
-                                                    Action</a>
-                                            </li>
-                                            <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Something
-                                                    else</a>
-                                            </li>
-                                        </ul>
-                                        <div class="my-1 h-px bg-slate-150 dark:bg-navy-500"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Separated
-                                                    Link</a>
+                                            <li x-data="{ showModal: false }" x-ref="popperRef"
+                                                @click="isShowPopper = !isShowPopper">
+                                                <button @click="showModal = true"
+                                                    class="flex h-8 items-center space-x-3 px-3 pr-8 font-medium tracking-wide text-success outline-none transition-all hover:bg-success/20 focus:bg-success/20">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                        fill="currentColor" class="size-4.5">
+                                                        <path fill-rule="evenodd"
+                                                            d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
+                                                            clip-rule="evenodd" />
+                                                        <path
+                                                            d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                                                    </svg>
+
+                                                    <span> Generate .xlsx</span>
+                                                </button>
                                             </li>
                                         </ul>
                                     </div>
@@ -389,10 +633,9 @@
                                             class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                             <label class="inline-flex items-center space-x-2">
                                                 <input
-                                                  class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                  type="checkbox"
-                                                />
-                                              </label>
+                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                    type="checkbox" />
+                                            </label>
                                         </th>
                                         <th
                                             class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
@@ -433,10 +676,9 @@
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <label class="inline-flex items-center space-x-2">
                                                 <input
-                                                  class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                  type="checkbox"
-                                                />
-                                              </label>
+                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                    type="checkbox" />
+                                            </label>
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">1</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
@@ -829,10 +1071,9 @@
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <label class="inline-flex items-center space-x-2">
                                                 <input
-                                                  class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                  type="checkbox"
-                                                />
-                                              </label>
+                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                    type="checkbox" />
+                                            </label>
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">2</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
@@ -1223,6 +1464,7 @@
                             </table>
                         </div>
 
+                        {{-- Table Pagination --}}
                         <div
                             class="flex flex-col justify-between space-y-4 px-4 py-4 sm:flex-row sm:items-center sm:space-y-0 sm:px-5">
                             <div class="flex items-center space-x-2 text-xs+">

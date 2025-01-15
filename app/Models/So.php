@@ -13,6 +13,7 @@ class So extends Model
 
     protected $fillable = [
         'nama_so',
+        'nama_telda',
         'created_by',
         'updated_by',
         'created_at',

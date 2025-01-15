@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\OrdersExport;
 use App\Models\EditLog;
 use App\Models\FeedbackPIC;
+use App\Models\Karyawan;
 use App\Models\Order;
 use App\Models\So;
 use App\Models\StatusKendala;
@@ -398,8 +399,13 @@ class MasterController extends Controller
         ]);
 
         // Query data utama
-        $query = Order::with(['feedback_order.uic', 'feedback_order.status_kendalas', 'order_sto.sto_so'])
-            ->select('*', DB::raw('DATEDIFF(CURDATE(), tanggal) AS umur'));
+        $query = Order::with([
+            'feedback_order.uic',
+            'feedback_order.status_kendalas',
+            'order_sto.sto_so',
+            'createdByUser'
+        ])->select('*', DB::raw('DATEDIFF(CURDATE(), tanggal) AS umur'));
+
 
         // Filter pencarian teks
         if ($request->filled('search')) {
@@ -508,9 +514,59 @@ class MasterController extends Controller
         // Ambil data yang telah difilter
         $filteredData = $query->get();
 
+        $customData = $filteredData->map(function ($order) {
+            return [
+                'ID' => $order->id,
+                'tanggal' => $order->tanggal,
+                'bulan' => $order->bulan,
+                'track_id_myir' => $order->track_id_myir,
+                'trackid' => $order->trackid,
+                'status_duplicate' => $order->status_duplicate,
+                'nomor_sc' => $order->nomor_sc,
+                'nama_pelanggan' => $order->nama_pelanggan,
+                'alamat_pelanggan' => $order->alamat_pelanggan,
+                'cp' => $order->cp,
+                'tipe_transaksi' => $order->tipe_transaksi,
+                'layanan' => $order->layanan,
+                'jenis_layanan' => $order->jenis_layanan,
+                'sto' => $order->order_sto->nama_sto,
+                'mitra' => $order->mitra,
+                'team' => $order->team,
+                'kategori' => $order->kategori,
+                'detail_progres' => $order->detail_progres,
+                'kendala' => $order->kendala,
+                'ket_detail' => $order->ket_detail,
+                'chanel' => $order->chanel,
+                'agency' => $order->agency,
+                'label_odp' => $order->label_odp,
+                'label_odp_alternatif' => $order->label_odp_alternatif,
+                'ket_label_odp' => $order->ket_label_odp,
+                'kap_odp' => $order->kap_odp,
+                'port_odp' => $order->port_odp,
+                'sisa_port_odp' => $order->sisa_port_odp,
+                'tagging_lokasi_odp' => $order->tagging_lokasi_odp,
+                'tagging_lokasi_pelanggan' => $order->tagging_lokasi_pelanggan,
+                'status_tagging_pelanggan' => $order->status_tagging_pelanggan,
+                'id_valins' => $order->id_valins,
+                'segmen' => $order->segmen,
+                'so' => optional($order->order_sto->sto_so)->nama_so,
+                'telda' => optional($order->order_sto->sto_so)->nama_telda,
+                'produk' => $order->produk,
+                'umur' => $order->umur . ' hari',
+                'Status' => optional($order->feedback_order->status_kendalas)->status_kendala,
+                'uic' => optional($order->feedback_order->uic)->uic,
+                'feedback' => optional($order->feedback_order)->feedback_pic,
+                'ket_feedback' => $order->ket_feedback,
+                'created_by' => optional($order->createdByUser)->nama,
+                'created_at' => $order->created_at,
+            ];
+        });
+
+        // Backend Debug
+        // dd($customData);
         // dd($filteredData);
 
         // Ekspor ke Excel
-        return Excel::download(new OrdersExport($filteredData), 'orders.xlsx');
+        return Excel::download(new OrdersExport($customData), 'orders.xlsx');
     }
 }

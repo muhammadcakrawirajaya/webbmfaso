@@ -56,14 +56,16 @@ class OrdersExport implements FromCollection, WithHeadings
             'Status Tagging Pelanggan',
             'ID Valins',
             'Segmen',
+            'SO',
+            'Telda',
             'Produk',
-            'ID Feedback PIC',
-            'Detail Feedback PIC',
-            'Create BY',
-            'Edit BY',
-            'Create AT',
-            'Edit AT',
             'Umur Kendala',
+            'Status Kendala',
+            'UIC',
+            'Feedback PIC',
+            'Detail Feedback PIC',
+            'Dibuat Oleh',
+            'Dibuat Pada',
         ];
     }
 }

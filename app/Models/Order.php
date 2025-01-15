@@ -62,4 +62,9 @@ class Order extends Model
     {
         return $this->belongsTo(Sto::class, 'id_sto', 'id');
     }
+
+    public function createdByUser()
+    {
+        return $this->belongsTo(Karyawan::class, 'created_by', 'id');
+    }
 }

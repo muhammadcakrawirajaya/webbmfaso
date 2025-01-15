@@ -41,11 +41,56 @@ class UserDataSeeder extends Seeder
             ];
         }
 
+        // Ms Rian seed
+        $users[] = [
+            'username' => '960198',
+            'password' => Hash::make('Bismillaah66'),
+            'division' => 'aso',
+            'role' => 'team leader',
+            'remember_token' => Str::random(60)
+        ];
+
+        // Ms Mukkid seed
+        $users[] = [
+            'username' => '40850060',
+            'password' => Hash::make('Mumu_85okok'),
+            'division' => 'aso',
+            'role' => 'admin',
+            'remember_token' => Str::random(60)
+        ];
+
+        // Mb Tiwi seed
+        $users[] = [
+            'username' => '40900111',
+            'password' => Hash::make('Tiw170990'),
+            'division' => 'aso',
+            'role' => 'team leader',
+            'remember_token' => Str::random(60)
+        ];
+
+        // Ms Soffyan seed
+        $users[] = [
+            'username' => '40820152',
+            'password' => Hash::make('Faulin4ar'),
+            'division' => 'aso',
+            'role' => 'admin',
+            'remember_token' => Str::random(60)
+        ];
+
+        // Cakra seed
+        $users[] = [
+            'username' => 'E41211187',
+            'password' => Hash::make('12345678'),
+            'division' => 'aso',
+            'role' => 'team leader',
+            'remember_token' => Str::random(60)
+        ];
+
         // Ega seed
         $users[] = [
             'username' => 'E41211200',
             'password' => Hash::make('12345678'),
-            'division' => 'psb',
+            'division' => 'aso',
             'role' => 'team leader',
             'remember_token' => Str::random(60)
         ];
@@ -54,16 +99,7 @@ class UserDataSeeder extends Seeder
         $users[] = [
             'username' => 'E41211220',
             'password' => Hash::make('12345678'),
-            'division' => 'psb',
-            'role' => 'team leader',
-            'remember_token' => Str::random(60)
-        ];
-
-        // Cakra seed
-        $users[] = [
-            'username' => 'E41211187',
-            'password' => Hash::make('12345678'),
-            'division' => 'psb',
+            'division' => 'aso',
             'role' => 'team leader',
             'remember_token' => Str::random(60)
         ];

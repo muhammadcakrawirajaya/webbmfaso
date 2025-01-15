@@ -45,6 +45,46 @@ class KaryawanDataSeeder extends Seeder
             ];
         }
 
+        // Ms Rian seed
+        $karyawanData[] = [
+            'id_user' => $i++,
+            'nama' => 'Rian Gilang',
+            'telegram' => '@riangilang',
+            'foto' => ''
+        ];
+
+        // Ms Mukkid seed
+        $karyawanData[] = [
+            'id_user' => $i++,
+            'nama' => 'Rochmad Mukit',
+            'telegram' => '@mu_kit',
+            'foto' => ''
+        ];
+
+        // Mb Tiwi seed
+        $karyawanData[] = [
+            'id_user' => $i++,
+            'nama' => 'Dwiana Arum Pratiwi',
+            'telegram' => '@dwianaarumpratiwi',
+            'foto' => ''
+        ];
+
+        // Ms Soffyan seed
+        $karyawanData[] = [
+            'id_user' => $i++,
+            'nama' => 'Sofyan',
+            'telegram' => '@msofyanh_WIBRO_SDA',
+            'foto' => ''
+        ];
+
+        // Cakra seed
+        $karyawanData[] = [
+            'id_user' => $i++,
+            'nama' => 'Muhammad Cakra Wirajaya',
+            'telegram' => '@wirajayacakra',
+            'foto' => ''
+        ];
+
         // Ega seed
         $karyawanData[] = [
             'id_user' => $i++,
@@ -58,14 +98,6 @@ class KaryawanDataSeeder extends Seeder
             'id_user' => $i++,
             'nama' => 'Yunan Aditya Primawardana',
             'telegram' => '@Joynnnnn',
-            'foto' => ''
-        ];
-
-        // Cakra seed
-        $karyawanData[] = [
-            'id_user' => $i++,
-            'nama' => 'Muhammad Cakra Wirajaya',
-            'telegram' => '@wirajayacakra',
             'foto' => ''
         ];
 

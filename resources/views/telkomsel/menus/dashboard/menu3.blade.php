@@ -9,13 +9,7 @@
 <body x-data="" class="is-header-blur" x-bind="$store.global.documentBody">
     <!-- App preloader-->
     @include('includes.preloader')
-    <!-- App preloader-->
-    @include('includes.preloader')
 
-    <!-- Page Wrapper -->
-    <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900" x-cloak="">
-        <!-- Sidebar -->
-        @include('telkomsel.menus.dashboard.dashboardMenus')
     <!-- Page Wrapper -->
     <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900" x-cloak="">
         <!-- Sidebar -->
@@ -23,16 +17,10 @@
 
         <!-- App Header Wrapper-->
         @include('includes.navbar')
-        <!-- App Header Wrapper-->
-        @include('includes.navbar')
 
         <!-- Mobile Searchbar -->
         @include('includes.searchBar')
-        <!-- Mobile Searchbar -->
-        @include('includes.searchBar')
 
-        <!-- Right Sidebar -->
-        @include('includes.rightSidebar')
         <!-- Right Sidebar -->
         @include('includes.rightSidebar')
 
@@ -74,7 +62,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </li>
-                    {{-- <li class="flex items-center space-x-2">
+                    <li class="flex items-center space-x-2">
                         <a class="flex items-center space-x-1.5 text-primary transition-colors hover:text-primary-focus dark:text-accent-light dark:hover:text-accent"
                             href="{{ route('telkomsel.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -83,20 +71,19 @@
                                     d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                             </svg>
 
-                            <span>Dashboard - Telkomsel</span>
+                            <span>Telkomsel</span>
                         </a>
                         <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-                    </li> --}}
+                    </li>
                     <li>
                         <div class="flex items-center space-x-1.5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-4.5">
-                                <path fill-rule="evenodd"
-                                    d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                                    clip-rule="evenodd" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
 
                             <span>Data Master</span>
@@ -171,7 +158,8 @@
                                         </div>
                                         <div class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500"></div>
                                         <div class="flex justify-center items-center space-x-4 mt-6">
-                                            <button type="button" data-modal="multiEditModal" class="closeModalButton"
+                                            <button type="button" data-modal="multiEditModal"
+                                                class="closeModalButton"
                                                 class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
                                                 Cancel
                                             </button>
@@ -298,26 +286,8 @@
                                                         class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Export
                                                         Excel</button>
                                                 </form>
-
-                                                {{-- <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Another
-                                                    Action</a>
                                             </li>
-                                            <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Something
-                                                    else</a>
-                                            </li> --}}
                                         </ul>
-                                        {{-- <div class="my-1 h-px bg-slate-150 dark:bg-navy-500"></div>
-                                        <ul>
-                                            <li>
-                                                <a href="#"
-                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Separated
-                                                    Link</a>
-                                            </li>
-                                        </ul> --}}
                                     </div>
                                 </div>
                             </div>
@@ -331,8 +301,6 @@
                                         d="M18 11.5H6M21 4H3m6 15h6"></path>
                                 </svg>
                             </button>
-
-
                         </div>
                     </div>
 
@@ -674,8 +642,8 @@
 
                     <div class="card mt-3">
                         @if ($data->count())
-                            <div class="min-w-full overflow-x-auto">
-                                <table class="w-full text-center">
+                            <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
+                                <table class="w-full text-left">
                                     <thead>
                                         <tr>
                                             <th
@@ -1271,33 +1239,18 @@
                                         @endif
                                         {{-- Previous Page Link --}}
                                         @if (!$data->onFirstPage())
-                                            @if ($data->currentPage() > 3)
-                                                <li class="bg-slate-150 dark:bg-navy-500">
-                                                    <a href="{{ $data->previousPageUrl() }}"
-                                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
-                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M15 19l-7-7 7-7">
-                                                            </path>
-                                                        </svg>
-                                                    </a>
-                                                </li>
-                                            @else
-                                                <li class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
-                                                    <a href="{{ $data->previousPageUrl() }}"
-                                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
-                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M15 19l-7-7 7-7">
-                                                            </path>
-                                                        </svg>
-                                                    </a>
-                                                </li>
-                                            @endif
+                                            <li class="bg-slate-150 dark:bg-navy-500">
+                                                <a href="{{ $data->previousPageUrl() }}"
+                                                    class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                        fill="none" viewbox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15 19l-7-7 7-7">
+                                                        </path>
+                                                    </svg>
+                                                </a>
+                                            </li>
                                         @endif
 
                                         {{-- Pagination Elements --}}
@@ -1317,29 +1270,16 @@
 
                                         {{-- Next Page Link --}}
                                         @if ($data->hasMorePages())
-                                            @if ($data->currentPage() < $data->lastPage() - 2)
-                                                <li class="bg-slate-150 dark:bg-navy-500">
-                                                    <a href="{{ $data->nextPageUrl() }}"
-                                                        class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
-                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                                        </svg>
-                                                    </a>
-                                                </li>
-                                            @else
-                                                <li class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
-                                                    <a href="{{ $data->nextPageUrl() }}"
-                                                        class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
-                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                                        </svg>
-                                                    </a>
-                                                </li>
-                                            @endif
+                                            <li class="bg-slate-150 dark:bg-navy-500">
+                                                <a href="{{ $data->nextPageUrl() }}"
+                                                    class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                        fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                    </svg>
+                                                </a>
+                                            </li>
                                         @endif
                                         {{-- Last Page Link --}}
                                         @if ($data->currentPage() < $data->lastPage() - 2)
@@ -1394,7 +1334,7 @@
     </script>
     <script type="text/javascript">
         console.log('JavaStart');
-        // console.log(clearButton);
+        console.log(clearButton);
 
         function toggleExpanded(rowId) {
             console.log(`Toggle expanded for ${rowId}`);
@@ -1430,23 +1370,15 @@
             });
         });
 
-        document.addEventListener('change', function(event) {
-            if (event.target.id === 'month') {
-                const selectedOption = event.target.options[event.target.selectedIndex];
-                const year = selectedOption.getAttribute('data-year');
-                const yearInput = document.getElementById('hiddenYear');
-
-                // if (yearInput) {
-                yearInput.value = year;
-                // } else {
-                //     console.error('Input with name="year" not found in DOM.');
-                // }
-            }
+        document.getElementById('month').addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const year = selectedOption.getAttribute('data-year');
+            document.querySelector('input[name="year"]').value = year;
         });
+
 
         function toggleClearButton() {
             const month = document.getElementById('month').value;
-            const year = document.getElementById('hiddenYear').value;
             const sto = document.getElementById('sto').value;
             const so = document.getElementById('so').value;
             const telda = document.getElementById('telda').value;
@@ -1458,7 +1390,7 @@
             // const endDate = document.querySelector('[name="end_date"]').value;
             const clearButton = document.getElementById('clearButton');
 
-            if (month || so || segmen || uic || pic || status || year || telda || sto) {
+            if (sto || telda || month || so || segmen || uic || pic || status) {
                 clearButton.style.display = 'inline-block';
             } else {
                 clearButton.style.display = 'none';
@@ -1467,7 +1399,6 @@
 
         function clearFields() {
             document.getElementById('month').value = '';
-            document.getElementById('year').value = '';
             document.getElementById('sto').value = '';
             document.getElementById('so').value = '';
             document.getElementById('telda').value = '';

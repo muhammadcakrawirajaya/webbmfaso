@@ -177,7 +177,7 @@
                                                                 </td>
                                                             @endforeach
                                                             <td class="whitespace-nowrap border">
-                                                                <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&sto={{ $row->id }}"
+                                                                <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset&sto={{ $row->id }}"
                                                                     class="hover:underline">
                                                                     {{ $rowTotal }}
                                                                 </a>
@@ -208,7 +208,7 @@
                                                     </td>
                                                 @endforeach
                                                 <td class="whitespace-nowrap border">
-                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}"
+                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset"
                                                         class="hover:underline">
                                                         {{ $totalOverall }}
                                                     </a>

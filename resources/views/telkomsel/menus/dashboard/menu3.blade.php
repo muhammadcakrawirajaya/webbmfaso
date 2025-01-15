@@ -626,7 +626,7 @@
 
                     <div class="card mt-4">
                         <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                            <table class="w-full text-left">
+                            <table class="w-full text-center">
                                 <thead>
                                     <tr>
                                         <th
@@ -729,77 +729,77 @@
                                 </thead>
                                 <tbody x-data="{ expanded: false }">
                                     <tr class="border-y border-transparent">
-                                        <td class="whitespace-nowrap px-2 py-1">
+                                        <td class="whitespace-nowrap px-2 py-1 border">
                                             <label class="inline-flex items-center">
                                                 <input
                                                     class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
                                                     type="checkbox" />
                                             </label>
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
                                     </tr>
@@ -911,77 +911,77 @@
                                 </tbody>
                                 <tbody x-data="{ expanded: false }">
                                     <tr class="border-y border-transparent bg-slate-150 dark:bg-navy-500">
-                                        <td class="whitespace-nowrap px-2 py-1">
+                                        <td class="whitespace-nowrap px-2 py-1 border-2">
                                             <label class="inline-flex items-center">
                                                 <input
                                                     class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
                                                     type="checkbox" />
                                             </label>
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border">
                                             Test
                                         </td>
                                     </tr>
@@ -1093,77 +1093,77 @@
                                 </tbody>
                                 <tbody x-data="{ expanded: false }">
                                     <tr class="border-y border-transparent">
-                                        <td class="whitespace-nowrap px-2 py-1">
+                                        <td class="whitespace-nowrap px-2 py-1 border-2">
                                             <label class="inline-flex items-center">
                                                 <input
                                                     class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
                                                     type="checkbox" />
                                             </label>
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
                                     </tr>
@@ -1275,77 +1275,77 @@
                                 </tbody>
                                 <tbody x-data="{ expanded: false }">
                                     <tr class="border-y border-transparent bg-slate-150 dark:bg-navy-500">
-                                        <td class="whitespace-nowrap px-2 py-1">
+                                        <td class="whitespace-nowrap px-2 py-1 border-2">
                                             <label class="inline-flex items-center">
                                                 <input
                                                     class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
                                                     type="checkbox" />
                                             </label>
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
-                                        <td class="whitespace-nowrap text-xs">
+                                        <td class="whitespace-nowrap text-xs border-2">
                                             Test
                                         </td>
                                     </tr>

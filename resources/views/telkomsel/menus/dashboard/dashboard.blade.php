@@ -210,7 +210,7 @@
                                                 <td class="whitespace-nowrap border">
                                                     <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}"
                                                         class="hover:underline">
-                                                        <strong>{{ $totalOverall }}</strong>
+                                                        {{ $totalOverall }}
                                                     </a>
                                                 </td>
                                                 <td class="whitespace-nowrap border">

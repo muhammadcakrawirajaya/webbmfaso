@@ -18,9 +18,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'username',
         'password',
+        'division',
+        'role',
+        'remember_token',
+        'created_by',
+        'updated_by',
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -30,7 +36,6 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -41,8 +46,12 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function karyawan()
+    {
+        return $this->hasOne(Karyawan::class, 'id_user', 'id');
     }
 }

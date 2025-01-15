@@ -58,7 +58,7 @@
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboardMenu3') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu3.index') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -72,7 +72,7 @@
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboardMenu4') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu4.index') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 
   <!-- Javascript Assets -->
+  <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
   <script src="{{ asset('assets/js/app.js') }}" defer=""></script>
 
   <!-- Fonts -->
@@ -25,3 +26,5 @@
       localStorage.getItem("_x_darkMode_on") === "true" &&
           document.documentElement.classList.add("dark");
   </script>
+  <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+  <script src="{{ asset('assets/js/custom.js') }}"></script>

@@ -9,7 +9,13 @@
 <body x-data="" class="is-header-blur" x-bind="$store.global.documentBody">
     <!-- App preloader-->
     @include('includes.preloader')
+    <!-- App preloader-->
+    @include('includes.preloader')
 
+    <!-- Page Wrapper -->
+    <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900" x-cloak="">
+        <!-- Sidebar -->
+        @include('telkomsel.menus.dashboard.dashboardMenus')
     <!-- Page Wrapper -->
     <div id="root" class="min-h-100vh flex grow bg-slate-50 dark:bg-navy-900" x-cloak="">
         <!-- Sidebar -->
@@ -17,18 +23,37 @@
 
         <!-- App Header Wrapper-->
         @include('includes.navbar')
+        <!-- App Header Wrapper-->
+        @include('includes.navbar')
 
+        <!-- Mobile Searchbar -->
+        @include('includes.searchBar')
         <!-- Mobile Searchbar -->
         @include('includes.searchBar')
 
         <!-- Right Sidebar -->
         @include('includes.rightSidebar')
+        <!-- Right Sidebar -->
+        @include('includes.rightSidebar')
 
         <!-- Main Content Wrapper -->
         <main class="main-content w-full px-[var(--margin-x)] pb-8">
+            <div id="custom-alert-container"
+                class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-90 z-50 space-y-2">
+                @if (session('success') || session('error') || session('warning') || session('info'))
+                    @foreach (['success', 'error', 'warning', 'info'] as $type)
+                        @if (session($type))
+                            <div class="custom-alert bg-opacity-90 px-6 py-3 rounded-lg text-white text-center shadow-lg"
+                                style="display: none; background-color: {{ $type === 'success' ? '#4CAF50' : ($type === 'error' ? '#F44336' : ($type === 'warning' ? '#FF9800' : '#2196F3')) }};">
+                                {{ session($type) }}
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
+            </div>
             <div class="flex items-center space-x-4 py-5 lg:py-6">
                 <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
-                    MENU 3
+                    Data Master
                 </h2>
                 <div class="hidden h-full py-1 sm:flex">
                     <div class="h-full w-px bg-slate-300 dark:bg-navy-600"></div>
@@ -36,7 +61,7 @@
                 <ul class="flex flex-wrap items-center space-x-2">
                     <li class="flex items-center space-x-2">
                         <a class="text-primary transition-colors hover:text-primary-focus dark:text-accent-light dark:hover:text-accent"
-                            href="{{ route('telkomsel') }}">
+                            href="{{ route('telkomsel.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="size-4.5" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -49,31 +74,32 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </li>
-                    <li class="flex items-center space-x-2">
+                    {{-- <li class="flex items-center space-x-2">
                         <a class="flex items-center space-x-1.5 text-primary transition-colors hover:text-primary-focus dark:text-accent-light dark:hover:text-accent"
-                            href="{{ route('manageDataMenu1') }}">
+                            href="{{ route('telkomsel.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-4.5">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                             </svg>
 
-                            <span>Manage Data</span>
+                            <span>Dashboard - Telkomsel</span>
                         </a>
                         <svg x-ignore xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-                    </li>
+                    </li> --}}
                     <li>
                         <div class="flex items-center space-x-1.5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-4.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                                <path fill-rule="evenodd"
+                                    d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                                    clip-rule="evenodd" />
                             </svg>
 
-                            <span>User Management</span>
+                            <span>Data Master</span>
                         </div>
                     </li>
                 </ul>
@@ -84,89 +110,137 @@
                 <div x-data="{ isFilterExpanded: false }">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            {{-- Import Button --}}
-                            <label
-                                class="mr-4 btn relative bg-success font-medium text-white hover:bg-success-focus focus:bg-success-focus active:bg-success-focus/90 dark:active:bg-accent/90">
-                                <input tabindex="-1" type="file"
-                                    class="pointer-events-none absolute inset-0 h-full w-full opacity-0" />
-                                <div class="flex items-center space-x-2">
-                                    <i class="fa-solid fa-file-excel"></i>
-                                    <span>Import Excel</span>
-                                </div>
-                            </label>
                             {{-- Generate Button --}}
-                            <label
-                                class="mr-4 btn relative bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
-                                <input tabindex="-1" type="file"
-                                    class="pointer-events-none absolute inset-0 h-full w-full opacity-0" />
-                                <div class="flex items-center space-x-2">
-                                    <i class="fa-solid fa-file-arrow-down"></i>
-                                    <span>Generate File</span>
+                            <button id="multiEditButton" style="display: none;">
+                                <label
+                                    class="mr-4 btn relative bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+                                    <div class="flex items-center space-x-2">
+                                        <i class="fa-solid fa-pen"></i>
+                                        <span>Edit</span>
+                                    </div>
+                                </label>
+                            </button>
+
+                            {{-- Edit Button --}}
+                            <div id="multiEditModal"
+                                class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                                {{-- <div class="absolute inset-0 bg-black bg-opacity-80"></div> --}}
+                                <div class="bg-white rounded-lg shadow-lg w-[28rem] p-6 relative z-10">
+                                    <div class="flex justify-center mb-4">
+                                        <img src="{{ asset('assets/images/logo-brand.svg') }}" alt="User Photo"
+                                            class="w-20 h-20 rounded-full border-4 border-white shadow-md">
+                                    </div>
+                                    <h3 class="text-center text-xl font-semibold mb-2">Edit Feedback PIC</h3>
+                                    <form id="multiEditForm" class="space-y-4">
+                                        <div class="text-left mt-5">
+                                            <span>Pilih
+                                                Kendala:</span>
+                                            <label class="mt-1.5 flex -space-x-px">
+                                                <div
+                                                    class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                    <span class="-mt-1">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                            viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor"
+                                                            class="size-3">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                                        </svg>
+
+                                                    </span>
+                                                </div>
+                                                <select id="kendalaSelect" name="id_feedback"
+                                                    class="form-select w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent">
+                                                    <option value="" disabled selected>Pilih Salah Satu Kendala
+                                                    </option>
+                                                    @foreach ($kendalas as $kendala)
+                                                        <optgroup label="{{ $kendala->uic }}">
+                                                            @foreach ($kendala->feedbacks as $feedback)
+                                                                <option value="{{ $feedback->id }}">
+                                                                    {{ $feedback->feedback_pic }}</option>
+                                                            @endforeach
+                                                        </optgroup>
+                                                    @endforeach
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="text-center">
+                                            <p class="mt-8 text-slate-500 dark:text-navy-200">Are you sure you want to
+                                                <b class="text-info">modify</b> this data ?<br>this action cannot be
+                                                undone.
+                                            </p>
+                                        </div>
+                                        <div class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500"></div>
+                                        <div class="flex justify-center items-center space-x-4 mt-6">
+                                            <button type="button" data-modal="multiEditModal" class="closeModalButton"
+                                                class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                Cancel
+                                            </button>
+                                            <button type="submit"
+                                                class="btn min-w-[7rem] rounded-full bg-info font-medium text-white hover:bg-info-focus focus:bg-info-focus active:bg-info-focus/90 dark:hover:bg-info-focus dark:focus:bg-info-focus">
+                                                Modify
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </label>
+                            </div>
+
                             {{-- Delete Button --}}
-                            <div x-data="{ showModal: false }">
-                                <button @click="showModal = true"
-                                    class="btn relative bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:active:bg-accent/90">
+                            <button id="multiDeleteButton" style="display: none;">
+                                <label
+                                    class="mr-4 btn relative bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90 dark:active:bg-accent/90">
                                     <div class="flex items-center space-x-2">
                                         <i class="fa-solid fa-trash"></i>
                                         <span>Delete</span>
                                     </div>
-                                </button>
-                                <template x-teleport="#x-teleport-target">
-                                    <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
-                                        x-show="showModal" role="dialog" @keydown.window.escape="showModal = false">
-                                        <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
-                                            @click="showModal = false" x-show="showModal" x-transition:enter="ease-out"
-                                            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                                            x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
-                                            x-transition:leave-end="opacity-0"></div>
-                                        <div class="relative max-w-lg rounded-lg bg-white px-4 py-10 text-center transition-opacity duration-300 dark:bg-navy-700 sm:px-5"
-                                            x-show="showModal" x-transition:enter="ease-out"
-                                            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                                            x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
-                                            x-transition:leave-end="opacity-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" class="inline size-28 text-error">
-                                                <path fill-rule="evenodd"
-                                                    d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z"
-                                                    clip-rule="evenodd" />
-                                            </svg>
-
-
-                                            <div class="mt-4">
-                                                <h2 class="text-2xl text-slate-700 dark:text-navy-100">
-                                                    Delete ?
-                                                </h2>
-                                                <p class="mt-2">
-                                                    Are you sure you want to <b class="text-error">delete</b> the
-                                                    selected data?
-                                                    <br> this action cannot be undone!
-                                                </p>
-                                                <button @click="showModal = false"
-                                                    class="btn mr-4 mt-6 bg-slate-150 font-medium text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                    Cancel
-                                                </button>
-                                                <button @click="showModal = false"
-                                                    class="btn mt-6 bg-error font-medium text-white hover:bg-error-focus focus:bg-error-focus active:bg-error-focus/90">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
+                                </label>
+                            </button>
+                            {{-- Delete Modal --}}
+                            <div id="multiDeleteModal"
+                                class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                                {{-- <div class="absolute inset-0 bg-black bg-opacity-80"></div> --}}
+                                <div class="bg-white rounded-lg shadow-lg w-[28rem] p-6 relative z-10">
+                                    <div class="flex justify-center mb-4">
+                                        <img src="{{ asset('assets/images/logo-brand.svg') }}" alt="User Photo"
+                                            class="w-20 h-20 rounded-full border-4 border-white shadow-md">
                                     </div>
-                                </template>
+                                    <h3 class="text-center text-xl font-semibold mb-2">Delete Data</h3>
+                                    <form id="multiDeleteForm" class="space-y-4">
+                                        <div class="mt-4">
+                                            <p class="mt-2">
+                                                Are you sure you want to <b class="text-error">delete</b> the
+                                                selected data?
+                                                <br> this action cannot be undone!
+                                            </p>
+                                        </div>
+                                        <div class="my-4 mt-16 h-px bg-slate-200 dark:bg-navy-500"></div>
+                                        <div class="flex justify-center items-center space-x-4 mt-6">
+                                            <button type="button" data-modal="multiDeleteModal"
+                                                class="closeModalButton"
+                                                class="btn min-w-[7rem] rounded-full border border-slate-300 font-medium text-slate-800 hover:bg-slate-150 focus:bg-slate-150 active:bg-slate-150/80 dark:border-navy-450 dark:text-navy-50 dark:hover:bg-navy-500 dark:focus:bg-navy-500 dark:active:bg-navy-500/90">
+                                                Cancel
+                                            </button>
+                                            <button type="submit"
+                                                class="btn min-w-[7rem] rounded-full bg-warning font-medium text-white hover:bg-warning-focus focus:bg-warning-focus active:bg-warning-focus/90 dark:hover:bg-warning-focus dark:focus:bg-warning-focus">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
 
                         <div class="flex">
                             {{-- Search Button --}}
                             <div class="flex items-center" x-data="{ isInputActive: false }">
-                                <label class="block">
-                                    <input x-effect="isInputActive === true && $nextTick(() => { $el.focus()});"
-                                        :class="isInputActive ? 'w-32 lg:w-48' : 'w-0'"
-                                        class="form-input bg-transparent px-1 text-right transition-all duration-100 placeholder:text-slate-500 dark:placeholder:text-navy-200"
-                                        placeholder="Search here..." type="text">
-                                </label>
+                                <form action="{{ route('dashboardMenu3.index') }}" method="GET">
+                                    <label class="block">
+                                        <input x-effect="isInputActive === true && $nextTick(() => { $el.focus()});"
+                                            :class="isInputActive ? 'w-32 lg:w-48' : 'w-0'"
+                                            class="form-input bg-transparent px-1 text-right transition-all duration-100 placeholder:text-slate-500 dark:placeholder:text-navy-200"
+                                            placeholder="Search here..." type="text" name="search"
+                                            value="{{ request('search') }}">
+                                    </label>
+                                </form>
                                 <button @click="isInputActive = !isInputActive"
                                     class="btn size-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="size-4.5" fill="none"
@@ -193,297 +267,57 @@
                                     <div
                                         class="popper-box rounded-md border border-slate-150 bg-white py-1.5 font-inter dark:border-navy-500 dark:bg-navy-700">
                                         <ul>
-                                            <li x-data="{ showModal: false }" x-ref="popperRef"
-                                                @click="isShowPopper = !isShowPopper">
-                                                <button @click="showModal = true"
-                                                    class="flex h-8 items-center space-x-3 px-3 pr-9 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor" class="size-4.5">
-                                                        <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
-                                                        <path fill-rule="evenodd"
-                                                            d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                                                            clip-rule="evenodd" />
-                                                    </svg>
-                                                    <span> View Log Info</span>
-                                                </button>
-                                                <template x-teleport="#x-teleport-target">
-                                                    <div class="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden px-4 py-6 sm:px-5"
-                                                        x-show="showModal" role="dialog"
-                                                        @keydown.window.escape="showModal = false">
-                                                        <div class="absolute inset-0 bg-slate-900/60 transition-opacity duration-300"
-                                                            @click="showModal = false" x-show="showModal"
-                                                            x-transition:enter="ease-out"
-                                                            x-transition:enter-start="opacity-0"
-                                                            x-transition:enter-end="opacity-100"
-                                                            x-transition:leave="ease-in"
-                                                            x-transition:leave-start="opacity-100"
-                                                            x-transition:leave-end="opacity-0"></div>
-                                                        <div class="relative w-full max-w-2xl origin-bottom rounded-lg bg-white pb-4 transition-all duration-300 dark:bg-navy-700"
-                                                            x-show="showModal" x-transition:enter="easy-out"
-                                                            x-transition:enter-start="opacity-0 scale-95"
-                                                            x-transition:enter-end="opacity-100 scale-100"
-                                                            x-transition:leave="easy-in"
-                                                            x-transition:leave-start="opacity-100 scale-100"
-                                                            x-transition:leave-end="opacity-0 scale-95">
-                                                            <div
-                                                                class="flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5">
-                                                                <h3
-                                                                    class="text-base font-medium text-slate-700 dark:text-navy-100">
-                                                                    Log Info
-                                                                </h3>
-                                                                <button @click="showModal = !showModal"
-                                                                    class="btn -mr-1.5 size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                                        class="size-4.5" fill="none"
-                                                                        viewBox="0 0 24 24" stroke="currentColor"
-                                                                        stroke-width="2">
-                                                                        <path stroke-linecap="round"
-                                                                            stroke-linejoin="round"
-                                                                            d="M6 18L18 6M6 6l12 12"></path>
-                                                                    </svg>
-                                                                </button>
-                                                            </div>
-                                                            <div
-                                                                class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                                                <table class="w-full text-left">
-                                                                    <thead>
-                                                                        <tr
-                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                            <th
-                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                                #
-                                                                            </th>
-                                                                            <th
-                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                                Name
-                                                                            </th>
-                                                                            <th
-                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                                Role
-                                                                            </th>
-                                                                            <th
-                                                                                class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                                Status
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr
-                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                1</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Cy Ganderton
-                                                                            </td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Admin</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                <div
-                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
-                                                                                    <div
-                                                                                        class="size-2 rounded-full bg-current">
-                                                                                    </div>
-                                                                                    <span>Online</span>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr
-                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                2</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                StarCodeKh
-                                                                            </td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Teacher</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                <div
-                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
-                                                                                    <div
-                                                                                        class="size-2 rounded-full bg-current">
-                                                                                    </div>
-                                                                                    <span>Online</span>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr
-                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                3</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Konnor Guzman
-                                                                            </td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Moderator</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                <div
-                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
-                                                                                    <div
-                                                                                        class="size-2 rounded-full bg-current">
-                                                                                    </div>
-                                                                                    <span>Online</span>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr
-                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                4</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Alfredo Elliott
-                                                                            </td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Admin</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                <div
-                                                                                    class="badge space-x-2.5 rounded-full bg-warning/10 text-warning dark:bg-warning/15">
-                                                                                    <div
-                                                                                        class="size-2 rounded-full bg-current">
-                                                                                    </div>
-                                                                                    <span>Offline</span>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr
-                                                                            class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                5</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Derrick Simmons
-                                                                            </td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                Teacher</td>
-                                                                            <td
-                                                                                class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                                <div
-                                                                                    class="badge space-x-2.5 rounded-full bg-primary/10 text-primary dark:bg-accent-light/15 dark:text-accent-light">
-                                                                                    <div
-                                                                                        class="size-2 rounded-full bg-current">
-                                                                                    </div>
-                                                                                    <span>Offline</span>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                            <div
-                                                                class="flex flex-col justify-between space-y-4 px-4 py-4 sm:flex-row sm:items-center sm:space-y-0 sm:px-5">
-                                                                <div class="flex items-center space-x-2 text-xs+">
-                                                                    <span>Show</span>
-                                                                    <label class="block">
-                                                                        <select
-                                                                            class="form-select rounded-full border border-slate-300 bg-white px-2 py-1 pr-6 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent">
-                                                                            <option>5</option>
-                                                                            <option>10</option>
-                                                                            <option>15</option>
-                                                                        </select>
-                                                                    </label>
-                                                                    <span>entries</span>
-                                                                </div>
+                                            <li>
+                                                <form method="GET" action="{{ route('dashboardMenu3.export') }}">
+                                                    <input type="hidden" name="search"
+                                                        value="{{ request('search') }}">
+                                                    <input type="hidden" name="start_date"
+                                                        value="{{ request('start_date') }}">
+                                                    <input type="hidden" name="end_date"
+                                                        value="{{ request('end_date') }}">
+                                                    <input type="hidden" name="sto"
+                                                        value="{{ request('sto') }}">
+                                                    <input type="hidden" name="so"
+                                                        value="{{ request('so') }}">
+                                                    <input type="hidden" name="telda"
+                                                        value="{{ request('telda') }}">
+                                                    <input type="hidden" name="segmen"
+                                                        value="{{ request('segmen') }}">
+                                                    <input type="hidden" name="uic"
+                                                        value="{{ request('uic') }}">
+                                                    <input type="hidden" name="pic"
+                                                        value="{{ request('pic') }}">
+                                                    <input type="hidden" name="status"
+                                                        value="{{ request('status') }}">
+                                                    <input type="hidden" name="month"
+                                                        value="{{ request('month') }}">
+                                                    <input type="hidden" name="year"
+                                                        value="{{ request('year') }}">
 
-                                                                <ol class="pagination">
-                                                                    <li
-                                                                        class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                class="size-4" fill="none"
-                                                                                viewbox="0 0 24 24"
-                                                                                stroke="currentColor"
-                                                                                stroke-width="2">
-                                                                                <path stroke-linecap="round"
-                                                                                    stroke-linejoin="round"
-                                                                                    d="M15 19l-7-7 7-7">
-                                                                                </path>
-                                                                            </svg>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">1</a>
-                                                                    </li>
-                                                                    <li class="bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg bg-primary px-3 leading-tight text-white transition-colors hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">2</a>
-                                                                    </li>
-                                                                    <li class="bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">3</a>
-                                                                    </li>
-                                                                    <li class="bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">4</a>
-                                                                    </li>
-                                                                    <li class="bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">5</a>
-                                                                    </li>
-                                                                    <li
-                                                                        class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
-                                                                        <a href="#"
-                                                                            class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                                class="size-4" fill="none"
-                                                                                viewbox="0 0 24 24"
-                                                                                stroke="currentColor">
-                                                                                <path stroke-linecap="round"
-                                                                                    stroke-linejoin="round"
-                                                                                    stroke-width="2" d="M9 5l7 7-7 7">
-                                                                                </path>
-                                                                            </svg>
-                                                                        </a>
-                                                                    </li>
-                                                                </ol>
+                                                    <button type="submit"
+                                                        class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Export
+                                                        Excel</button>
+                                                </form>
 
-                                                                <div class="text-xs+">1 - 5 of 5 entries</div>
-                                                            </div>
-                                                            <div class="text-center">
-                                                                <button
-                                                                    class="btn mt-4 border border-primary/30 bg-primary/10 font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:border-accent-light/30 dark:bg-accent-light/10 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
-                                                                    Show All
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </template>
+                                                {{-- <li>
+                                                <a href="#"
+                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Another
+                                                    Action</a>
                                             </li>
-                                            <li x-data="{ showModal: false }" x-ref="popperRef"
-                                                @click="isShowPopper = !isShowPopper">
-                                                <button @click="showModal = true"
-                                                    class="flex h-8 items-center space-x-3 px-3 pr-8 font-medium tracking-wide text-success outline-none transition-all hover:bg-success/20 focus:bg-success/20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor" class="size-4.5">
-                                                        <path fill-rule="evenodd"
-                                                            d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z"
-                                                            clip-rule="evenodd" />
-                                                        <path
-                                                            d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
-                                                    </svg>
-
-                                                    <span> Generate .xlsx</span>
-                                                </button>
-                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Something
+                                                    else</a>
+                                            </li> --}}
                                         </ul>
+                                        {{-- <div class="my-1 h-px bg-slate-150 dark:bg-navy-500"></div>
+                                        <ul>
+                                            <li>
+                                                <a href="#"
+                                                    class="flex h-8 items-center px-3 pr-8 font-medium tracking-wide outline-none transition-all hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Separated
+                                                    Link</a>
+                                            </li>
+                                        </ul> --}}
                                     </div>
                                 </div>
                             </div>
@@ -504,1021 +338,1044 @@
 
                     {{-- Filter Expanded --}}
                     <div x-show="isFilterExpanded" x-collapse="">
-                        <div class="max-w-2xl py-3">
-                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">
-                                <label class="block">
-                                    <span>Employer name:</span>
-                                    <div class="relative mt-1.5 flex">
-                                        <input
-                                            class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                            placeholder="Enter Employer Name" type="text">
-                                        <span
-                                            class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="size-4.5 transition-colors duration-200" fill="none"
-                                                viewbox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-width="1.5"
-                                                    d="M5 19.111c0-2.413 1.697-4.468 4.004-4.848l.208-.035a17.134 17.134 0 015.576 0l.208.035c2.307.38 4.004 2.435 4.004 4.848C19 20.154 18.181 21 17.172 21H6.828C5.818 21 5 20.154 5 19.111zM16.083 6.938c0 2.174-1.828 3.937-4.083 3.937S7.917 9.112 7.917 6.937C7.917 4.764 9.745 3 12 3s4.083 1.763 4.083 3.938z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </label>
-                                <label class="block">
-                                    <span>Project name:</span>
-                                    <div class="relative mt-1.5 flex">
-                                        <input
-                                            class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                            placeholder="Enter Project Name" type="text">
-                                        <span
-                                            class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="size-4.5 transition-colors duration-200" fill="none"
-                                                viewbox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-width="1.5"
-                                                    d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
-                                                </path>
-                                                <circle cx="12" cy="12" r="3" stroke="currentColor"
-                                                    stroke-width="1.5"></circle>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </label>
-                                <label class="block">
-                                    <span>From:</span>
-                                    <div class="relative mt-1.5 flex">
-                                        <input x-init="$el._x_flatpickr = flatpickr($el)"
-                                            class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                            placeholder="Choose start date..." type="text">
-                                        <span
-                                            class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="size-5 transition-colors duration-200" fill="none"
-                                                viewbox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                                </path>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </label>
-                                <label class="block">
-                                    <span>To:</span>
-                                    <div class="relative mt-1.5 flex">
-                                        <input x-init="$el._x_flatpickr = flatpickr($el)"
-                                            class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                            placeholder="Choose start date..." type="text">
-                                        <div
-                                            class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="size-5 transition-colors duration-200" fill="none"
-                                                viewbox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                                </path>
-                                            </svg>
+                        <div class="max-w-3xl py-3">
+                            <form action="{{ route('dashboardMenu3.index') }}" method="GET">
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5 lg:gap-6">
+                                    {{-- Filter Bulan --}}
+                                    <label class="block">
+                                        <span>Bulan:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="month" id="month"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua Bulan --</option>
+                                                @foreach ($months as $month)
+                                                    <option value="{{ $month->month }}"
+                                                        data-year="{{ $month->year }}"
+                                                        {{ request('month') == $month->month && request('year') == $month->year ? 'selected' : '' }}>
+                                                        {{ \Carbon\Carbon::createFromDate($month->year, $month->month)->translatedFormat('F Y') }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <input type="hidden" name="year" id="hiddenYear">
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
                                         </div>
-                                    </div>
-                                </label>
-                                <div class="sm:col-span-2">
-                                    <span>Project Status:</span>
-                                    <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-4 sm:gap-5 lg:gap-6">
-                                        <label class="inline-flex items-center space-x-2">
-                                            <input
-                                                class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:border-secondary checked:bg-secondary hover:border-secondary focus:border-secondary dark:border-navy-400 dark:checked:border-secondary-light dark:checked:bg-secondary-light dark:hover:border-secondary-light dark:focus:border-secondary-light"
-                                                type="checkbox">
-                                            <span>Upcoming</span>
-                                        </label>
-                                        <label class="inline-flex items-center space-x-2">
-                                            <input
-                                                class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:border-primary checked:bg-primary hover:border-primary focus:border-primary dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
-                                                type="checkbox">
-                                            <span>In Progress</span>
-                                        </label>
-                                        <label class="inline-flex items-center space-x-2">
-                                            <input checked=""
-                                                class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:!border-success checked:bg-success hover:!border-success focus:!border-success dark:border-navy-400"
-                                                type="checkbox">
-                                            <span>Complete</span>
-                                        </label>
-                                        <label class="inline-flex items-center space-x-2">
-                                            <input checked=""
-                                                class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:!border-error checked:bg-error hover:!border-error focus:!border-error dark:border-navy-400"
-                                                type="checkbox">
-                                            <span>Cancelled</span>
-                                        </label>
-                                    </div>
+                                    </label>
+                                    {{-- Filter SO --}}
+                                    <label class="block">
+                                        <span>SO:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="so" id="so"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua SO --</option>
+                                                @foreach ($so as $sos)
+                                                    <option value="{{ $sos->id }}"
+                                                        {{ request('so') == $sos->id ? 'selected' : '' }}>
+                                                        {{ $sos->nama_so }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter STO --}}
+                                    <label class="block">
+                                        <span>STO:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="sto" id="sto"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua STO --</option>
+                                                @foreach ($sto as $stos)
+                                                    <option value="{{ $stos->id }}"
+                                                        {{ request('sto') == $stos->id ? 'selected' : '' }}>
+                                                        {{ $stos->nama_sto }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter Telda --}}
+                                    <label class="block">
+                                        <span>Telda:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="telda" id="telda"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua Telda --</option>
+                                                @foreach ($so as $item)
+                                                    <option
+                                                        {{ request('telda') == $item->nama_telda ? 'selected' : '' }}>
+                                                        {{ $item->nama_telda }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter Segmen --}}
+                                    <label class="block">
+                                        <span>Segmen:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="segmen" id="segmen"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Pilih Segmen --</option>
+                                                @foreach ($segmen as $item)
+                                                    <option value="{{ $item->segmen }}"
+                                                        {{ request('segmen') == $item->segmen ? 'selected' : '' }}>
+                                                        {{ $item->segmen }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter UIC --}}
+                                    <label class="block">
+                                        <span>UIC:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="uic" id="uic"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua UIC --</option>
+                                                @foreach ($seacruic as $ui)
+                                                    <option value="{{ $ui->id }}"
+                                                        {{ request('uic') == $ui->id ? 'selected' : '' }}>
+                                                        {{ $ui->uic }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter Feedback PIC --}}
+                                    <label class="block">
+                                        <span>Feedback PIC:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="pic" id="pic"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua Feedback PIC --</option>
+                                                @foreach ($kendalas as $kendala)
+                                                    <optgroup label="{{ $kendala->uic }}">
+                                                        @forelse ($kendala->feedbacks as $feedback)
+                                                            <option value="{{ $feedback->id }}"
+                                                                {{ $feedback->id == request('uic') ? 'selected' : '' }}>
+                                                                {{ $feedback->feedback_pic }}
+                                                            </option>
+                                                        @empty
+                                                            <option disabled>Tidak ada jenis kendala
+                                                            </option>
+                                                        @endforelse
+                                                    </optgroup>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter Status Kendala --}}
+                                    <label class="block">
+                                        <span>Status Kendala:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <select name="status" id="status"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                onchange="toggleClearButton()">
+                                                <option value="">-- Semua Status Kendala --</option>
+                                                @foreach ($status as $statu)
+                                                    <option value="{{ $statu->id }}"
+                                                        {{ request('status') == $statu->id ? 'selected' : '' }}>
+                                                        {{ $statu->status_kendala }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-4.5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-width="1.5"
+                                                        d="M3.082 13.944c-.529-.95-.793-1.425-.793-1.944 0-.519.264-.994.793-1.944L4.43 7.63l1.426-2.381c.559-.933.838-1.4 1.287-1.66.45-.259.993-.267 2.08-.285L12 3.26l2.775.044c1.088.018 1.631.026 2.08.286.45.26.73.726 1.288 1.659L19.57 7.63l1.35 2.426c.528.95.792 1.425.792 1.944 0 .519-.264.994-.793 1.944L19.57 16.37l-1.426 2.381c-.559.933-.838 1.4-1.287 1.66-.45.259-.993.267-2.08.285L12 20.74l-2.775-.044c-1.088-.018-1.631-.026-2.08-.286-.45-.26-.73-.726-1.288-1.659L4.43 16.37l-1.35-2.426z">
+                                                    </path>
+                                                    <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                        stroke-width="1.5"></circle>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    {{-- Filter Tanggal --}}
+                                    {{-- <label class="block">
+                                        <span>From:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <input x-init="$el._x_flatpickr = flatpickr($el)"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                placeholder="Choose start date..." type="text" name="start_date"
+                                                oninput="toggleClearButton()" value="{{ request('start_date') }}">
+                                            <span
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                    </path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </label>
+                                    <label class="block">
+                                        <span>To:</span>
+                                        <div class="relative mt-1.5 flex">
+                                            <input x-init="$el._x_flatpickr = flatpickr($el)"
+                                                class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                placeholder="Choose start date..." type="text" name="end_date"
+                                                oninput="toggleClearButton()" value="{{ request('end_date') }}">
+                                            <div
+                                                class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="size-5 transition-colors duration-200" fill="none"
+                                                    viewbox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </label> --}}
+                                    {{-- <div class="sm:col-span-2">
+                                        <span>Project Status:</span>
+                                        <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-4 sm:gap-5 lg:gap-6">
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input
+                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:border-secondary checked:bg-secondary hover:border-secondary focus:border-secondary dark:border-navy-400 dark:checked:border-secondary-light dark:checked:bg-secondary-light dark:hover:border-secondary-light dark:focus:border-secondary-light"
+                                                    type="checkbox">
+                                                <span>Upcoming</span>
+                                            </label>
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input
+                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:border-primary checked:bg-primary hover:border-primary focus:border-primary dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
+                                                    type="checkbox">
+                                                <span>In Progress</span>
+                                            </label>
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input checked=""
+                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:!border-success checked:bg-success hover:!border-success focus:!border-success dark:border-navy-400"
+                                                    type="checkbox">
+                                                <span>Complete</span>
+                                            </label>
+                                            <label class="inline-flex items-center space-x-2">
+                                                <input checked=""
+                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:!border-error checked:bg-error hover:!border-error focus:!border-error dark:border-navy-400"
+                                                    type="checkbox">
+                                                <span>Cancelled</span>
+                                            </label>
+                                        </div>
+                                    </div> --}}
                                 </div>
-                            </div>
-                            <div class="mt-4 space-x-1 text-right">
-                                <button @click="isFilterExpanded = ! isFilterExpanded"
-                                    class="btn font-medium text-slate-700 hover:bg-slate-300/20 active:bg-slate-300/25 dark:text-navy-100 dark:hover:bg-navy-300/20 dark:active:bg-navy-300/25">
-                                    Cancel
-                                </button>
+                                <div class="mt-4 space-x-1 text-right">
+                                    <button @click="isFilterExpanded = ! isFilterExpanded"
+                                        class="btn font-medium text-slate-700 hover:bg-slate-300/20 active:bg-slate-300/25 dark:text-navy-100 dark:hover:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                        Cancel
+                                    </button>
 
-                                <button @click="isFilterExpanded = ! isFilterExpanded"
-                                    class="btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
-                                    Apply
-                                </button>
-                            </div>
+                                    <button type="button" id="clearButton" style="display: none;"
+                                        onclick="clearFields()"
+                                        class="btn bg-secondary font-medium text-white hover:bg-secondary-focus focus:bg-secondary-focus active:bg-secondary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+                                        Clear
+                                    </button>
+
+                                    <button @click="isFilterExpanded = ! isFilterExpanded" type="submit"
+                                        class="btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+                                        Apply
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
-                    <div class="card mt-4">
-                        <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                            <table class="w-full text-center">
-                                <thead>
-                                    <tr>
-                                        <th
-                                            class="whitespace-nowrap px-2 py-1 rounded-tl-lg bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus">
-                                            <label class="inline-flex items-center">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                    type="checkbox" />
-                                            </label>
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                        <th
-                                        class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
-                                            Test
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody x-data="{ expanded: false }">
-                                    <tr class="border-y border-transparent">
-                                        <td class="whitespace-nowrap px-2 py-1 border">
-                                            <label class="inline-flex items-center">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                    type="checkbox" />
-                                            </label>
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                    </tr>
-                                    <tr class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                        <td colspan="100" class="p-0">
-                                            <div x-show="expanded" x-collapse="">
-                                                <div class="px-4 pb-4 sm:px-5">
-                                                    <p>
-                                                        Lorem ipsum dolor, sit amet consectetur
-                                                        adipisicing elit. Aut amet sunt repudiandae!
-                                                    </p>
-                                                    <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                                        <table class="is-hoverable w-full text-left">
-                                                            <thead>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        #
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Name
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Job
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Favorite Color
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        1
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Cy Ganderton
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Quality Control Specialist
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Blue
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        2
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Hart Hagerty
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Desktop Support Technician
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Purple
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        3
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Brice Swyre
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Tax Accountant
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Red
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        4
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Marjy Ferencz
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Office Assistant I
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Crimson
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <button @click="expanded = false"
-                                                            class="btn mt-2 h-8 rounded px-3 text-xs+ font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
-                                                            Hide
+                    <div class="card mt-3">
+                        @if ($data->count())
+                            <div class="min-w-full overflow-x-auto">
+                                <table class="w-full text-center">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="whitespace-nowrap p-2 rounded-tl-lg bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus">
+                                                <label class="inline-flex items-center">
+                                                    <input
+                                                        class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
+                                                        type="checkbox" id="selectAll">
+                                                </label>
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                No
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                tanggal
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                bulan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                track id myir
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                trackid
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                status duplicate
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                nomor sc
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                nama pelanggan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                alamat pelanggan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                cp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                tipe transaksi
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                layanan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                jenis layanan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                sto
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                mitra
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                team
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                kategori
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                detail progres
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                kendala
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                ket detail
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                chanel
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                agency
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                label odp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                label odp alternatif
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                ket label odp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                kap odp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                port odp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                sisa port odp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                tagging lokasi odp
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                tagging lokasi pelanggan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                status tagging pelanggan
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                id valins
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                Segmen
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                so
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                Telda
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                umur kendala
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                uic
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                status kendala
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                Feedback PIC
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                Detail Feedback pic
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                Recent Log
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    @isset($data)
+                                        <tbody>
+                                            @foreach ($data as $index => $row)
+                                                @php $rowId = 'row-' . $index; @endphp
+                                                <tr class="border-y border-transparent" data-index="{{ $index }}"
+                                                    id="{{ $rowId }}">
+                                                    <form id="rowForm-{{ $index }}"
+                                                        action="{{ route('dashboardMenu3.store') }}" method="POST">
+                                                        <meta name="csrf-token" content="{{ csrf_token() }}">
+                                                        <input type="hidden" name="data[{{ $index }}][id]"
+                                                            value="{{ $row['id'] }}">
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <label class="inline-flex items-center space-x-2">
+                                                                <input
+                                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary hover:border-primary focus:border-primary userCheckbox"
+                                                                    type="checkbox" value="{{ $row->id }}">
+                                                            </label>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            {{ $data->firstItem() + $index }}
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][off_tanggal]"
+                                                                value="{{ \Carbon\Carbon::parse($row['tanggal'])->format('d-m-Y') }}"
+                                                                data-row="{{ $index }}" readonly>
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][tanggal]"
+                                                                value="{{ $row['tanggal'] }}"
+                                                                data-row="{{ $index }}" hidden>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text" name="data[{{ $index }}][bulan]"
+                                                                value="{{ $row['bulan'] }}" class="auto-save"
+                                                                data-row="{{ $index }}" readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][track_id_myir]"
+                                                                value="{{ $row['track_id_myir'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][trackid]"
+                                                                value="{{ $row['trackid'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][status_duplicate]"
+                                                                value="{{ $row['status_duplicate'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][nomor_sc]"
+                                                                value="{{ $row['nomor_sc'] }}" class="auto-save"
+                                                                data-row="{{ $index }}" readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][nama_pelanggan]"
+                                                                value="{{ $row['nama_pelanggan'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][alamat_pelanggan]"
+                                                                value="{{ $row['alamat_pelanggan'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text" name="data[{{ $index }}][cp]"
+                                                                value="{{ $row['cp'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][tipe_transaksi]"
+                                                                value="{{ $row['tipe_transaksi'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][layanan]"
+                                                                value="{{ $row['layanan'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][jenis_layanan]"
+                                                                value="{{ $row['jenis_layanan'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <select name="data[{{ $index }}][id_sto]"
+                                                                class="form-select auto-save"
+                                                                data-row="{{ $index }}">
+                                                                <option value="" disabled
+                                                                    {{ !$row['id_sto'] ? 'selected' : '' }}>Pilih
+                                                                    STO</option>
+                                                                @foreach ($so as $sos)
+                                                                    <optgroup label="{{ $sos->nama_so }}">
+                                                                        @if ($sos->so_sto && is_iterable($sos->so_sto))
+                                                                            @forelse ($sos->so_sto as $so_stos)
+                                                                                <option value="{{ $so_stos->id }}"
+                                                                                    {{ $so_stos->id == $row['id_sto'] ? 'selected' : '' }}>
+                                                                                    {{ $so_stos->nama_sto }}
+                                                                                </option>
+                                                                            @empty
+                                                                                <option disabled>Tidak ada jenis kendala
+                                                                                </option>
+                                                                            @endforelse
+                                                                        @else
+                                                                            <option disabled>Relasi tidak tersedia</option>
+                                                                        @endif
+                                                                    </optgroup>
+                                                                @endforeach
+                                                            </select>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][mitra]"
+                                                                value="{{ $row['mitra'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text" name="data[{{ $index }}][team]"
+                                                                value="{{ $row['team'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][kategori]"
+                                                                value="{{ $row['kategori'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][detail_progres]"
+                                                                value="{{ $row['detail_progres'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][kendala]"
+                                                                value="{{ $row['kendala'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][ket_detail]"
+                                                                value="{{ $row['ket_detail'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][chanel]"
+                                                                value="{{ $row['chanel'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][agency]"
+                                                                value="{{ $row['agency'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][label_odp]"
+                                                                value="{{ $row['label_odp'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][label_odp_alternatif]"
+                                                                value="{{ $row['label_odp_alternatif'] }}"
+                                                                class="auto-save" data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][ket_label_odp]"
+                                                                value="{{ $row['ket_label_odp'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][kap_odp]"
+                                                                value="{{ $row['kap_odp'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][port_odp]"
+                                                                value="{{ $row['port_odp'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][sisa_port_odp]"
+                                                                value="{{ $row['sisa_port_odp'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][tagging_lokasi_odp]"
+                                                                value="{{ $row['tagging_lokasi_odp'] }}"
+                                                                class="auto-save" data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][tagging_lokasi_pelanggan]"
+                                                                value="{{ $row['tagging_lokasi_pelanggan'] }}"
+                                                                class="auto-save" data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][status_tagging_pelanggan]"
+                                                                value="{{ $row['status_tagging_pelanggan'] }}"
+                                                                class="auto-save" data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][id_valins]"
+                                                                value="{{ $row['id_valins'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][segmen]"
+                                                                value="{{ $row['segmen'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text" name="data[{{ $index }}][so]"
+                                                                value="{{ $row->order_sto->sto_so->nama_so }}"
+                                                                class="auto-save" data-row="{{ $index }}"
+                                                                readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][telda]"
+                                                                value="{{ $row->order_sto->sto_so->nama_telda }}"
+                                                                class="auto-save" data-row="{{ $index }}"
+                                                                readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text" name="data[{{ $index }}][umur]"
+                                                                value="{{ $row['umur'] }} Hari" class="auto-save"
+                                                                data-row="{{ $index }}" readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text" name="data[{{ $index }}][uic]"
+                                                                value="{{ $row->feedback_order->uic->uic ?? '' }}"
+                                                                class="auto-save" data-row="{{ $index }}"
+                                                                readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][status_kendala ]"
+                                                                value="{{ $row->feedback_order->status_kendalas->status_kendala ?? '' }}"
+                                                                class="auto-save" data-row="{{ $index }}"
+                                                                readonly>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <select name="data[{{ $index }}][id_feedback]"
+                                                                class="form-select auto-save"
+                                                                data-row="{{ $index }}">
+                                                                <option value="" disabled
+                                                                    {{ !$row['id_feedback'] ? 'selected' : '' }}>Pilih
+                                                                    Salah
+                                                                    Satu Pilihan</option>
+                                                                @foreach ($kendalas as $kendala)
+                                                                    <optgroup label="{{ $kendala->uic }}">
+                                                                        @forelse ($kendala->feedbacks as $feedback)
+                                                                            <option value="{{ $feedback->id }}"
+                                                                                {{ $feedback->id == $row['id_feedback'] ? 'selected' : '' }}>
+                                                                                {{ $feedback->feedback_pic }}
+                                                                            </option>
+                                                                        @empty
+                                                                            <option disabled>Tidak ada jenis kendala
+                                                                            </option>
+                                                                        @endforelse
+                                                                    </optgroup>
+                                                                @endforeach
+                                                            </select>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][ket_feedback]"
+                                                                value="{{ $row['ket_feedback'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                    </form>
+                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <button type="button"
+                                                            onclick="toggleExpanded('{{ $rowId }}')"
+                                                            class="btn size-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                                            <i class="fas fa-chevron-down text-sm transition-transform"
+                                                                id="icon-{{ $rowId }}">
+                                                            </i>
                                                         </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody x-data="{ expanded: false }">
-                                    <tr class="border-y border-transparent bg-slate-150 dark:bg-navy-500">
-                                        <td class="whitespace-nowrap px-2 py-1 border-2">
-                                            <label class="inline-flex items-center">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                    type="checkbox" />
-                                            </label>
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border">
-                                            Test
-                                        </td>
-                                    </tr>
-                                    <tr class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                        <td colspan="100" class="p-0">
-                                            <div x-show="expanded" x-collapse="">
-                                                <div class="px-4 pb-4 sm:px-5">
-                                                    <p>
-                                                        Lorem ipsum dolor, sit amet consectetur
-                                                        adipisicing elit. Aut amet sunt repudiandae!
-                                                    </p>
-                                                    <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                                        <table class="is-hoverable w-full text-left">
-                                                            <thead>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        #
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Name
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Job
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Favorite Color
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        1
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Cy Ganderton
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Quality Control Specialist
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Blue
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        2
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Hart Hagerty
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Desktop Support Technician
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Purple
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        3
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Brice Swyre
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Tax Accountant
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Red
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        4
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Marjy Ferencz
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Office Assistant I
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Crimson
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <button @click="expanded = false"
-                                                            class="btn mt-2 h-8 rounded px-3 text-xs+ font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
-                                                            Hide
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody x-data="{ expanded: false }">
-                                    <tr class="border-y border-transparent">
-                                        <td class="whitespace-nowrap px-2 py-1 border-2">
-                                            <label class="inline-flex items-center">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                    type="checkbox" />
-                                            </label>
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                    </tr>
-                                    <tr class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                        <td colspan="100" class="p-0">
-                                            <div x-show="expanded" x-collapse="">
-                                                <div class="px-4 pb-4 sm:px-5">
-                                                    <p>
-                                                        Lorem ipsum dolor, sit amet consectetur
-                                                        adipisicing elit. Aut amet sunt repudiandae!
-                                                    </p>
-                                                    <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                                        <table class="is-hoverable w-full text-left">
-                                                            <thead>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        #
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Name
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Job
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Favorite Color
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        1
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Cy Ganderton
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Quality Control Specialist
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Blue
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        2
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Hart Hagerty
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Desktop Support Technician
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Purple
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        3
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Brice Swyre
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Tax Accountant
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Red
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        4
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Marjy Ferencz
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Office Assistant I
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Crimson
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <button @click="expanded = false"
-                                                            class="btn mt-2 h-8 rounded px-3 text-xs+ font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
-                                                            Hide
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <tbody x-data="{ expanded: false }">
-                                    <tr class="border-y border-transparent bg-slate-150 dark:bg-navy-500">
-                                        <td class="whitespace-nowrap px-2 py-1 border-2">
-                                            <label class="inline-flex items-center">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
-                                                    type="checkbox" />
-                                            </label>
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                        <td class="whitespace-nowrap text-xs border-2">
-                                            Test
-                                        </td>
-                                    </tr>
-                                    <tr class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                        <td colspan="100" class="p-0">
-                                            <div x-show="expanded" x-collapse="">
-                                                <div class="px-4 pb-4 sm:px-5">
-                                                    <p>
-                                                        Lorem ipsum dolor, sit amet consectetur
-                                                        adipisicing elit. Aut amet sunt repudiandae!
-                                                    </p>
-                                                    <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                                        <table class="is-hoverable w-full text-left">
-                                                            <thead>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        #
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Name
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Job
-                                                                    </th>
-                                                                    <th
-                                                                        class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
-                                                                        Favorite Color
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        1
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Cy Ganderton
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Quality Control Specialist
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Blue
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        2
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Hart Hagerty
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Desktop Support Technician
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Purple
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        3
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Brice Swyre
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Tax Accountant
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Red
-                                                                    </td>
-                                                                </tr>
-                                                                <tr
-                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        4
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Marjy Ferencz
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Office Assistant I
-                                                                    </td>
-                                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                                                        Crimson
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="text-right">
-                                                        <button @click="expanded = false"
-                                                            class="btn mt-2 h-8 rounded px-3 text-xs+ font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
-                                                            Hide
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-
-                            </table>
-                        </div>
-
-                        {{-- Table Pagination --}}
+                                                    </td>
+                                                </tr>
+                                                <tr class="details-row border-y border-transparent border-b-slate-200 dark:border-b-navy-500"
+                                                    id="details-row-{{ $rowId }}" style="display: none;">
+                                                    <td colspan="100" class="p-0">
+                                                        <div>
+                                                            <div class="px-4 pb-4 sm:px-5 text-xs+">
+                                                                <p>Log</p>
+                                                                <div
+                                                                    class="is-scrollbar-hidden min-w-full overflow-x-auto">
+                                                                    <table class="is-hoverable w-full text-left">
+                                                                        <thead>
+                                                                            <tr
+                                                                                class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                                <th
+                                                                                    class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                    NO</th>
+                                                                                <th
+                                                                                    class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                    Nama</th>
+                                                                                <th
+                                                                                    class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                    Tanggal Ubah</th>
+                                                                                <th
+                                                                                    class="whitespace-nowrap px-3 py-3 font-semibold uppercase text-slate-800 dark:text-navy-100 lg:px-5">
+                                                                                    Waktu Ubah</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            @php $filteredLogs = $editLogs->where('model_id', $row->id); @endphp
+                                                                            @forelse ($filteredLogs as $num => $log)
+                                                                                <tr
+                                                                                    class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
+                                                                                    <td
+                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        {{ $loop->iteration }}</td>
+                                                                                    <td
+                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        {{ $log->nama }}</td>
+                                                                                    <td
+                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        {{ \Carbon\Carbon::parse($log->created_at)->format('d-F-Y') }}
+                                                                                    </td>
+                                                                                    <td
+                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        {{ \Carbon\Carbon::parse($log->created_at)->format('H:i:s') }}
+                                                                                    </td>
+                                                                                </tr>
+                                                                            @empty
+                                                                                <tr>
+                                                                                    <td colspan="4"
+                                                                                        class="text-center">No Logs Found
+                                                                                    </td>
+                                                                                </tr>
+                                                                            @endforelse
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                                <div class="text-right">
+                                                                    <button type="button"
+                                                                        onclick="toggleExpanded('{{ $rowId }}')"
+                                                                        class="btn mt-2 h-8 rounded px-3 text-xs+ font-medium text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:text-accent-light dark:hover:bg-accent-light/20 dark:focus:bg-accent-light/20 dark:active:bg-accent-light/25">
+                                                                        Hide
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    @endisset
+                                </table>
+                            </div>
+                        @else
+                            <br>
+                            <p class="text-center">Tidak menemukan data yang cocok</p><br>
+                        @endif
                         <div
                             class="flex flex-col justify-between space-y-4 px-4 py-4 sm:flex-row sm:items-center sm:space-y-0 sm:px-5">
                             <div class="flex items-center space-x-2 text-xs+">
                                 <span>Show</span>
-                                <label class="block">
-                                    <select
-                                        class="form-select rounded-full border border-slate-300 bg-white px-2 py-1 pr-6 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent">
-                                        <option>10</option>
-                                        <option>30</option>
-                                        <option>50</option>
-                                    </select>
-                                </label>
+                                <select
+                                    class="form-select rounded-full border border-slate-300 bg-white px-2 py-1 pr-6 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent"
+                                    id="perPage" onchange="changePerPage(this.value)"
+                                    class="ml-2 px-3 py-1 rounded">
+                                    <option value="10" {{ request('per_page') == 10 ? 'selected' : '' }}>10
+                                    </option>
+                                    <option value="30" {{ request('per_page') == 30 ? 'selected' : '' }}>30
+                                    </option>
+                                    <option value="50" {{ request('per_page') == 50 ? 'selected' : '' }}>50
+                                    </option>
+                                    <option value="100" {{ request('per_page') == 100 ? 'selected' : '' }}>100
+                                    </option>
+                                </select>
                                 <span>entries</span>
                             </div>
+                            <ol class="pagination flex justify-center mt-4">
+                                @if ($data->lastPage() > 5)
+                                    <nav role="navigation" aria-label="Pagination Navigation" class="pagination">
+                                        {{-- First Page Link --}}
+                                        @if ($data->currentPage() > 3)
+                                            <li class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
+                                                <a href="{{ $data->url(1) }}"
+                                                    class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="currentColor" class="size-5">
+                                                        <path fill-rule="evenodd"
+                                                            d="M4.72 9.47a.75.75 0 0 0 0 1.06l4.25 4.25a.75.75 0 1 0 1.06-1.06L6.31 10l3.72-3.72a.75.75 0 1 0-1.06-1.06L4.72 9.47Zm9.25-4.25L9.72 9.47a.75.75 0 0 0 0 1.06l4.25 4.25a.75.75 0 1 0 1.06-1.06L11.31 10l3.72-3.72a.75.75 0 0 0-1.06-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        @endif
+                                        {{-- Previous Page Link --}}
+                                        @if (!$data->onFirstPage())
+                                            @if ($data->currentPage() > 3)
+                                                <li class="bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->previousPageUrl() }}"
+                                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor"
+                                                            stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M15 19l-7-7 7-7">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->previousPageUrl() }}"
+                                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor"
+                                                            stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M15 19l-7-7 7-7">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endif
 
-                            <ol class="pagination">
-                                <li class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none"
-                                            viewbox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7">
-                                            </path>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">1</a>
-                                </li>
-                                <li class="bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg bg-primary px-3 leading-tight text-white transition-colors hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">2</a>
-                                </li>
-                                <li class="bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">3</a>
-                                </li>
-                                <li class="bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">4</a>
-                                </li>
-                                <li class="bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">5</a>
-                                </li>
-                                <li class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
-                                    <a href="#"
-                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none"
-                                            viewbox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7"></path>
-                                        </svg>
-                                    </a>
-                                </li>
+                                        {{-- Pagination Elements --}}
+                                        @foreach (range(max(1, $data->currentPage() - 2), min($data->lastPage(), $data->currentPage() + 2)) as $page)
+                                            @if ($page == $data->currentPage())
+                                                <li class="active bg-slate-150 dark:bg-navy-500">
+                                                    <a href="#"
+                                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg bg-primary px-3 leading-tight text-white transition-colors hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">{{ $page }}</a>
+                                                </li>
+                                            @else
+                                                <li class="pagination-link bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->url($page) }}"
+                                                        class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">{{ $page }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+
+                                        {{-- Next Page Link --}}
+                                        @if ($data->hasMorePages())
+                                            @if ($data->currentPage() < $data->lastPage() - 2)
+                                                <li class="bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->nextPageUrl() }}"
+                                                        class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->nextPageUrl() }}"
+                                                        class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endif
+                                        {{-- Last Page Link --}}
+                                        @if ($data->currentPage() < $data->lastPage() - 2)
+                                            <li class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
+                                                <a href="{{ $data->url($data->lastPage()) }}"
+                                                    class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                        fill="currentColor" class="size-5">
+                                                        <path fill-rule="evenodd"
+                                                            d="M15.28 9.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L13.69 10 9.97 6.28a.75.75 0 0 1 1.06-1.06l4.25 4.25ZM6.03 5.22l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L8.69 10 4.97 6.28a.75.75 0 0 1 1.06-1.06Z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        @endif
+                                    </nav>
+                                @else
+                                    {{-- Default Pagination --}}
+                                    @foreach (range(1, $data->lastPage()) as $page)
+                                        @if ($page == $data->currentPage())
+                                            <li class="active bg-slate-150 dark:bg-navy-500">
+                                                <a href="#"
+                                                    class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg bg-primary px-3 leading-tight text-white transition-colors hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">{{ $page }}</a>
+                                            </li>
+                                        @else
+                                            <li class="pagination-link bg-slate-150 dark:bg-navy-500">
+                                                <a href="{{ $data->url($page) }}"
+                                                    class="flex h-8 min-w-[2rem] items-center justify-center rounded-lg px-3 leading-tight transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">{{ $page }}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </ol>
-
-                            <div class="text-xs+">1 - 10 of 10 entries</div>
+                            <div class="text-xs+">
+                                <b>{{ $data->count() }}</b> of <b>{{ $data->total() }}</b> entries
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1535,6 +1392,281 @@
     <script>
         window.addEventListener("DOMContentLoaded", () => Alpine.start());
     </script>
+    <script type="text/javascript">
+        console.log('JavaStart');
+        // console.log(clearButton);
+
+        function toggleExpanded(rowId) {
+            console.log(`Toggle expanded for ${rowId}`);
+            const detailsRow = document.getElementById(`details-row-${rowId}`);
+            const icon = document.getElementById(`icon-${rowId}`);
+
+            if (detailsRow) {
+                if (detailsRow.style.display === 'none' || detailsRow.style.display === '') {
+                    detailsRow.style.display = 'table-row';
+                    icon.classList.add('-rotate-180');
+                } else {
+                    detailsRow.style.display = 'none';
+                    icon.classList.remove('-rotate-180');
+                }
+            } else {
+                console.error(`Element with id details-row-${rowId} not found`);
+            }
+        }
+
+        function changePerPage(perPage) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('per_page', perPage);
+            window.location.href = url.toString();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".auto-save").forEach((input) => {
+                input.addEventListener("change", (e) => {
+                    const rowIndex = e.target.dataset.row;
+                    const form = document.getElementById(`rowForm-${rowIndex}`);
+                    saveRowData(form);
+                });
+            });
+        });
+
+        document.addEventListener('change', function(event) {
+            if (event.target.id === 'month') {
+                const selectedOption = event.target.options[event.target.selectedIndex];
+                const year = selectedOption.getAttribute('data-year');
+                const yearInput = document.getElementById('hiddenYear');
+
+                // if (yearInput) {
+                yearInput.value = year;
+                // } else {
+                //     console.error('Input with name="year" not found in DOM.');
+                // }
+            }
+        });
+
+        function toggleClearButton() {
+            const month = document.getElementById('month').value;
+            const year = document.getElementById('hiddenYear').value;
+            const sto = document.getElementById('sto').value;
+            const so = document.getElementById('so').value;
+            const telda = document.getElementById('telda').value;
+            const segmen = document.getElementById('segmen').value;
+            const uic = document.getElementById('uic').value;
+            const pic = document.getElementById('pic').value;
+            const status = document.getElementById('status').value;
+            // const startDate = document.querySelector('[name="start_date"]').value;
+            // const endDate = document.querySelector('[name="end_date"]').value;
+            const clearButton = document.getElementById('clearButton');
+
+            if (month || so || segmen || uic || pic || status || year || telda || sto) {
+                clearButton.style.display = 'inline-block';
+            } else {
+                clearButton.style.display = 'none';
+            }
+        }
+
+        function clearFields() {
+            document.getElementById('month').value = '';
+            document.getElementById('year').value = '';
+            document.getElementById('sto').value = '';
+            document.getElementById('so').value = '';
+            document.getElementById('telda').value = '';
+            document.getElementById('segmen').value = '';
+            document.getElementById('uic').value = '';
+            document.getElementById('pic').value = '';
+            document.getElementById('status').value = '';
+            // document.querySelector('[name="start_date"]').value = '';
+            // document.querySelector('[name="end_date"]').value = '';
+            toggleClearButton();
+        }
+
+        document.addEventListener('DOMContentLoaded', toggleClearButton);
+
+        function saveRowData(form) {
+            const formData = new FormData(form);
+            const csrfTokenMeta = document.querySelector('meta[name="csrf-token"]');
+            if (!csrfTokenMeta) {
+                console.error("CSRF token meta tag not found!");
+            } else {
+                const csrfToken = csrfTokenMeta.content;
+
+                // Lanjutkan proses jika CSRF token ditemukan
+                fetch(form.action, {
+                        method: "POST",
+                        headers: {
+                            "X-CSRF-TOKEN": csrfToken,
+                        },
+                        body: formData,
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.success) {
+                            console.log("Data berhasil disimpan.");
+                        } else {
+                            console.error("Terjadi kesalahan:", data.message);
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Kesalahan AJAX:", error);
+                    });
+            }
+
+        }
+    </script>
+    <script>
+        console.log('Multi JavaStart');
+
+        document.querySelectorAll('.closeModalButton').forEach(button => {
+            button.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                document.getElementById(modalId).classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const editButton = document.querySelector('#multiEditButton');
+            const deleteButton = document.querySelector('#multiDeleteButton');
+            const editmodal = document.querySelector('#multiEditModal');
+            const deletemodal = document.querySelector('#multiDeleteModal');
+            const kendalaSelect = document.querySelector('#kendalaSelect');
+            const userCheckboxes = document.querySelectorAll('.userCheckbox');
+            const editform = document.querySelector('#multiEditForm');
+            const deleteform = document.querySelector('#multiDeleteForm');
+            const selectAllCheckbox = document.querySelector('#selectAll');
+
+            // Fungsi untuk memperbarui visibilitas tombol
+            function updateButtonVisibility() {
+                const hasChecked = Array.from(userCheckboxes).some(checkbox => checkbox.checked);
+                if (hasChecked) {
+                    editButton.style.display = 'inline-block';
+                    deleteButton.style.display = 'inline-block';
+                } else {
+                    editButton.style.display = 'none';
+                    deleteButton.style.display = 'none';
+                }
+            }
+
+            // Awal: Sembunyikan tombol jika tidak ada yang dicentang
+            updateButtonVisibility();
+
+            // Event Listener: Select All Checkbox
+            selectAllCheckbox.addEventListener('change', function() {
+                userCheckboxes.forEach(checkbox => {
+                    checkbox.checked = this.checked;
+                });
+                updateButtonVisibility();
+            });
+
+            // Event Listener: Checkbox Individu
+            userCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateButtonVisibility);
+            });
+
+            // Multi Edit
+            editButton.addEventListener('click', function() {
+                const selectedIds = Array.from(userCheckboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+
+                if (selectedIds.length === 0) {
+                    alert('Pilih setidaknya satu data untuk diedit.');
+                    return;
+                }
+
+                // Simpan ID yang dipilih dalam atribut data
+                editform.setAttribute('data-ids', JSON.stringify(selectedIds));
+                editmodal.classList.remove('hidden');
+            });
+
+            // Multi Delete
+            deleteButton.addEventListener('click', function() {
+                const selectedIds = Array.from(userCheckboxes)
+                    .filter(checkbox => checkbox.checked)
+                    .map(checkbox => checkbox.value);
+
+                if (selectedIds.length === 0) {
+                    alert('Pilih setidaknya satu data untuk diedit.');
+                    return;
+                }
+
+                // Simpan ID yang dipilih dalam atribut data
+                deleteform.setAttribute('data-ids', JSON.stringify(selectedIds));
+                deletemodal.classList.remove('hidden');
+            });
+
+            // Event Listener untuk submit form
+            editform.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const selectedIds = JSON.parse(editform.getAttribute('data-ids'));
+                const selectedFeedback = kendalaSelect.value;
+
+                if (!selectedFeedback) {
+                    alert('Pilih jenis kendala.');
+                    return;
+                }
+
+                // Kirim request ke server
+                fetch('{{ route('dashboardMenu3.multiEdit') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                        },
+                        body: JSON.stringify({
+                            ids: selectedIds,
+                            id_feedback: selectedFeedback
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Data berhasil diperbarui.');
+                            location.reload();
+                        } else {
+                            alert('Gagal memperbarui data.');
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+
+            // Multi Delete
+            deleteform.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const selectedIds = JSON.parse(deleteform.getAttribute('data-ids'));
+
+                // Kirim permintaan AJAX
+                fetch('{{ route('dashboardMenu3.multiDelete') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
+                                .getAttribute('content'),
+                        },
+                        body: JSON.stringify({
+                            ids: selectedIds
+                        }), // Kirim data dalam format JSON
+                    })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Gagal menghapus data');
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Data berhasil dihapus:', data);
+
+                        // Tutup modal dan berikan notifikasi sukses
+                        alert('Data berhasil dihapus!');
+                        location.reload(); // Refresh halaman (opsional)
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('Terjadi kesalahan saat menghapus data.');
+                    });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

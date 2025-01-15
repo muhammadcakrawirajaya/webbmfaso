@@ -24,8 +24,10 @@
             <div x-data="{ expandedItem: null }" class="h-[calc(100%-4.5rem)] overflow-x-hidden pb-6" x-init="$el._x_simplebar = new SimpleBar($el);">
                 <ul class="flex flex-1 flex-col px-4 font-inter">
 
+                    <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
+
                     <li>
-                        <a x-data="navLink" href="{{ route('telkomsel') }}"
+                        <a x-data="navLink" href="{{ route('telkomsel.index') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
@@ -37,58 +39,63 @@
                             </svg>
 
 
-                            Overview
+                            Dashboard
                         </a>
                     </li>
 
                     <li>
-                        <a x-data="navLink" href="{{ route('dashboardMenu2') }}"
+                        <a x-data="navLink" href="{{ route('dashboardMenu3.index') }}"
+                            :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
+                                'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                            class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20"
+                                stroke-width="1.5" stroke="currentColor" class="size-4 mr-2">
+                                <path fill-rule="evenodd"
+                                    d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            Data Master
+                        </a>
+                    </li>
+
+                    <li>
+                        <a x-data="navLink" href="{{ route('dashboardMenu2.index') }}"
+                            :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
+                                'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
+                            class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                viewBox="0 0 24 20" stroke-width="1.5" stroke="none" class="size-4 mr-2">
+                                class="size-5">
+                                <path
+                                    d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129V2.75Z" />
+                                <path
+                                    d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5Z" />
+                            </svg>
+
+                            Upload Excel
+                        </a>
+                    </li>
+
+                    <li>
+                        <a x-data="navLink" href="{{ route('dashboardMenu4.index') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                             class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20"
                                 stroke-width="1.5" stroke="currentColor" class="size-4 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25M9 16.5v.75m3-3v3M15 12v5.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                <path fill-rule="evenodd"
+                                    d="M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Zm10.857 5.691a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 0 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                                    clip-rule="evenodd" />
                             </svg>
 
-                            Status Follow Up WO
+                            Check Complete
                         </a>
                     </li>
 
-                    <li>
-                        <a x-data="navLink" href="{{ route('dashboardMenu3') }}"
-                            :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
-                                'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
-                            class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20" stroke-width="1.5" stroke="currentColor" class="size-4 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                              </svg>
-
-                            Gagal PS Hi
-                        </a>
-                    </li>
-
-                    <li>
-                        <a x-data="navLink" href="{{ route('dashboardMenu4') }}"
-                            :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
-                                'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
-                            class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20"
-                                stroke-width="1.5" stroke="currentColor" class="size-4 mr-2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
-                            </svg>
-
-
-                            Billing Perdana
-                        </a>
-                    </li>
-
-                    <li>
+                    {{-- <li>
                         <a x-data="navLink" href="{{ route('dashboardMenu5') }}"
                             :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                 'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
@@ -100,11 +107,11 @@
 
                             Migrate
                         </a>
-                    </li>
+                    </li> --}}
 
                 </ul>
                 <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
-                <ul class="flex flex-1 flex-col px-4 font-inter">
+                {{-- <ul class="flex flex-1 flex-col px-4 font-inter">
                     <li x-data="accordionItem('menu-item-1')">
                         <a :class="expanded ? 'text-slate-800 font-semibold dark:text-navy-50' :
                             'text-slate-600 dark:text-navy-200  hover:text-slate-800  dark:hover:text-navy-50'"
@@ -211,7 +218,7 @@
                             Another Menu 2
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
     </div>

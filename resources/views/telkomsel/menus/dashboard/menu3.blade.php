@@ -1739,7 +1739,6 @@
                     }
 
                     showAlert(data.message || 'Data berhasil diperbarui.', 'success');
-                    setTimeout(() => {}, 10000);
                     location.reload();
                 } catch (error) {
                     console.error('Error:', error);
@@ -1773,7 +1772,6 @@
                     }
 
                     showAlert(data.message || 'Data berhasil dihapus.', 'success');
-                    setTimeout(() => {}, 10000);
                     location.reload();
                 } catch (error) {
                     console.error('Error:', error);

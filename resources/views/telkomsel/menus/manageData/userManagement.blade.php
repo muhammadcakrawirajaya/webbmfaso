@@ -416,37 +416,37 @@
                     </div>
                     <div class="card mt-3">
                         <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                            <table class="w-full text-left">
+                            <table class="w-full text-center">
                                 {{-- Head --}}
                                 <thead>
                                     <tr>
                                         <th
-                                            class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            class="whitespace-nowrap p-2 rounded-tl-lg bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus">
                                             No
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Photo
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Name
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Division
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Telegram
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white @if (session('role') !== 'admin') rounded-tr-lg @endif focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Role
                                         </th>
                                         @if (session('role') === 'admin')
                                             <th
-                                                class="whitespace-nowrap rounded-tr-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             </th>
                                         @endif
                                     </tr>
@@ -455,10 +455,10 @@
                                 {{-- LIST --}}
                                 @foreach ($users as $index => $data)
                                     <tr class="border-y border-transparent">
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                             {{ $users->firstItem() + $index }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            <div class="avatar flex">
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                            <div class="avatar d-flex justify-content-center">
                                                 {{-- <img class="rounded-full"
                                                     src="{{ Storage::exists('public/' . $data->karyawan->foto) ? asset('storage/' . $data->karyawan->foto) : asset('assets/images/logo-brand.png') }}"
                                                     alt="avatar"> --}}
@@ -473,18 +473,17 @@
                                                 @endif
                                             </div>
                                         </td>
-                                        <td
-                                            class="whitespace-nowrap px-4 py-3 font-medium text-slate-700 dark:text-navy-100 sm:px-5">
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                             {{ $data->karyawan->nama ?? '-' }}
                                         </td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5"
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                             style="text-transform: uppercase;">
                                             {{ $data->division ?? '-' }}
                                         </td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                             {{ $data->karyawan->telegram ?? '-' }}
                                         </td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                             <div class="flex space-x-2" style="text-transform: capitalize;">
                                                 @if ($data->role == 'team leader')
                                                     <div
@@ -499,7 +498,7 @@
                                             </div>
                                         </td>
                                         @if (session('role') === 'admin')
-                                            <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                 <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })"
                                                     @click.outside="isShowPopper && (isShowPopper = false)"
                                                     class="inline-flex">

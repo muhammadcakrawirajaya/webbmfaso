@@ -111,32 +111,32 @@
                     <div class="card mt-3">
                         @if ($editLogs->count())
                             <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                <table class="w-full text-left">
+                                <table class="w-full text-center">
                                     {{-- Head --}}
                                     <thead>
                                         <tr>
                                             <th
-                                                class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap p-2 rounded-tl-lg bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus">
                                                 No
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Nama Table
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 isi Edit
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Dedit oleh
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Tanggal Edit
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Waktu Edit
                                             </th>
                                         </tr>
@@ -147,25 +147,23 @@
                                             @isset($editLogs)
                                                 @foreach ($editLogs as $index => $log)
                                                     <tr class="border-y border-transparent">
-                                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             {{ $editLogs->firstItem() + $index }}</td>
-                                                        <td
-                                                            class="whitespace-nowrap px-4 py-3 font-medium text-slate-700 dark:text-navy-100 sm:px-5">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             {{ $log['model_type'] }}
                                                         </td>
-                                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5"
-                                                            style="text-transform: uppercase;">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][edit_data]"
                                                                 value="{{ print_r($log['edit_data'], true) }}"
                                                                 class="auto-save" data-row="{{ $index }}" readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             {{ $log['updated_by'] ?? 'Unknown' }}
                                                         </td>
-                                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             {{ $log['date'] }}
                                                         </td>
-                                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             {{ $log['time'] }}
                                                         </td>
                                                     </tr>

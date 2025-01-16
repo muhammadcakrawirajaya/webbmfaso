@@ -286,41 +286,41 @@
                     <div class="card mt-3">
                         @if ($Sto->count())
                             <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                <table class="w-full text-left">
+                                <table class="w-full text-center">
                                     {{-- Head --}}
                                     <thead>
                                         <tr>
                                             <th
-                                                class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap p-2 rounded-tl-lg bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus">
                                                 No
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Nama StO
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Nama SO
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Nama tl
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Dibuat Oleh
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Tanggal Buat
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white @if (session('role') !== 'admin') rounded-tr-lg @endif focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Waktu Buat
                                             </th>
                                             @if (session('role') === 'admin')
                                                 <th
-                                                    class="whitespace-nowrap rounded-tr-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                                    class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 </th>
                                             @endif
                                         </tr>
@@ -330,31 +330,28 @@
                                     @isset($Sto)
                                         @foreach ($Sto as $index => $log)
                                             <tr class="border-y border-transparent">
-                                                <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $Sto->firstItem() + $index }}</td>
-                                                <td
-                                                    class="whitespace-nowrap px-4 py-3 font-medium text-slate-700 dark:text-navy-100 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['nama_sto'] }}
                                                 </td>
-                                                <td
-                                                    class="whitespace-nowrap px-4 py-3 font-medium text-slate-700 dark:text-navy-100 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['nama_so'] }}
                                                 </td>
-                                                <td
-                                                    class="whitespace-nowrap px-4 py-3 font-medium text-slate-700 dark:text-navy-100 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['nama_tl'] }}
                                                 </td>
-                                                <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['created_by'] }}
                                                 </td>
-                                                <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['date'] }}
                                                 </td>
-                                                <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['time'] }}
                                                 </td>
                                                 @if (session('role') === 'admin')
-                                                    <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })"
                                                             @click.outside="isShowPopper && (isShowPopper = false)"
                                                             class="inline-flex">

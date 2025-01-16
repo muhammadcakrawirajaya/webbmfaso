@@ -29,11 +29,12 @@
             <div class="flex items-center py-5 lg:py-6">
                 <form method="GET" action="{{ route('telkomsel.index') }}">
                     <div class="container">
-                        <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
+                        <h2 class="font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
                             Dashboard Monitoring Progress Order Fallout End State -
-                            <select name="data-change" class="form-select" onchange="this.form.submit()">
-                                <option value="" disabled {{ empty($selectedFeedbackId) ? 'selected' : '' }}>Mohon
-                                    Pilih
+                            <select name="data-change" onchange="this.form.submit()"
+                                class="form-selected">
+                                <option value="" disabled {{ empty($selectedFeedbackId) ? 'selected' : '' }}>
+                                    Mohon Pilih
                                 </option>
                                 @forelse ($kendalas as $feedback)
                                     <option value="{{ $feedback->id }}"
@@ -46,8 +47,8 @@
                             </select>
                             &nbsp;Di bulan -
                             <!-- Dropdown untuk Bulan -->
-                            <select name="month" id="month" class="form-select" onchange="updateYearAndSubmit()">
-                                <option value="">-- Semua Bulan --</option>
+                            <select name="month" id="month" class="form-selected" onchange="updateYearAndSubmit()">
+                                <option value="">Semua Bulan</option>
                                 @foreach ($months as $month)
                                     <option value="{{ $month->month }}" data-year="{{ $month->year }}"
                                         {{ request('month') == $month->month && request('year') == $month->year ? 'selected' : '' }}>

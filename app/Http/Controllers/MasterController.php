@@ -294,8 +294,10 @@ class MasterController extends Controller
         $idFeedback = $request->input('id_feedback');
 
         if (!$ids || !$idFeedback) {
-            session()->flash('error', 'Terjadi kesalahan: Data tidak valid.');
-            return redirect()->back();
+            return response()->json([
+                'success' => false,
+                'message' => 'Terjadi kesalahan: Data tidak valid.',
+            ], 500);
         }
 
         // Edit prosess
@@ -359,19 +361,37 @@ class MasterController extends Controller
             DB::commit();
             // Log::info('Transaction committed successfully for multiEdit');
 
-            session()->flash('info', 'Data Berhasil Diedit!');
-            return redirect()->back();
+            return response()->json([
+                'success' => true,
+                'message' => 'Data berhasil diperbarui.',
+            ]);
         } catch (\Exception $e) {
             DB::rollBack();
             // Log::error('Error during multiEdit', ['error' => $e->getMessage()]);
 
-            session()->flash('error', 'Terjadi kesalahan: ' . $e->getMessage());
-            return redirect()->back();
+            return response()->json([
+                'success' => false,
+                'message' => 'Gagal memperbarui data.',
+                'errors' => $e->getMessage(),
+            ], 500);
         }
     }
 
     public function multiDelete(Request $request)
     {
+        // Log check
+        if (!Auth::check()) {
+            session()->flash('info', 'Mohon Login Kembali untuk Melanjutkan aktivitas');
+            return redirect('/login');
+        }
+        $user = Auth::user();
+        if ($user->role !== 'admin' || $user->division !== 'aso') {
+            return response()->json([
+                'success' => false,
+                'message' => 'Anda tidak memiliki aksess untuk fungsi ini.',
+            ], 500);
+        }
+
         // Validasi data
         $request->validate([
             'ids' => 'required|array',
@@ -382,11 +402,16 @@ class MasterController extends Controller
         try {
             DB::table('order')->whereIn('id', $request->ids)->delete();
 
-            session()->flash('warning', 'Data berhasil dihapus.');
-            return redirect()->back();
+            return response()->json([
+                'success' => true,
+                'message' => 'Data berhasil diperbarui.',
+            ]);
         } catch (\Exception $e) {
-            session()->flash('error', 'Terjadi kesalahan: ' . $e->getMessage());
-            return redirect()->back();
+            return response()->json([
+                'success' => false,
+                'message' => 'Gagal menghapus data.',
+                'errors' => $e->getMessage(),
+            ], 500);
         }
     }
 

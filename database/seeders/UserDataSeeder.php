@@ -25,7 +25,7 @@ class UserDataSeeder extends Seeder
             'username' => 'Super Admin',
             'password' => Hash::make('SuperStars'),
             'division' => 'aso',
-            'role' => 'team leader',
+            'role' => 'admin',
             'remember_token' => Str::random(60)
         ];
 
@@ -46,7 +46,7 @@ class UserDataSeeder extends Seeder
             'username' => '960198',
             'password' => Hash::make('Bismillaah66'),
             'division' => 'aso',
-            'role' => 'team leader',
+            'role' => 'admin',
             'remember_token' => Str::random(60)
         ];
 
@@ -64,7 +64,7 @@ class UserDataSeeder extends Seeder
             'username' => '40900111',
             'password' => Hash::make('Tiw170990'),
             'division' => 'aso',
-            'role' => 'team leader',
+            'role' => 'admin',
             'remember_token' => Str::random(60)
         ];
 
@@ -82,7 +82,7 @@ class UserDataSeeder extends Seeder
             'username' => 'E41211187',
             'password' => Hash::make('12345678'),
             'division' => 'aso',
-            'role' => 'team leader',
+            'role' => 'admin',
             'remember_token' => Str::random(60)
         ];
 
@@ -91,7 +91,7 @@ class UserDataSeeder extends Seeder
             'username' => 'E41211200',
             'password' => Hash::make('12345678'),
             'division' => 'aso',
-            'role' => 'team leader',
+            'role' => 'admin',
             'remember_token' => Str::random(60)
         ];
 
@@ -100,7 +100,7 @@ class UserDataSeeder extends Seeder
             'username' => 'E41211220',
             'password' => Hash::make('12345678'),
             'division' => 'aso',
-            'role' => 'team leader',
+            'role' => 'admin',
             'remember_token' => Str::random(60)
         ];
 

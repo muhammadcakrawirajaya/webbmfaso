@@ -28,17 +28,9 @@
         <main class="main-content w-full px-[var(--margin-x)] pb-8">
             <div id="custom-alert-container"
                 class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-90 z-50 space-y-2">
-                @if (session('success') || session('error') || session('warning') || session('info'))
-                    @foreach (['success', 'error', 'warning', 'info'] as $type)
-                        @if (session($type))
-                            <div class="custom-alert bg-opacity-90 px-6 py-3 rounded-lg text-white text-center shadow-lg"
-                                style="display: none; background-color: {{ $type === 'success' ? '#4CAF50' : ($type === 'error' ? '#F44336' : ($type === 'warning' ? '#FF9800' : '#2196F3')) }};">
-                                {{ session($type) }}
-                            </div>
-                        @endif
-                    @endforeach
-                @endif
+                <!-- Alerts akan di-inject melalui JavaScript -->
             </div>
+
             <div class="flex items-center space-x-4 py-5 lg:py-6">
                 <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
                     Data Master
@@ -111,10 +103,10 @@
                             {{-- Edit Button --}}
                             <div id="multiEditModal"
                                 class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                                {{-- <div class="absolute inset-0 bg-black bg-opacity-80"></div> --}}
+                                <div class="absolute inset-0 bg-black bg-opacity-80"></div>
                                 <div class="bg-white rounded-lg shadow-lg w-[28rem] p-6 relative z-10">
                                     <div class="flex justify-center mb-4">
-                                        <img src="{{ asset('assets/images/logo-brand.svg') }}" alt="User Photo"
+                                        <img src="{{ asset('assets/images/logo-brand.png') }}" alt="User Photo"
                                             class="w-20 h-20 rounded-full border-4 border-white shadow-md">
                                     </div>
                                     <h3 class="text-center text-xl font-semibold mb-2">Edit Feedback PIC</h3>
@@ -185,10 +177,10 @@
                             {{-- Delete Modal --}}
                             <div id="multiDeleteModal"
                                 class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                                {{-- <div class="absolute inset-0 bg-black bg-opacity-80"></div> --}}
+                                <div class="absolute inset-0 bg-black bg-opacity-80"></div>
                                 <div class="bg-white rounded-lg shadow-lg w-[28rem] p-6 relative z-10">
                                     <div class="flex justify-center mb-4">
-                                        <img src="{{ asset('assets/images/logo-brand.svg') }}" alt="User Photo"
+                                        <img src="{{ asset('assets/images/logo-brand.png') }}" alt="User Photo"
                                             class="w-20 h-20 rounded-full border-4 border-white shadow-md">
                                     </div>
                                     <h3 class="text-center text-xl font-semibold mb-2">Delete Data</h3>
@@ -840,7 +832,17 @@
                                         <tbody>
                                             @foreach ($data as $index => $row)
                                                 @php $rowId = 'row-' . $index; @endphp
-                                                <tr class="border-y border-transparent" data-index="{{ $index }}"
+                                                <tr class="data-row cursor-pointer"
+                                                    data-nomor-sc="{{ $row['nomor_sc'] }}"
+                                                    data-nama-pelanggan="{{ $row['nama_pelanggan'] }}"
+                                                    data-alamat-pelanggan="{{ $row['alamat_pelanggan'] }}"
+                                                    data-sto="{{ $row->order_sto->nama_sto ?? '' }}"
+                                                    data-layanan="{{ $row['layanan'] }}"
+                                                    data-jenis-layanan="{{ $row['jenis_layanan'] }}"
+                                                    data-uic="{{ $row->feedback_order->uic->uic ?? '' }}"
+                                                    data-status-kendala="{{ $row->feedback_order->status_kendalas->status_kendala ?? '' }}"
+                                                    data-feedback="{{ $row->feedback_order->feedback_pic ?? '' }}"
+                                                    class="border-y border-transparent" data-index="{{ $index }}"
                                                     id="{{ $rowId }}">
                                                     <form id="rowForm-{{ $index }}"
                                                         action="{{ route('dashboardMenu3.store') }}" method="POST">
@@ -1401,6 +1403,68 @@
         @see https://alpinejs.dev/directives/teleport
       -->
     <div id="x-teleport-target"></div>
+
+    <!-- Modal Container -->
+    <div id="dataModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="modal-content bg-white rounded-lg shadow-lg relative w-4/5 max-w-2xl p-6">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl">
+                &times;
+            </button>
+
+            <!-- Modal Header -->
+            <div class="modal-header text-center mb-6">
+                <img src="{{ asset('assets/images/logo-brand.png') }}" alt="Logo"
+                    class="modal-logo mx-auto mb-4 w-12 h-12">
+                <h2 class="text-2xl font-bold">Detail Data</h2>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body space-y-4">
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Nomor SC:</label>
+                    <span id="modalNomorSC" class="block text-gray-600">[Data Nomor SC]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Nama Pelanggan:</label>
+                    <span id="modalNamaPelanggan" class="block text-gray-600">[Data Nama
+                        Pelanggan]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Alamat Pelanggan:</label>
+                    <span id="modalAlamatPelanggan" class="block text-gray-600">[Data Alamat
+                        Pelanggan]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">STO:</label>
+                    <span id="modalSTO" class="block text-gray-600">[Data STO]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Layanan:</label>
+                    <span id="modalLayanan" class="block text-gray-600">[Data Layanan]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Jenis Layanan:</label>
+                    <span id="modalJenisLayanan" class="block text-gray-600">[Data Jenis
+                        Layanan]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">UIC:</label>
+                    <span id="modalUIC" class="block text-gray-600">[Data UIC]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Status Kendala:</label>
+                    <span id="modalStatusKendala" class="block text-gray-600">[Data Status
+                        Kendala]</span>
+                </div>
+                <div class="form-group">
+                    <label class="block font-semibold text-gray-700">Feedback:</label>
+                    <span id="modalFeedback" class="block text-gray-600">[Data Feedback]</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         window.addEventListener("DOMContentLoaded", () => Alpine.start());
     </script>
@@ -1500,8 +1564,6 @@
                 console.error("CSRF token meta tag not found!");
             } else {
                 const csrfToken = csrfTokenMeta.content;
-
-                // Lanjutkan proses jika CSRF token ditemukan
                 fetch(form.action, {
                         method: "POST",
                         headers: {
@@ -1527,6 +1589,52 @@
     <script>
         console.log('Multi JavaStart');
 
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('dataModal');
+            const closeModal = document.getElementById('closeModal');
+            const dataRows = document.querySelectorAll('.data-row');
+
+            const modalNomorSC = document.getElementById('modalNomorSC');
+            const modalNamaPelanggan = document.getElementById('modalNamaPelanggan');
+            const modalAlamatPelanggan = document.getElementById('modalAlamatPelanggan');
+            const modalSTO = document.getElementById('modalSTO');
+            const modalLayanan = document.getElementById('modalLayanan');
+            const modalJenisLayanan = document.getElementById('modalJenisLayanan');
+            const modalUIC = document.getElementById('modalUIC');
+            const modalStatusKendala = document.getElementById('modalStatusKendala');
+            const modalFeedback = document.getElementById('modalFeedback');
+
+            dataRows.forEach(row => {
+                row.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
+                        return;
+                    }
+
+                    modalNomorSC.textContent = this.getAttribute('data-nomor-sc');
+                    modalNamaPelanggan.textContent = this.getAttribute('data-nama-pelanggan');
+                    modalAlamatPelanggan.textContent = this.getAttribute('data-alamat-pelanggan');
+                    modalSTO.textContent = this.getAttribute('data-sto');
+                    modalLayanan.textContent = this.getAttribute('data-layanan');
+                    modalJenisLayanan.textContent = this.getAttribute('data-jenis-layanan');
+                    modalUIC.textContent = this.getAttribute('data-uic');
+                    modalStatusKendala.textContent = this.getAttribute('data-status-kendala');
+                    modalFeedback.textContent = this.getAttribute('data-feedback');
+
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            closeModal.addEventListener('click', function() {
+                modal.classList.add('hidden');
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+
         document.querySelectorAll('.closeModalButton').forEach(button => {
             button.addEventListener('click', function() {
                 const modalId = this.getAttribute('data-modal');
@@ -1545,7 +1653,6 @@
             const deleteform = document.querySelector('#multiDeleteForm');
             const selectAllCheckbox = document.querySelector('#selectAll');
 
-            // Fungsi untuk memperbarui visibilitas tombol
             function updateButtonVisibility() {
                 const hasChecked = Array.from(userCheckboxes).some(checkbox => checkbox.checked);
                 if (hasChecked) {
@@ -1557,10 +1664,8 @@
                 }
             }
 
-            // Awal: Sembunyikan tombol jika tidak ada yang dicentang
             updateButtonVisibility();
 
-            // Event Listener: Select All Checkbox
             selectAllCheckbox.addEventListener('change', function() {
                 userCheckboxes.forEach(checkbox => {
                     checkbox.checked = this.checked;
@@ -1568,7 +1673,6 @@
                 updateButtonVisibility();
             });
 
-            // Event Listener: Checkbox Individu
             userCheckboxes.forEach(checkbox => {
                 checkbox.addEventListener('change', updateButtonVisibility);
             });
@@ -1584,7 +1688,6 @@
                     return;
                 }
 
-                // Simpan ID yang dipilih dalam atribut data
                 editform.setAttribute('data-ids', JSON.stringify(selectedIds));
                 editmodal.classList.remove('hidden');
             });
@@ -1600,80 +1703,82 @@
                     return;
                 }
 
-                // Simpan ID yang dipilih dalam atribut data
                 deleteform.setAttribute('data-ids', JSON.stringify(selectedIds));
                 deletemodal.classList.remove('hidden');
             });
 
-            // Event Listener untuk submit form
-            editform.addEventListener('submit', function(e) {
+            editform.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 const selectedIds = JSON.parse(editform.getAttribute('data-ids'));
                 const selectedFeedback = kendalaSelect.value;
 
                 if (!selectedFeedback) {
-                    alert('Pilih jenis kendala.');
+                    showAlert('Pilih jenis kendala.', 'warning');
                     return;
                 }
 
-                // Kirim request ke server
-                fetch('{{ route('dashboardMenu3.multiEdit') }}', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                        },
-                        body: JSON.stringify({
-                            ids: selectedIds,
-                            id_feedback: selectedFeedback
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            alert('Data berhasil diperbarui.');
-                            location.reload();
-                        } else {
-                            alert('Gagal memperbarui data.');
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-            });
-
-            // Multi Delete
-            deleteform.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const selectedIds = JSON.parse(deleteform.getAttribute('data-ids'));
-
-                // Kirim permintaan AJAX
-                fetch('{{ route('dashboardMenu3.multiDelete') }}', {
+                try {
+                    const response = await fetch('{{ route('dashboardMenu3.multiEdit') }}', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
-                                .getAttribute('content'),
+                                .content,
+                        },
+                        body: JSON.stringify({
+                            ids: selectedIds,
+                            id_feedback: selectedFeedback,
+                        }),
+                    });
+
+                    const data = await response.json();
+                    if (!response.ok) {
+                        showAlert(data.message || 'Gagal memperbarui data.', 'error');
+                        console.error(data.errors || data);
+                        return;
+                    }
+
+                    showAlert(data.message || 'Data berhasil diperbarui.', 'success');
+                    setTimeout(() => {}, 10000);
+                    location.reload();
+                } catch (error) {
+                    console.error('Error:', error);
+                    showAlert('Terjadi kesalahan saat mengedit data.', 'error');
+                }
+            });
+
+            // Multi Delete
+            deleteform.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const selectedIds = JSON.parse(deleteform.getAttribute('data-ids'));
+
+                try {
+                    const response = await fetch('{{ route('dashboardMenu3.multiDelete') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')
+                                .content,
                         },
                         body: JSON.stringify({
                             ids: selectedIds
-                        }), // Kirim data dalam format JSON
-                    })
-                    .then((response) => {
-                        if (!response.ok) {
-                            throw new Error('Gagal menghapus data');
-                        }
-                        return response.json();
-                    })
-                    .then((data) => {
-                        console.log('Data berhasil dihapus:', data);
-
-                        // Tutup modal dan berikan notifikasi sukses
-                        alert('Data berhasil dihapus!');
-                        location.reload(); // Refresh halaman (opsional)
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                        alert('Terjadi kesalahan saat menghapus data.');
+                        }),
                     });
+
+                    const data = await response.json();
+                    if (!response.ok) {
+                        showAlert(data.message || 'Gagal menghapus data.', 'error');
+                        console.error(data.errors || data);
+                        return;
+                    }
+
+                    showAlert(data.message || 'Data berhasil dihapus.', 'success');
+                    setTimeout(() => {}, 10000);
+                    location.reload();
+                } catch (error) {
+                    console.error('Error:', error);
+                    showAlert('Terjadi kesalahan saat menghapus data.', 'error');
+                }
             });
         });
     </script>

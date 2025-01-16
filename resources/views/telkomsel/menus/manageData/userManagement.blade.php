@@ -459,6 +459,9 @@
                                             {{ $users->firstItem() + $index }}</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <div class="avatar flex">
+                                                {{-- <img class="rounded-full"
+                                                    src="{{ Storage::exists('public/' . $data->karyawan->foto) ? asset('storage/' . $data->karyawan->foto) : asset('assets/images/logo-brand.png') }}"
+                                                    alt="avatar"> --}}
                                                 @if ($data->karyawan->foto)
                                                     <img class="rounded-full"
                                                         src="{{ asset('storage/' . $data->karyawan->foto) }}"
@@ -971,6 +974,23 @@
     <script>
         window.addEventListener("DOMContentLoaded", () => Alpine.start());
     </script>
+
+    <script>
+        $(document).ready(function() {
+            const $inputFoto = $('#foto');
+            const $previewSpan = $('#preview');
+
+            if ($inputFoto.length && $previewSpan.length) {
+                $inputFoto.on('change', function() {
+                    const fileName = this.files && this.files[0] ? this.files[0].name : 'No file chosen';
+                    $previewSpan.text(fileName);
+                });
+            } else {
+                console.error('Element inputFoto atau previewSpan tidak ditemukan!');
+            }
+        });
+    </script>
+
 
 </body>
 

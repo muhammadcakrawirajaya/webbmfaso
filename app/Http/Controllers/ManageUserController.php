@@ -43,6 +43,9 @@ class ManageUserController extends Controller
         // Paginate data utama
         $users = $query->paginate($perPage)->withQueryString();
 
+        // debug
+        // dd(Storage::exists('public/' . $users->karyawan->foto));
+
         // Return ke view
         return view('telkomsel.menus.manageData.userManagement', compact('users'));
     }
@@ -71,6 +74,7 @@ class ManageUserController extends Controller
                 'telegram' => 'required|string',
                 'role' => 'required|string',
                 'division' => 'required|string',
+                'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ], [
                 'nama.required' => 'Nama wajib diisi.',
                 // 'nama.string' => 'Nama harus berupa teks.',
@@ -91,6 +95,14 @@ class ManageUserController extends Controller
         } catch (ValidationException $e) {
             session()->flash('warning',  'Mohon Periksa Kembali Data yang Anda Masukkan.');
             return redirect()->back()->withInput();
+        }
+
+        // Division restrics
+        if ($request->role === 'team leader') {
+            if ($user->division !== 'aso') {
+                session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
+                return redirect()->back();
+            }
         }
 
         // Tele check
@@ -116,10 +128,7 @@ class ManageUserController extends Controller
             // Server try foto
             $path = null;
             if ($request->hasFile('foto')) {
-                $request->validate([
-                    'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-                ]);
-                $path = $request->file('foto')->store('Karyawan', 'public');
+                $path = $request->file('foto')->store('karyawan', 'public');
                 Log::info('Foto berhasil disimpan', ['path' => $path]);
             } else {
                 Log::info('No file uploaded');

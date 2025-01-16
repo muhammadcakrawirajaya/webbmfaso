@@ -382,7 +382,7 @@ class MasterController extends Controller
         try {
             DB::table('order')->whereIn('id', $request->ids)->delete();
 
-            session()->flash('warning', 'Data STO berhasil dihapus dan id_sto di tabel order telah dikosongkan.');
+            session()->flash('warning', 'Data berhasil dihapus.');
             return redirect()->back();
         } catch (\Exception $e) {
             session()->flash('error', 'Terjadi kesalahan: ' . $e->getMessage());

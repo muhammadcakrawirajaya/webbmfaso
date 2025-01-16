@@ -394,148 +394,164 @@
                                             </label>
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             No
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             tanggal
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             bulan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             track id myir
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             trackid
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             status duplicate
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             nomor sc
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             nama pelanggan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             alamat pelanggan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             cp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             tipe transaksi
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             layanan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             jenis layanan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             sto
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             mitra
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             team
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             kategori
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             detail progres
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             kendala
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             ket detail
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             chanel
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             agency
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             label odp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             label odp alternatif
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             ket label odp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             kap odp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             port odp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             sisa port odp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             tagging lokasi odp
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             tagging lokasi pelanggan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             status tagging pelanggan
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             id valins
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             segmen
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             produk
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Feedback PIC
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Keterangan feedback
+                                        </th>
+                                        <th
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                            rab sdi
+                                        </th>
+                                        <th
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                            rab aanwijzing
+                                        </th>
+                                        <th
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                            bges mbb approval
+                                        </th>
+                                        <th
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                            bges mbb note
                                         </th>
                                     </tr>
                                 </thead>
@@ -546,7 +562,7 @@
                                         @foreach ($data as $index => $row)
                                             <tbody x-data="{ expanded: false }">
                                                 <tr class="border-y border-transparent" data-index="{{ $index }}">
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <label class="inline-flex items-center space-x-2">
                                                             <input
                                                                 class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
@@ -555,164 +571,184 @@
                                                             <label for="checkbox"></label>
                                                         </label>
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         {{ $index + 1 }}
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][tanggal]"
                                                             value="{{ $row['tanggal'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][bulan]"
                                                             value="{{ $row['bulan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][track_id_myir]"
                                                             value="{{ $row['track_id_myir'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][trackid]"
                                                             value="{{ $row['trackid'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][status_duplicate]"
                                                             value="{{ $row['status_duplicate'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][nomor_sc]"
                                                             value="{{ $row['nomor_sc'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][nama_pelanggan]"
                                                             value="{{ $row['nama_pelanggan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][alamat_pelanggan]"
                                                             value="{{ $row['alamat_pelanggan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][cp]"
                                                             value="{{ $row['cp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][tipe_transaksi]"
                                                             value="{{ $row['tipe_transaksi'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][layanan]"
                                                             value="{{ $row['layanan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][jenis_layanan]"
                                                             value="{{ $row['jenis_layanan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][sto]"
                                                             value="{{ $row['sto'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][mitra]"
                                                             value="{{ $row['mitra'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][team]"
                                                             value="{{ $row['team'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][kategori]"
                                                             value="{{ $row['kategori'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][detail_progres]"
                                                             value="{{ $row['detail_progres'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][kendala]"
                                                             value="{{ $row['kendala'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][ket_detail]"
                                                             value="{{ $row['ket_detail'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][chanel]"
                                                             value="{{ $row['chanel'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][agency]"
                                                             value="{{ $row['agency'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][label_odp]"
                                                             value="{{ $row['label_odp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][label_odp_alternatif]"
                                                             value="{{ $row['label_odp_alternatif'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][ket_label_odp]"
                                                             value="{{ $row['ket_label_odp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][kap_odp]"
                                                             value="{{ $row['kap_odp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][port_odp]"
                                                             value="{{ $row['port_odp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][sisa_port_odp]"
                                                             value="{{ $row['sisa_port_odp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][tagging_lokasi_odp]"
                                                             value="{{ $row['tagging_lokasi_odp'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][tagging_lokasi_pelanggan]"
                                                             value="{{ $row['tagging_lokasi_pelanggan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][status_tagging_pelanggan]"
                                                             value="{{ $row['status_tagging_pelanggan'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][id_valins]"
                                                             value="{{ $row['id_valins'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][segmen]"
                                                             value="{{ $row['segmen'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][produk]"
                                                             value="{{ $row['produk'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][feedback_pic]"
                                                             value="{{ $row['feedback_pic'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][detail_feedback_pic]"
                                                             value="{{ $row['detail_feedback_pic'] }}">
+                                                    </td>
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                        <input type="text"
+                                                            name="data[{{ $index }}][rab_sdi]"
+                                                            value="{{ $row['rab_sdi'] }}">
+                                                    </td>
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                        <input type="text"
+                                                            name="data[{{ $index }}][rab_aanwijzing]"
+                                                            value="{{ $row['rab_aanwijzing'] }}">
+                                                    </td>
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                        <input type="text"
+                                                            name="data[{{ $index }}][bges_mbb_approval]"
+                                                            value="{{ $row['bges_mbb_approval'] }}">
+                                                    </td>
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                        <input type="text"
+                                                            name="data[{{ $index }}][bges_mbb_note]"
+                                                            value="{{ $row['bges_mbb_note'] }}">
                                                     </td>
                                                 </tr>
                                             </tbody>

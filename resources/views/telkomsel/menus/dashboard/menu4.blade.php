@@ -185,7 +185,7 @@
 
                     <div class="card mt-3">
                         <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                            <table class="w-full text-left">
+                            <table class="w-full text-center">
                                 <thead>
                                     <tr>
                                         <th
@@ -197,27 +197,27 @@
                                             </label>
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             No
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             Nomer SC
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             sto
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             order date
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             customer name
                                         </th>
                                         <th
-                                            class="whitespace-nowrap bg-primary-focus font-medium text-white rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            class="whitespace-nowrap bg-primary-focus font-medium text-white rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                             status resume
                                         </th>
                                     </tr>
@@ -229,7 +229,7 @@
                                         @foreach ($data as $index => $row)
                                             <tbody x-data="{ expanded: false }">
                                                 <tr class="border-y border-transparent" data-index="{{ $index }}">
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <label class="inline-flex items-center space-x-2">
                                                             <input
                                                                 class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
@@ -238,27 +238,27 @@
                                                             <label for="checkbox"></label>
                                                         </label>
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">{{ $index + 1 }}
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">{{ $index + 1 }}
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][order_id]"
                                                             value="{{ $row['order_id'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text" name="data[{{ $index }}][sto]"
                                                             value="{{ $row['sto'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][order_date]"
                                                             value="{{ $row['order_date'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][customer_name]"
                                                             value="{{ $row['customer_name'] }}">
                                                     </td>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <input type="text"
                                                             name="data[{{ $index }}][status_resume]"
                                                             value="{{ $row['status_resume'] }}">

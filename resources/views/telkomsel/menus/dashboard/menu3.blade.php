@@ -643,7 +643,7 @@
                     <div class="card mt-3">
                         @if ($data->count())
                             <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                <table class="w-full text-left">
+                                <table class="w-full text-center">
                                     <thead>
                                         <tr>
                                             <th
@@ -655,167 +655,183 @@
                                                 </label>
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 No
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tanggal
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 bulan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 track id myir
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 trackid
                                             </th>
-                                            <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            {{-- <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 status duplicate
-                                            </th>
+                                            </th> --}}
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 nomor sc
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 nama pelanggan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 alamat pelanggan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 cp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tipe transaksi
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 layanan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 jenis layanan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 sto
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 mitra
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 team
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 kategori
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 detail progres
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 kendala
                                             </th>
-                                            <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                            {{-- <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 ket detail
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 chanel
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 agency
-                                            </th>
+                                            </th> --}}
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 label odp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 label odp alternatif
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 ket label odp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 kap odp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 port odp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 sisa port odp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tagging lokasi odp
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tagging lokasi pelanggan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 status tagging pelanggan
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 id valins
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Segmen
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 so
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Telda
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 umur kendala
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 uic
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 status kendala
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Feedback PIC
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Detail Feedback pic
                                             </th>
                                             <th
-                                                class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs+ text-xs font-semibold uppercase">
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                                rab sdi
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                                rab aanwijzing
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                                bges mbb approval
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                                bges mbb note
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Recent Log
                                             </th>
                                         </tr>
@@ -831,17 +847,17 @@
                                                         <meta name="csrf-token" content="{{ csrf_token() }}">
                                                         <input type="hidden" name="data[{{ $index }}][id]"
                                                             value="{{ $row['id'] }}">
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <label class="inline-flex items-center space-x-2">
                                                                 <input
                                                                     class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary hover:border-primary focus:border-primary userCheckbox"
                                                                     type="checkbox" value="{{ $row->id }}">
                                                             </label>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             {{ $data->firstItem() + $index }}
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][off_tanggal]"
                                                                 value="{{ \Carbon\Carbon::parse($row['tanggal'])->format('d-m-Y') }}"
@@ -851,71 +867,75 @@
                                                                 value="{{ $row['tanggal'] }}"
                                                                 data-row="{{ $index }}" hidden>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][bulan]"
                                                                 value="{{ $row['bulan'] }}" class="auto-save"
                                                                 data-row="{{ $index }}" readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][track_id_myir]"
                                                                 value="{{ $row['track_id_myir'] }}" class="auto-save"
-                                                                data-row="{{ $index }}">
+                                                                data-row="{{ $index }}"
+                                                                @if (session('role') !== 'admin' || session('division') !== 'aso') readonly @endif>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][trackid]"
                                                                 value="{{ $row['trackid'] }}" class="auto-save"
-                                                                data-row="{{ $index }}">
+                                                                data-row="{{ $index }}"
+                                                                @if (session('role') !== 'admin' || session('division') !== 'aso') readonly @endif>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        {{-- <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][status_duplicate]"
                                                                 value="{{ $row['status_duplicate'] }}" class="auto-save"
-                                                                data-row="{{ $index }}">
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                                data-row="{{ $index }}"
+                                                                @if (session('role') !== 'admin' || session('division') !== 'aso') readonly @endif>
+                                                        </td> --}}
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][nomor_sc]"
                                                                 value="{{ $row['nomor_sc'] }}" class="auto-save"
-                                                                data-row="{{ $index }}" readonly>
+                                                                data-row="{{ $index }}"
+                                                                @if (session('role') !== 'admin' || session('division') !== 'aso') readonly @endif>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][nama_pelanggan]"
                                                                 value="{{ $row['nama_pelanggan'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][alamat_pelanggan]"
                                                                 value="{{ $row['alamat_pelanggan'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][cp]"
                                                                 value="{{ $row['cp'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][tipe_transaksi]"
                                                                 value="{{ $row['tipe_transaksi'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][layanan]"
                                                                 value="{{ $row['layanan'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][jenis_layanan]"
                                                                 value="{{ $row['jenis_layanan'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <select name="data[{{ $index }}][id_sto]"
                                                                 class="form-select auto-save"
                                                                 data-row="{{ $index }}">
@@ -941,151 +961,151 @@
                                                                 @endforeach
                                                             </select>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][mitra]"
                                                                 value="{{ $row['mitra'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][team]"
                                                                 value="{{ $row['team'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][kategori]"
                                                                 value="{{ $row['kategori'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][detail_progres]"
                                                                 value="{{ $row['detail_progres'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][kendala]"
                                                                 value="{{ $row['kendala'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        {{-- <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][ket_detail]"
                                                                 value="{{ $row['ket_detail'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][chanel]"
                                                                 value="{{ $row['chanel'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][agency]"
                                                                 value="{{ $row['agency'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        </td> --}}
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][label_odp]"
                                                                 value="{{ $row['label_odp'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][label_odp_alternatif]"
                                                                 value="{{ $row['label_odp_alternatif'] }}"
                                                                 class="auto-save" data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][ket_label_odp]"
                                                                 value="{{ $row['ket_label_odp'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][kap_odp]"
                                                                 value="{{ $row['kap_odp'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][port_odp]"
                                                                 value="{{ $row['port_odp'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][sisa_port_odp]"
                                                                 value="{{ $row['sisa_port_odp'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][tagging_lokasi_odp]"
                                                                 value="{{ $row['tagging_lokasi_odp'] }}"
                                                                 class="auto-save" data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][tagging_lokasi_pelanggan]"
                                                                 value="{{ $row['tagging_lokasi_pelanggan'] }}"
                                                                 class="auto-save" data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][status_tagging_pelanggan]"
                                                                 value="{{ $row['status_tagging_pelanggan'] }}"
                                                                 class="auto-save" data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][id_valins]"
                                                                 value="{{ $row['id_valins'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][segmen]"
                                                                 value="{{ $row['segmen'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][so]"
                                                                 value="{{ $row->order_sto->sto_so->nama_so }}"
                                                                 class="auto-save" data-row="{{ $index }}"
                                                                 readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][telda]"
                                                                 value="{{ $row->order_sto->sto_so->nama_telda }}"
                                                                 class="auto-save" data-row="{{ $index }}"
                                                                 readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][umur]"
                                                                 value="{{ $row['umur'] }} Hari" class="auto-save"
                                                                 data-row="{{ $index }}" readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text" name="data[{{ $index }}][uic]"
                                                                 value="{{ $row->feedback_order->uic->uic ?? '' }}"
                                                                 class="auto-save" data-row="{{ $index }}"
                                                                 readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][status_kendala ]"
                                                                 value="{{ $row->feedback_order->status_kendalas->status_kendala ?? '' }}"
                                                                 class="auto-save" data-row="{{ $index }}"
                                                                 readonly>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <select name="data[{{ $index }}][id_feedback]"
                                                                 class="form-select auto-save"
                                                                 data-row="{{ $index }}">
@@ -1108,14 +1128,38 @@
                                                                 @endforeach
                                                             </select>
                                                         </td>
-                                                        <td class="whitespace-nowrap px-2 py-1 border">
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                             <input type="text"
                                                                 name="data[{{ $index }}][ket_feedback]"
                                                                 value="{{ $row['ket_feedback'] }}" class="auto-save"
                                                                 data-row="{{ $index }}">
                                                         </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][rab_sdi]"
+                                                                value="{{ $row['rab_sdi'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][rab_aanwijzing]"
+                                                                value="{{ $row['rab_aanwijzing'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][bges_mbb_approval]"
+                                                                value="{{ $row['bges_mbb_approval'] }}"
+                                                                class="auto-save" data-row="{{ $index }}">
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                            <input type="text"
+                                                                name="data[{{ $index }}][bges_mbb_note]"
+                                                                value="{{ $row['bges_mbb_note'] }}" class="auto-save"
+                                                                data-row="{{ $index }}">
+                                                        </td>
                                                     </form>
-                                                    <td class="whitespace-nowrap px-2 py-1 border">
+                                                    <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                         <button type="button"
                                                             onclick="toggleExpanded('{{ $rowId }}')"
                                                             class="btn size-8 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
@@ -1157,17 +1201,17 @@
                                                                                 <tr
                                                                                     class="border-y border-transparent border-b-slate-200 dark:border-b-navy-500">
                                                                                     <td
-                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        class="whitespace-nowrap px-2 py-1 text-xs border">
                                                                                         {{ $loop->iteration }}</td>
                                                                                     <td
-                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        class="whitespace-nowrap px-2 py-1 text-xs border">
                                                                                         {{ $log->nama }}</td>
                                                                                     <td
-                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        class="whitespace-nowrap px-2 py-1 text-xs border">
                                                                                         {{ \Carbon\Carbon::parse($log->created_at)->format('d-F-Y') }}
                                                                                     </td>
                                                                                     <td
-                                                                                        class="whitespace-nowrap px-2 py-1 border">
+                                                                                        class="whitespace-nowrap px-2 py-1 text-xs border">
                                                                                         {{ \Carbon\Carbon::parse($log->created_at)->format('H:i:s') }}
                                                                                     </td>
                                                                                 </tr>
@@ -1239,18 +1283,33 @@
                                         @endif
                                         {{-- Previous Page Link --}}
                                         @if (!$data->onFirstPage())
-                                            <li class="bg-slate-150 dark:bg-navy-500">
-                                                <a href="{{ $data->previousPageUrl() }}"
-                                                    class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
-                                                        fill="none" viewbox="0 0 24 24" stroke="currentColor"
-                                                        stroke-width="2">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M15 19l-7-7 7-7">
-                                                        </path>
-                                                    </svg>
-                                                </a>
-                                            </li>
+                                            @if ($data->currentPage() > 3)
+                                                <li class="bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->previousPageUrl() }}"
+                                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor"
+                                                            stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M15 19l-7-7 7-7">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li class="rounded-l-lg bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->previousPageUrl() }}"
+                                                        class="flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor"
+                                                            stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M15 19l-7-7 7-7">
+                                                            </path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @endif
                                         @endif
 
                                         {{-- Pagination Elements --}}
@@ -1270,16 +1329,29 @@
 
                                         {{-- Next Page Link --}}
                                         @if ($data->hasMorePages())
-                                            <li class="bg-slate-150 dark:bg-navy-500">
-                                                <a href="{{ $data->nextPageUrl() }}"
-                                                    class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
-                                                        fill="none" viewbox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                                    </svg>
-                                                </a>
-                                            </li>
+                                            @if ($data->currentPage() < $data->lastPage() - 2)
+                                                <li class="bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->nextPageUrl() }}"
+                                                        class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li class="rounded-r-lg bg-slate-150 dark:bg-navy-500">
+                                                    <a href="{{ $data->nextPageUrl() }}"
+                                                        class="pagination-link flex size-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-300 focus:bg-slate-300 active:bg-slate-300/80 dark:text-navy-200 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-4"
+                                                            fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                        </svg>
+                                                    </a>
+                                                </li>
+                                            @endif
                                         @endif
                                         {{-- Last Page Link --}}
                                         @if ($data->currentPage() < $data->lastPage() - 2)
@@ -1334,7 +1406,6 @@
     </script>
     <script type="text/javascript">
         console.log('JavaStart');
-        console.log(clearButton);
 
         function toggleExpanded(rowId) {
             console.log(`Toggle expanded for ${rowId}`);
@@ -1370,15 +1441,23 @@
             });
         });
 
-        document.getElementById('month').addEventListener('change', function() {
-            const selectedOption = this.options[this.selectedIndex];
-            const year = selectedOption.getAttribute('data-year');
-            document.querySelector('input[name="year"]').value = year;
-        });
+        document.addEventListener('change', function(event) {
+            if (event.target.id === 'month') {
+                const selectedOption = event.target.options[event.target.selectedIndex];
+                const year = selectedOption.getAttribute('data-year');
+                const yearInput = document.getElementById('hiddenYear');
 
+                // if (yearInput) {
+                yearInput.value = year;
+                // } else {
+                //     console.error('Input with name="year" not found in DOM.');
+                // }
+            }
+        });
 
         function toggleClearButton() {
             const month = document.getElementById('month').value;
+            const year = document.getElementById('hiddenYear').value;
             const sto = document.getElementById('sto').value;
             const so = document.getElementById('so').value;
             const telda = document.getElementById('telda').value;
@@ -1390,7 +1469,7 @@
             // const endDate = document.querySelector('[name="end_date"]').value;
             const clearButton = document.getElementById('clearButton');
 
-            if (sto || telda || month || so || segmen || uic || pic || status) {
+            if (sto || telda || month || year || so || segmen || uic || pic || status) {
                 clearButton.style.display = 'inline-block';
             } else {
                 clearButton.style.display = 'none';
@@ -1399,6 +1478,7 @@
 
         function clearFields() {
             document.getElementById('month').value = '';
+            document.getElementById('year').value = '';
             document.getElementById('sto').value = '';
             document.getElementById('so').value = '';
             document.getElementById('telda').value = '';

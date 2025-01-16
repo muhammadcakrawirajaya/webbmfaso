@@ -8,6 +8,7 @@ use App\Http\Controllers\LogDataController;
 use App\Http\Controllers\ManageUserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SoDataController;
 use App\Http\Controllers\StatusKendalaDataController;
 use App\Http\Controllers\StoDataController;
@@ -112,11 +113,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/ManageData/UserManagement', ManageUserController::class)->names('userManagement');
 
     // Tools - Telkomsel
-    Route::resource('/toolsMenu1', ToolsController::class)->names('toolsMenu1');
-
-    Route::get('/toolsMenu2', function () {
-        return view('telkomsel.menus.toolsMenu.menu2');
-    })->name('toolsMenu2');
+    Route::resource('/setting', ToolsController::class)->names('toolsMenu1');
+    Route::resource('/profile', ProfileController::class)->names('toolsMenu2');
 
     // Logout
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

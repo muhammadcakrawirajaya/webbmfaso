@@ -62,6 +62,11 @@ class CheckController extends Controller
             session()->flash('info', 'Mohon Login Kembali untuk Melanjutkan aktivitas');
             return redirect('/login');
         }
+        $user = Auth::user();
+        if ($user->role !== 'admin' || $user->division !== 'aso') {
+            session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
+            return redirect()->back();
+        }
 
         try {
             $validatedData = $request->validate([

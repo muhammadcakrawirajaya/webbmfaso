@@ -121,7 +121,7 @@
                                 </button>
                             </div>
 
-                            @if (session('role') === 'team leader')
+                            @if (session('role') === 'admin')
                                 <div x-data="{ showModal: false }">
                                     <button x-tooltip.duration.500="'Add New'" @click="showModal = true"
                                         class="btn size-9 bg-success p-0 font-medium text-white hover:bg-success-focus hover:shadow-lg hover:shadow-success/50 focus:bg-success-focus focus:shadow-lg focus:shadow-success/50 active:bg-success-focus/90">
@@ -244,7 +244,7 @@
                                                 class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                                 Waktu Buat
                                             </th>
-                                            @if (session('role') === 'team leader')
+                                            @if (session('role') === 'admin')
                                                 <th
                                                     class="whitespace-nowrap rounded-tr-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                                 </th>
@@ -271,7 +271,7 @@
                                                 <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                                     {{ $log['time'] }}
                                                 </td>
-                                                @if (session('role') === 'team leader')
+                                                @if (session('role') === 'admin')
                                                     <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                                         <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })"
                                                             @click.outside="isShowPopper && (isShowPopper = false)"

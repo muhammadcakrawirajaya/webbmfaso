@@ -92,7 +92,7 @@ class FeedbackPICDataController extends Controller
             return redirect('/login');
         }
         $user = Auth::user();
-        if ($user->role !== 'team leader') {
+        if ($user->role !== 'admin') {
             session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
             return redirect()->back();
         }
@@ -149,7 +149,7 @@ class FeedbackPICDataController extends Controller
             return redirect('/login');
         }
         $user = Auth::user();
-        if ($user->role !== 'team leader') {
+        if ($user->role !== 'admin') {
             session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
             return redirect()->back();
         }
@@ -223,7 +223,7 @@ class FeedbackPICDataController extends Controller
             return redirect('/login');
         }
         $user = Auth::user();
-        if ($user->role !== 'team leader') {
+        if ($user->role !== 'admin') {
             session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
             return redirect()->back();
         }
@@ -281,7 +281,7 @@ class FeedbackPICDataController extends Controller
             return redirect('/login');
         }
         $user = Auth::user();
-        if ($user->role !== 'team leader') {
+        if ($user->role !== 'admin') {
             session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
             return redirect()->back();
         }

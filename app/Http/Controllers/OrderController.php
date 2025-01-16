@@ -48,6 +48,7 @@ class OrderController extends Controller
 
             $data = $import->getData();
 
+            // Debug
             // Log::info('Data:', ['request' => $data->all()]);
             // dd($data);
 
@@ -66,7 +67,7 @@ class OrderController extends Controller
             return redirect('/login');
         }
         $user = Auth::user();
-        if ($user->role !== 'team leader' || $user->division !== 'aso') {
+        if ($user->role !== 'admin' || $user->division !== 'aso') {
             session()->flash('error', 'Anda tidak memiliki aksess untuk fungsi ini.');
             return redirect()->back();
         }
@@ -101,9 +102,6 @@ class OrderController extends Controller
             $skippedRows = [];
             if (Order::count() === 0) {
                 // Log::warning('Tabel Order kosong. Semua data akan diteruskan ke store.');
-                // Anda bisa langsung memproses semua data jika tabel kosong.
-
-
                 foreach ($dataChunks as $chunkIndex => $chunk) {
                     // Log::info('Processing chunk: ' . ($chunkIndex + 1), ['chunk_size' => count($chunk)]);
 
@@ -261,7 +259,7 @@ class OrderController extends Controller
                             $sto = Sto::where('nama_sto', $row['sto'])->value('id') ?? null;
 
                             // Create data in Database Order
-                            Order::create([
+                            $data = Order::create([
                                 'tanggal' => Carbon::createFromFormat('d-m-Y', $row['tanggal'])->format('Y-m-d'),
                                 'bulan' => $row['bulan'],
                                 'chanel' => $row['chanel'],
@@ -297,10 +295,15 @@ class OrderController extends Controller
                                 'produk' => $row['produk'],
                                 'id_feedback' => $id_feedback,
                                 'ket_feedback' => $row['detail_feedback_pic'],
+                                'rab_sdi' => $row['rab_sdi'],
+                                'rab_aanwijzing' => $row['rab_aanwijzing'],
+                                'bges_mbb_approval' => $row['bges_mbb_approval'],
+                                'bges_mbb_note' => $row['bges_mbb_note'],
                                 'created_by' => Auth::id(),
                                 'created_at' => now(),
                                 'updated_at' => now(),
                             ]);
+                            // Log::info('data:', ['data' => $data->all()]);
                             $updatedRows[] = ['row' => $rowIndex + 1, 'nomor_sc' => $row['nomor_sc']];
                         } catch (\Exception $e) {
                             Log::error('Error on chunk ' . ($chunkIndex + 1) . ', row ' . ($rowIndex + 1), ['error' => $e->getMessage(), 'row' => $row]);
@@ -352,7 +355,6 @@ class OrderController extends Controller
                                                 'feedback_pic' => $nama_feedbackpic,
                                             ]);
                                         }
-
                                     } else {
                                         Log::warning('Failed to parse Feedback PIC', ['feedback_pic' => $row['feedback_pic']]);
                                     }
@@ -470,7 +472,7 @@ class OrderController extends Controller
                                 $sto = Sto::where('nama_sto', $row['sto'])->value('id') ?? null;
 
                                 // Create data in Database Order
-                                Order::create([
+                                $data =  Order::create([
                                     'tanggal' => Carbon::createFromFormat('d-m-Y', $row['tanggal'])->format('Y-m-d'),
                                     'bulan' => $row['bulan'],
                                     'chanel' => $row['chanel'],
@@ -506,10 +508,15 @@ class OrderController extends Controller
                                     'produk' => $row['produk'],
                                     'id_feedback' => $id_feedback,
                                     'ket_feedback' => $row['detail_feedback_pic'],
+                                    'rab_sdi' => $row['rab_sdi'],
+                                    'rab_aanwijzing' => $row['rab_aanwijzing'],
+                                    'bges_mbb_approval' => $row['bges_mbb_approval'],
+                                    'bges_mbb_note' => $row['bges_mbb_note'],
                                     'created_by' => Auth::id(),
                                     'created_at' => now(),
                                     'updated_at' => now(),
                                 ]);
+                                // Log::info('data:', ['data' => $data->all()]);
                                 $updatedRows[] = ['row' => $rowIndex + 1, 'nomor_sc' => $row['nomor_sc']];
                             } catch (\Exception $e) {
                                 Log::error('Error on chunk ' . ($chunkIndex + 1) . ', row ' . ($rowIndex + 1), ['error' => $e->getMessage(), 'row' => $row]);

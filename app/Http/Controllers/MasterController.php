@@ -176,7 +176,7 @@ class MasterController extends Controller
         $status = StatusKendala::get();
         $segmen = Order::select('segmen')->distinct()->get();
 
-        // dd($request->input('year'), $request->input('month'));
+        // dd($data);
 
         // Return ke view
         return view('telkomsel.menus.dashboard.menu3', compact('data', 'kendalas', 'editLogs', 'months', 'sto', 'so', 'seacruic', 'status', 'segmen'));

@@ -43,7 +43,7 @@ class AuthController extends Controller
                 $request->session()->put('role', $user->role);
                 $request->session()->put('nama', $user->karyawan->nama);
                 $request->session()->put('foto', $fotoPath);
-                return redirect()->intended('/Dashboard');
+                return redirect()->intended('/');
             } else {
                 Auth::logout();
                 return redirect('login')->withErrors('Akun sudah tidak memiliki akses')->withInput();

@@ -48,6 +48,10 @@ return new class extends Migration
             $table->string('produk')->nullable();
             $table->foreignId('id_feedback')->nullable()->constrained('feedback_pic')->onDelete('restrict')->onUpdate('cascade');
             $table->text('ket_feedback')->nullable();
+            $table->text('rab_sdi')->nullable();
+            $table->text('rab_aanwijzing')->nullable();
+            $table->text('bges_mbb_approval')->nullable();
+            $table->text('bges_mbb_note')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamp('created_at')->useCurrent();

@@ -53,6 +53,10 @@ class OrderImport implements ToCollection, WithHeadingRow
                 'produk' => $row['produk'] ?? null,
                 'feedback_pic' => $row['feedback_pic'] ?? null,
                 'detail_feedback_pic' => $row['detail_feedback_pic'] ?? null,
+                'rab_sdi' => $row['rab_sdi'] ?? null,
+                'rab_aanwijzing' => $row['rab_aanwijzing'] ?? null,
+                'bges_mbb_approval' => $row['bges_mbb_approval'] ?? null,
+                'bges_mbb_note' => $row['bges_mbb_note'] ?? null,
             ];
         });
     }

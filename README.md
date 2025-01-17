@@ -48,21 +48,21 @@ ver 1.0001
         #   Read Data Order
     {Data Master}
         (Team Leader)
-        #   CRUD Data Order
+        #   CRUD Data Order with restrict('data po')
         (admin)
         #   CRUD Data Order
     {Upload Excel}
-        (Team Leader && ASO)
+        (admin && ASO)
         #   Upload Data Order
     {Check Complete}
-        (Team Leader && ASO)
+        (admin && ASO)
         #   Update Data Order
 - Manage Data
     {User Data Management}
         (Team Leader)
-        #   CRUD Data User
-        (admin)
         #   Read Data User
+        (admin)
+        #   CRUD Data User
     {Log Data Management}
         (Team Leader)
         #   Read Data Log
@@ -70,26 +70,26 @@ ver 1.0001
         #   Read Data Log
     {So Data Management}
         (Team Leader)
-        #   CRUD Data So
-        (admin)
         #   Read Data So
+        (admin)
+        #   CRUD Data So
     {Sto Data Management}
         (Team Leader)
-        #   CRUD Data Sto
-        (admin)
         #   Read Data Sto
+        (admin)
+        #   CRUD Data Sto
     {Uic Data Management}
         (Team Leader)
-        #   CRUD Data Uic
-        (admin)
         #   Read Data Uic
+        (admin)
+        #   CRUD Data Uic
     {Pic Data Management}
         (Team Leader)
-        #   CRUD Data Pic
-        (admin)
         #   Read Data Pic
+        (admin)
+        #   CRUD Data Pic
     {Status Kendala Data Management}
         (Team Leader)
-        #   CRUD Data Status Kendala
-        (admin)
         #   Read Data Status Kendala
+        (admin)
+        #   CRUD Data Status Kendala

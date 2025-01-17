@@ -14,22 +14,42 @@ class ToolsController extends Controller
      */
     public function index()
     {
-        $settings = Setting::where('id_user', Session::id())->get();
+        $settings = Setting::where('id_user', Auth::id())->first();
+
+        // dd($settings);
+
         return view('telkomsel.menus.toolsMenu.menu1', compact('settings'));
     }
 
-    public function update(Request $request)
+    public function update(Request $request, Setting $setting)
     {
-        // Ambil data input settings
-        $updatedSettings = $request->input('settings', []);
+        $validatedData = $request->validate([
+            'so' => 'nullable|in:1,2',
+            'sto' => 'nullable|in:1,2',
+            'bulan' => 'nullable|in:1,2',
+            'telda' => 'nullable|in:1,2',
+            'segmen' => 'nullable|in:1,2',
+            'uic' => 'nullable|in:1,2',
+            'feedback' => 'nullable|in:1,2',
+            'status' => 'nullable|in:1,2',
+            'search' => 'nullable|in:1,2',
+            'export' => 'nullable|in:1,2',
+        ]);
 
-        // Loop semua settings dan update statusnya
-        $settings = Setting::all();
-        foreach ($settings as $setting) {
-            $setting->active = isset($updatedSettings[$setting->id]) ? 1 : 0;
-            $setting->save();
-        }
+        $setting->update([
+            'so' => $request->has('so') ? 1 : 2,
+            'sto' => $request->has('sto') ? 1 : 2,
+            'bulan' => $request->has('bulan') ? 1 : 2,
+            'telda' => $request->has('telda') ? 1 : 2,
+            'segmen' => $request->has('segmen') ? 1 : 2,
+            'uic' => $request->has('uic') ? 1 : 2,
+            'feedback' => $request->has('feedback') ? 1 : 2,
+            'status' => $request->has('status') ? 1 : 2,
+            'search' => $request->has('search') ? 1 : 2,
+            'export' => $request->has('export') ? 1 : 2,
+        ]);
 
-        return redirect()->route('settings.index')->with('success', 'Settings updated successfully.');
+        session()->flash('info', 'Filter Diperbaharui');
+        return redirect()->back();
     }
 }

@@ -476,7 +476,7 @@
                                         <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                             {{ $data->karyawan->nama ?? '-' }}
                                         </td>
-                                        <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                        <td class="whitespace-nowrap px-2 py-1 text-xs border"
                                             style="text-transform: uppercase;">
                                             {{ $data->division ?? '-' }}
                                         </td>

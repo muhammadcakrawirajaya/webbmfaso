@@ -581,35 +581,6 @@
                                             </div>
                                         </div>
                                     </label> --}}
-                                    {{-- <div class="sm:col-span-2">
-                                        <span>Project Status:</span>
-                                        <div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-4 sm:gap-5 lg:gap-6">
-                                            <label class="inline-flex items-center space-x-2">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:border-secondary checked:bg-secondary hover:border-secondary focus:border-secondary dark:border-navy-400 dark:checked:border-secondary-light dark:checked:bg-secondary-light dark:hover:border-secondary-light dark:focus:border-secondary-light"
-                                                    type="checkbox">
-                                                <span>Upcoming</span>
-                                            </label>
-                                            <label class="inline-flex items-center space-x-2">
-                                                <input
-                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:border-primary checked:bg-primary hover:border-primary focus:border-primary dark:border-navy-400 dark:checked:border-accent dark:checked:bg-accent dark:hover:border-accent dark:focus:border-accent"
-                                                    type="checkbox">
-                                                <span>In Progress</span>
-                                            </label>
-                                            <label class="inline-flex items-center space-x-2">
-                                                <input checked=""
-                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:!border-success checked:bg-success hover:!border-success focus:!border-success dark:border-navy-400"
-                                                    type="checkbox">
-                                                <span>Complete</span>
-                                            </label>
-                                            <label class="inline-flex items-center space-x-2">
-                                                <input checked=""
-                                                    class="form-checkbox is-basic size-5 rounded border-slate-400/70 checked:!border-error checked:bg-error hover:!border-error focus:!border-error dark:border-navy-400"
-                                                    type="checkbox">
-                                                <span>Cancelled</span>
-                                            </label>
-                                        </div>
-                                    </div> --}}
                                 </div>
                                 <div class="mt-4 space-x-1 text-right">
                                     <button @click="isFilterExpanded = ! isFilterExpanded"

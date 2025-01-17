@@ -59,7 +59,7 @@
                         <h2
                             class="font-medium text-slate-700 transition-colors group-hover:text-primary group-focus:text-primary dark:text-navy-100 dark:group-hover:text-accent-light dark:group-focus:text-accent-light">
                             <img class="rounded-full w-5 h-5 mr-0.5 mb-1 inline-flex"
-                                src="{{ asset('assets/images/logo-brand.svg') }}" alt="avatar">Telkomsel
+                                src="{{ asset('assets/images/logo-brand.png') }}" alt="avatar">Telkomsel
                         </h2>
                         <div class="text-xs text-slate-400 line-clamp-1 dark:text-navy-300">
                             Switch to Telkomsel

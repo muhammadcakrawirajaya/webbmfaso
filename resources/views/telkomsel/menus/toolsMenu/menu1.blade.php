@@ -27,9 +27,22 @@
         <!-- Main Content Wrapper -->
 
         <main class="main-content w-full px-[var(--margin-x)] pb-8">
+            <div id="custom-alert-container"
+                class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-opacity-90 z-50 space-y-2">
+                @if (session('success') || session('error') || session('warning') || session('info'))
+                    @foreach (['success', 'error', 'warning', 'info'] as $type)
+                        @if (session($type))
+                            <div class="custom-alert bg-opacity-90 px-6 py-3 rounded-lg text-white text-center shadow-lg"
+                                style="display: none; background-color: {{ $type === 'success' ? '#4CAF50' : ($type === 'error' ? '#F44336' : ($type === 'warning' ? '#FF9800' : '#2196F3')) }};">
+                                {{ session($type) }}
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
+            </div>
             <div class="flex items-center space-x-4 py-5 lg:py-6">
                 <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
-                    Web Settings
+                    Web settings
                 </h2>
                 <div class="hidden h-full py-1 sm:flex">
                     <div class="h-full w-px bg-slate-300 dark:bg-navy-600"></div>
@@ -74,32 +87,117 @@
                                     d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
 
-                            <span>Web Settings</span>
+                            <span>Web settingss</span>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
 
-                <!-- Settings List -->
+                <!-- settings List -->
                 <div>
                     <div class="flex items-center justify-between">
                         <h2 class="text-base font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100">
-                            Settings List
+                            settings List
                         </h2>
                     </div>
-                    <div class="card mt-3">
-                        <h4
-                            class="text-base font-medium tracking-wide text-slate-800 line-clamp-1 dark:text-navy-100 flex justify-center">
-                            Data Master Settings
+                    <div class="card mt-3 shadow-md rounded-lg">
+                        <h4 class="text-lg font-semibold text-center py-4 text-gray-700 bg-gray-100 rounded-t-lg">
+                            Data Master settings
                         </h4>
-                        <div class="container d-flex justify-content-end mx-5 px-5">
-                            <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
-                            <span>Bulan</span>
-                            <label class="switch">
-                                <input type="checkbox" name="exampleSwitch" checked>
-                                <span class="slider"></span>
-                            </label>
+                        <div class="container mx-5 p-5 space-y-4">
+                            <!-- settingss -->
+                            <form action="{{ route('toolsMenu1.update', ['setting' => $settings->id_user]) }}"
+                                method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Bulan :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="bulan" id="bulan" value="1"
+                                            {{ $settings->bulan == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">SO :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="so" id="so" value="1"
+                                            {{ $settings->so == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">STO :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="sto" id="sto" value="1"
+                                            {{ $settings->sto == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Telda :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="telda" id="telda" value="1"
+                                            {{ $settings->telda == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Segmen :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="segmen" id="segmen" value="1"
+                                            {{ $settings->segmen == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">UIC :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="uic" id="uic" value="1"
+                                            {{ $settings->uic == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Feedback PIC :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="feedback" id="feedback" value="1"
+                                            {{ $settings->feedback == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Status Kendala :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="status" id="status" value="1"
+                                            {{ $settings->status == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Search Bar :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="search" id="search" value="1"
+                                            {{ $settings->search == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="flex items-center justify-between py-3">
+                                    <span class="font-medium text-gray-600">Export :</span>
+                                    <label class="switch">
+                                        <input type="checkbox" name="export" id="export" value="1"
+                                            {{ $settings->export == 1 ? 'checked' : '' }}>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="space-x-2 text-center py-5">
+                                    <button type="submit"
+                                        class="btn min-w-[7rem] rounded-full bg-success font-medium text-white hover:bg-success-focus focus:bg-success-focus">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
                             <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
                         </div>
                     </div>

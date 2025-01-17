@@ -430,7 +430,7 @@
                                                                                                 <div
                                                                                                     class="avatar size-20">
                                                                                                     <img class="rounded-full"
-                                                                                                        src="{{ asset('assets/images/logo-brand.svg') }}"
+                                                                                                        src="{{ asset('assets/images/logo-brand.png') }}"
                                                                                                         alt="Logo Perusahaan" />
                                                                                                 </div>
                                                                                                 <div
@@ -439,7 +439,7 @@
                                                                                                     <div
                                                                                                         class="text-left mt-5">
                                                                                                         <span>Modify
-                                                                                                            Division</span>
+                                                                                                            STO</span>
                                                                                                         <!-- Nama STO Input -->
                                                                                                         <div>
                                                                                                             <span>Nama
@@ -641,7 +641,7 @@
                                                                                             x-transition:leave-end="opacity-0 [transform:translate3d(0,1rem,0)]">
                                                                                             <div class="avatar size-20">
                                                                                                 <img class="rounded-full"
-                                                                                                    src="{{ asset('assets/images/logo-brand.svg') }}"
+                                                                                                    src="{{ asset('assets/images/logo-brand.png') }}"
                                                                                                     alt="Logo Perusahaan" />
                                                                                             </div>
                                                                                             <div

@@ -219,7 +219,7 @@
                     <div class="card mt-3">
                         @if ($So->count())
                             <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                                <table class="w-full text-left">
+                                <table class="w-full text-center">
                                     {{-- Head --}}
                                     <thead>
                                         <tr>
@@ -349,7 +349,7 @@
                                                                                                 <div
                                                                                                     class="avatar size-20">
                                                                                                     <img class="rounded-full"
-                                                                                                        src="{{ asset('assets/images/logo-brand.svg') }}"
+                                                                                                        src="{{ asset('assets/images/logo-brand.png') }}"
                                                                                                         alt="Logo Perusahaan" />
                                                                                                 </div>
                                                                                                 <div
@@ -358,7 +358,7 @@
                                                                                                     <div
                                                                                                         class="text-left mt-5">
                                                                                                         <span>Modify
-                                                                                                            Division</span>
+                                                                                                            SO</span>
                                                                                                         <label
                                                                                                             class="mt-1.5 flex -space-x-px">
                                                                                                             <div
@@ -477,7 +477,7 @@
                                                                                             x-transition:leave-end="opacity-0 [transform:translate3d(0,1rem,0)]">
                                                                                             <div class="avatar size-20">
                                                                                                 <img class="rounded-full"
-                                                                                                    src="{{ asset('assets/images/logo-brand.svg') }}"
+                                                                                                    src="{{ asset('assets/images/logo-brand.png') }}"
                                                                                                     alt="Logo Perusahaan" />
                                                                                             </div>
                                                                                             <div

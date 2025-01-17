@@ -174,8 +174,6 @@ class ManageUserController extends Controller
             return redirect()->back();
         }
 
-
-
         // Cari data berdasarkan ID
         $validated = User::findOrFail($id);
 

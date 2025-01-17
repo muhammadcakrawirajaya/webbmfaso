@@ -7,6 +7,7 @@ use App\Models\EditLog;
 use App\Models\FeedbackPIC;
 use App\Models\Karyawan;
 use App\Models\Order;
+use App\Models\Setting;
 use App\Models\So;
 use App\Models\StatusKendala;
 use App\Models\Sto;
@@ -175,11 +176,12 @@ class MasterController extends Controller
         $seacruic = Uic::get();
         $status = StatusKendala::get();
         $segmen = Order::select('segmen')->distinct()->get();
+        $setting = Setting::where('id_user', Auth::id())->first();
 
         // dd($data);
 
         // Return ke view
-        return view('telkomsel.menus.dashboard.menu3', compact('data', 'kendalas', 'editLogs', 'months', 'sto', 'so', 'seacruic', 'status', 'segmen'));
+        return view('telkomsel.menus.dashboard.menu3', compact('data', 'kendalas', 'editLogs', 'months', 'sto', 'so', 'seacruic', 'status', 'segmen', 'setting'));
     }
 
     public function store(Request $request)

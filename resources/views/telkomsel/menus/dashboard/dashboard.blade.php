@@ -146,7 +146,7 @@
                                                             @if ($loop->parent->first && $index === 0)
                                                                 <td class="whitespace-nowrap border text-xs"
                                                                     rowspan="{{ $rowSpanSO }}">
-                                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so={{ $row->id_so }}"
+                                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so={{ $row->id_so }}&sto=&telda=&segmen=&uic=&pic=&status="
                                                                         class="hover:underline">
                                                                         {{ $so }}
                                                                     </a>
@@ -157,7 +157,7 @@
                                                                     rowspan="{{ $rowSpanTL }}">{{ $tl }}</td>
                                                             @endif
                                                             <td class="whitespace-nowrap border text-xs">
-                                                                <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&sto={{ $row->id }}"
+                                                                <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto={{ $row->id }}&telda=&segmen=&uic=&pic=&status="
                                                                     class="hover:underline">
                                                                     {{ $row->nama_sto }}
                                                                 </a>
@@ -171,14 +171,14 @@
                                                                     $rowTotal += $count;
                                                                 @endphp
                                                                 <td class="whitespace-nowrap border">
-                                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&uic={{ $pic->id_uic }}&pic={{ $pic->id }}&sto={{ $row->id }}"
+                                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto={{ $row->id }}&telda=&segmen=&uic={{ $pic->id_uic }}&pic={{ $pic->id }}&status="
                                                                         class="hover:underline">
                                                                         {{ $count }}
                                                                     </a>
                                                                 </td>
                                                             @endforeach
                                                             <td class="whitespace-nowrap border">
-                                                                <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset&sto={{ $row->id }}"
+                                                                <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto={{ $row->id }}&telda=&segmen=@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset&pic=&status="
                                                                     class="hover:underline">
                                                                     {{ $rowTotal }}
                                                                 </a>
@@ -202,14 +202,14 @@
                                                 </td>
                                                 @foreach ($feedbackPics as $pic)
                                                     <td class="whitespace-nowrap border">
-                                                        <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&uic={{ $pic->id_uic }}&pic={{ $pic->id }}"
+                                                        <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto=&telda=&segmen=&uic={{ $pic->id_uic }}&pic={{ $pic->id }}&status="
                                                             class="hover:underline">
                                                             {{ $totalPerFeedback[$pic->id] ?? 0 }}
                                                         </a>
                                                     </td>
                                                 @endforeach
                                                 <td class="whitespace-nowrap border">
-                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset"
+                                                    <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto=&telda=&segmen=@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset&pic=&status="
                                                         class="hover:underline">
                                                         {{ $totalOverall }}
                                                     </a>

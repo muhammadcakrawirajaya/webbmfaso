@@ -4,6 +4,107 @@
 <head>
     <title>Tools Menu 1 - Telescout</title>
     @include('includes.head')
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .card-header {
+            background: linear-gradient(90deg, lightgreen, green);
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .rounded-circle {
+            border: 4px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .rounded-circle:hover {
+            border-color: #007bff;
+            transform: scale(1.05);
+        }
+
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .card-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .col-md-6 {
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .col-md-6 {
+                width: 48%;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body x-data="" class="is-header-blur is-sidebar-open" x-bind="$store.global.documentBody">
@@ -92,113 +193,115 @@
                     </li>
                 </ul>
             </div>
-            <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
 
-                <!-- settings List -->
-                <div>
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-base font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100">
-                            settings List
-                        </h2>
-                    </div>
-                    <div class="card mt-3 shadow-md rounded-lg">
-                        <h4 class="text-lg font-semibold text-center py-4 text-gray-700 bg-gray-100 rounded-t-lg">
-                            Data Master settings
-                        </h4>
-                        <div class="container mx-5 p-5 space-y-4">
-                            <!-- settingss -->
-                            <form action="{{ route('toolsMenu1.update', ['setting' => $settings->id_user]) }}"
-                                method="POST">
-                                @csrf
-                                @method('PUT')
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Bulan :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="bulan" id="bulan" value="1"
-                                            {{ $settings->bulan == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
+            <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-base font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100">
+                        Settings List
+                    </h2>
+                </div>
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h5>Data Master Settings</h5>
                                 </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">SO :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="so" id="so" value="1"
-                                            {{ $settings->so == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
+                                <div class="card-body">
+                                    <form action="{{ route('toolsMenu1.update', ['setting' => $settings->id_user]) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Bulan :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="bulan" id="bulan" value="1"
+                                                    {{ $settings->bulan == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">SO :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="so" id="so" value="1"
+                                                    {{ $settings->so == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">STO :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="sto" id="sto" value="1"
+                                                    {{ $settings->sto == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Telda :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="telda" id="telda" value="1"
+                                                    {{ $settings->telda == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Segmen :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="segmen" id="segmen" value="1"
+                                                    {{ $settings->segmen == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">UIC :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="uic" id="uic" value="1"
+                                                    {{ $settings->uic == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Feedback PIC :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="feedback" id="feedback" value="1"
+                                                    {{ $settings->feedback == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Status Kendala
+                                                :&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="status" id="status" value="1"
+                                                    {{ $settings->status == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Search Bar :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="search" id="search" value="1"
+                                                    {{ $settings->search == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="flex items-center justify-between py-3">
+                                            <span class="font-medium text-gray-600">Export :</span>
+                                            <label class="switch">
+                                                <input type="checkbox" name="export" id="export" value="1"
+                                                    {{ $settings->export == 1 ? 'checked' : '' }}>
+                                                <span class="slider"></span>
+                                            </label>
+                                        </div>
+                                        <div class="space-x-2 text-center py-5">
+                                            <button type="submit"
+                                                class="btn min-w-[7rem] rounded-full bg-success font-medium text-white hover:bg-success-focus focus:bg-success-focus">
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">STO :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="sto" id="sto" value="1"
-                                            {{ $settings->sto == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Telda :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="telda" id="telda" value="1"
-                                            {{ $settings->telda == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Segmen :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="segmen" id="segmen" value="1"
-                                            {{ $settings->segmen == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">UIC :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="uic" id="uic" value="1"
-                                            {{ $settings->uic == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Feedback PIC :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="feedback" id="feedback" value="1"
-                                            {{ $settings->feedback == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Status Kendala :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="status" id="status" value="1"
-                                            {{ $settings->status == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Search Bar :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="search" id="search" value="1"
-                                            {{ $settings->search == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="flex items-center justify-between py-3">
-                                    <span class="font-medium text-gray-600">Export :</span>
-                                    <label class="switch">
-                                        <input type="checkbox" name="export" id="export" value="1"
-                                            {{ $settings->export == 1 ? 'checked' : '' }}>
-                                        <span class="slider"></span>
-                                    </label>
-                                </div>
-                                <div class="space-x-2 text-center py-5">
-                                    <button type="submit"
-                                        class="btn min-w-[7rem] rounded-full bg-success font-medium text-white hover:bg-success-focus focus:bg-success-focus">
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
-                            <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

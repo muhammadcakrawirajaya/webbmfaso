@@ -38,8 +38,12 @@
 
             <div class="flex w-full max-w-sm grow flex-col justify-center p-5">
                 <div class="text-center">
-                    <img class="mx-auto size-16 lg:hidden" src="{{ asset('assets/images/logo-brand.png') }}"
-                        alt="logo">
+                    <div class="w-full max-w-lg p-6">
+                        <img class="w-full" x-show="!$store.global.isDarkModeEnabled"
+                            src="{{ asset('assets/images/light_login.svg') }}" alt="image">
+                        <img class="w-full" x-show="$store.global.isDarkModeEnabled"
+                            src="{{ asset('assets/images/dark_login.svg') }}" alt="image">
+                    </div>
                     <div class="mt-4">
                         <h2 class="text-2xl font-semibold text-slate-600 dark:text-navy-100">
                             Welcome

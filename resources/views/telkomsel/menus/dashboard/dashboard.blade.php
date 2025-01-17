@@ -31,8 +31,7 @@
                     <div class="container">
                         <h2 class="font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
                             Dashboard Monitoring Progress Order Fallout End State -
-                            <select name="data-change" onchange="this.form.submit()"
-                                class="form-selected">
+                            <select name="data-change" onchange="this.form.submit()" class="form-selected">
                                 <option value="" disabled {{ empty($selectedFeedbackId) ? 'selected' : '' }}>
                                     Mohon Pilih
                                 </option>
@@ -47,7 +46,8 @@
                             </select>
                             &nbsp;Di bulan -
                             <!-- Dropdown untuk Bulan -->
-                            <select name="month" id="month" class="form-selected" onchange="updateYearAndSubmit()">
+                            <select name="month" id="month" class="form-selected"
+                                onchange="updateYearAndSubmit()">
                                 <option value="">Semua Bulan</option>
                                 @foreach ($months as $month)
                                     <option value="{{ $month->month }}" data-year="{{ $month->year }}"
@@ -112,8 +112,40 @@
                                                 sto<br><br>
                                             </th>
                                             @foreach ($feedbackPics as $feedbackPic)
-                                                <th colspan="1"
-                                                    class="break-words whitespace-nowrap bg-primary-focus font-medium text-white px-1 focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                                @php
+                                                    $color = match ($feedbackPic->feedback_pic) {
+                                                        'NEED JUMLAH TIANG' => 'gold',
+                                                        'BUTUH IZIN' => 'darkturquoise',
+                                                        'IZIN OK, SURVEY MITRA' => 'gold',
+                                                        'PROGRESS INSTALL TIANG' => 'gold',
+                                                        'SOLUSI DONE, NEED FU CUST' => 'darkturquoise',
+                                                        'NEED FU CUST + INPUT GD CB' => 'darkturquoise',
+                                                        'BUTUH IZIN/ NEED FU DEVELOPER' => 'darkturquoise',
+                                                        'RAB NOK, NEED TAMBAH CUST' => 'darkturquoise',
+                                                        'OGP PT1' => 'lime',
+                                                        'SOLUSI DONE, NEED FU FMC' => 'darkturquoise',
+                                                        'CLOSED PS' => 'green',
+                                                        'BATAL PASANG/IZIN NOK' => 'red',
+                                                        'BATAL PASANG/DROP DESAIN' => 'red',
+                                                        'BATAL PASANG/DROP' => 'red',
+                                                        'BATAL PASANG' => 'red',
+                                                        'DUPLICATED DATA' => 'red',
+                                                        'NEED EVIDENCE' => 'orange',
+                                                        'NEED TAGGING PELANGGAN + VALINS ID' => 'orange',
+                                                        'NEED TAGGING PELANGGAN' => 'orange',
+                                                        'CEK MANCORE' => 'orange',
+                                                        'ODP READY/ ODP BELUM GO LIVE' => 'orange',
+                                                        'REDESIGN' => 'orange',
+                                                        'SURVEY MITRA' => 'gold',
+                                                        'ORDER REPAIR' => 'gold',
+                                                        'WAITING ED APPROVAL' => 'darkturquoise',
+                                                        'OGP REPAIR' => 'gold',
+                                                        'PROGRESS DEPLOY' => 'gold',
+                                                        default => 'gray',
+                                                    };
+                                                @endphp
+                                                <th colspan="1" style="background-color: {{ $color }}"
+                                                    class="break-words whitespace-nowrap font-medium text-white px-1 focus:bg-opacity-80 dark:focus:bg-opacity-80 text-xs border font-semibold uppercase">
                                                     {{ $feedbackPic->feedback_pic }} <br><br>
                                                 </th>
                                             @endforeach
@@ -173,19 +205,28 @@
                                                                 <td class="whitespace-nowrap border">
                                                                     <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto={{ $row->id }}&telda=&segmen=&uic={{ $pic->id_uic }}&pic={{ $pic->id }}&status="
                                                                         class="hover:underline">
-                                                                        {{ $count }}
+                                                                        @if ($count > 0)
+                                                                            <strong>
+                                                                                {{ $count }}</strong>
+                                                                        @else
+                                                                            {{ $count }}
+                                                                        @endif
                                                                     </a>
                                                                 </td>
                                                             @endforeach
                                                             <td class="whitespace-nowrap border">
                                                                 <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto={{ $row->id }}&telda=&segmen=@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset&pic=&status="
                                                                     class="hover:underline">
-                                                                    {{ $rowTotal }}
+                                                                    @if ($rowTotal > 0)
+                                                                        <strong>{{ $rowTotal }}</strong>
+                                                                    @else
+                                                                        {{ $rowTotal }}
+                                                                    @endif
                                                                 </a>
                                                             </td>
                                                             <td class="whitespace-nowrap border">
                                                                 @if ($totalOverall > 0)
-                                                                    {{ number_format(($rowTotal / $totalOverall) * 100, 2) }}%
+                                                                    <strong>{{ number_format(($rowTotal / $totalOverall) * 100, 2) }}%</strong>
                                                                 @else
                                                                     0%
                                                                 @endif
@@ -204,19 +245,27 @@
                                                     <td class="whitespace-nowrap border">
                                                         <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto=&telda=&segmen=&uic={{ $pic->id_uic }}&pic={{ $pic->id }}&status="
                                                             class="hover:underline">
-                                                            {{ $totalPerFeedback[$pic->id] ?? 0 }}
+                                                            @if ($totalPerFeedback[$pic->id] > 0)
+                                                                <strong>{{ $totalPerFeedback[$pic->id] }}</strong>
+                                                            @else
+                                                                {{ $totalPerFeedback[$pic->id] }}
+                                                            @endif
                                                         </a>
                                                     </td>
                                                 @endforeach
                                                 <td class="whitespace-nowrap border">
                                                     <a href="{{ url('MasterData') }}?month={{ request('month') }}&year={{ request('year') }}&so=&sto=&telda=&segmen=@isset($selectedFeedbackId)&uic={{ $feedbackPics->first()->id_uic ?? '' }}@endisset&pic=&status="
                                                         class="hover:underline">
-                                                        {{ $totalOverall }}
+                                                        @if ($totalOverall > 0)
+                                                            <strong>{{ $totalOverall }}</strong>
+                                                        @else
+                                                            {{ $totalOverall }}
+                                                        @endif
                                                     </a>
                                                 </td>
                                                 <td class="whitespace-nowrap border">
                                                     @if ($totalOverall > 0)
-                                                        {{ number_format(($totalOverall / $totalOverall) * 100, 2) }}%
+                                                        <strong>{{ number_format(($totalOverall / $totalOverall) * 100, 2) }}%</strong>
                                                     @else
                                                         0%
                                                     @endif

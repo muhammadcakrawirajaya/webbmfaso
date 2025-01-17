@@ -51,6 +51,7 @@ class SoDataController extends Controller
                 return [
                     'id' => $so->id,
                     'nama_so' => $so->nama_so,
+                    'nama_telda' => $so->nama_telda,
                     'created_by' => $createdByName,
                     'date' => $so->created_at->format('Y-m-d'),
                     'time' => $so->created_at->format('H:i:s'),
@@ -83,6 +84,7 @@ class SoDataController extends Controller
         try {
             $request->validate([
                 'nama_so' => 'required|string|max:255',
+                'nama_telda' => 'required|string|max:255',
             ]);
             // Log::info('Validation passed successfully');
         } catch (ValidationException $e) {
@@ -98,6 +100,7 @@ class SoDataController extends Controller
 
             So::create([
                 'nama_so' => $request->nama_so,
+                'nama_telda' => $request->nama_telda,
                 'created_by' => Auth::id(),
             ]);
 
@@ -180,6 +183,7 @@ class SoDataController extends Controller
 
         // Update data
         $validated->nama_so = $request->input('nama_so');
+        $validated->nama_datel = $request->input('nama_datel');
         $validated->updated_by = Auth::id();
         $validated->save();
 

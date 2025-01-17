@@ -210,15 +210,15 @@
                                         </th>
                                         <th
                                             class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
-                                            order date
+                                            Tanggal
                                         </th>
                                         <th
                                             class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
-                                            customer name
+                                            Nama Kostumer
                                         </th>
                                         <th
                                             class="whitespace-nowrap bg-primary-focus font-medium text-white rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
-                                            status resume
+                                            Feedback PIC
                                         </th>
                                     </tr>
                                 </thead>

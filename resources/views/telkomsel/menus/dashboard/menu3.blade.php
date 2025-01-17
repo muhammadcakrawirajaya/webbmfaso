@@ -610,7 +610,7 @@
                                     <thead>
                                         <tr>
                                             <th
-                                                class="whitespace-nowrap p-2 rounded-tl-lg bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus">
+                                                class="whitespace-nowrap bg-slate-150 px-2 py-1 rounded-tl-lg font-medium text-white">
                                                 <label class="inline-flex items-center">
                                                     <input
                                                         class="form-checkbox is-basic size-5 rounded bg-slate-100 border-slate-400/70 checked:bg-primary checked:border-primary hover:border-primary focus:border-primary dark:bg-navy-900 dark:border-navy-500 dark:checked:bg-accent dark:checked:border-accent dark:hover:border-accent dark:focus:border-accent"
@@ -645,51 +645,51 @@
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 nomor sc
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 nama pelanggan
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 alamat pelanggan
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 cp
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tipe transaksi
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 layanan
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 jenis layanan
                                             </th>
-                                            <th
+                                            <th  style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 sto
                                             </th>
-                                            <th
+                                            <th  style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 mitra
                                             </th>
-                                            <th
+                                            <th  style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 team
                                             </th>
-                                            <th
+                                            <th  style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 kategori
                                             </th>
-                                            <th
+                                            <th  style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 detail progres
                                             </th>
-                                            <th
+                                            <th style="background-color: purple"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 kendala
                                             </th>
@@ -705,95 +705,95 @@
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 agency
                                             </th> --}}
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 label odp
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 label odp alternatif
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 ket label odp
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 kap odp
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 port odp
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 sisa port odp
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tagging lokasi odp
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 tagging lokasi pelanggan
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 status tagging pelanggan
                                             </th>
-                                            <th
+                                            <th  style="background-color: gold"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 id valins
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Segmen
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 so
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Telda
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 umur kendala
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 uic
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 status kendala
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Feedback PIC
                                             </th>
-                                            <th
+                                            <th style="background-color: red"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Detail Feedback pic
                                             </th>
-                                            <th
+                                            <th style="background-color: lightgreen"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 rab sdi
                                             </th>
-                                            <th
+                                            <th style="background-color: lightgreen"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 rab aanwijzing
                                             </th>
-                                            <th
+                                            <th style="background-color: lightgreen"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 bges mbb approval
                                             </th>
-                                            <th
+                                            <th style="background-color: lightgreen"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 bges mbb note
                                             </th>
-                                            <th
+                                            <th style="background-color: lightgreen"
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white px-2 rounded-tr-lg focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Recent Log
                                             </th>

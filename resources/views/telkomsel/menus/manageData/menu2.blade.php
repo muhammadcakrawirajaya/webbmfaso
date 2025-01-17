@@ -195,6 +195,29 @@
                                                                         id="nama_so" name="nama_so" required />
                                                                 </label>
                                                             </div>
+                                                            <!-- Nama Telda Input -->
+                                                            <div>
+                                                                <span>Nama Telda</span>
+                                                                <label class="mt-1.5 flex -space-x-px">
+                                                                    <div
+                                                                        class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                        <span class="-mt-1">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                fill="none" viewBox="0 0 24 20"
+                                                                                stroke-width="1.5"
+                                                                                stroke="currentColor" class="size-3">
+                                                                                <path stroke-linecap="round"
+                                                                                    stroke-linejoin="round"
+                                                                                    d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                                                                            </svg>
+                                                                        </span>
+                                                                    </div>
+                                                                    <input
+                                                                        class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                        placeholder="Masukkan Nama Telda" type="text"
+                                                                        id="nama_telda" name="nama_telda" required />
+                                                                </label>
+                                                            </div>
                                                             <!-- Buttons -->
                                                             <div class="space-x-2 text-right">
                                                                 <button type="button" @click="showModal = false"
@@ -233,6 +256,10 @@
                                             </th>
                                             <th
                                                 class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
+                                                Nama Telda
+                                            </th>
+                                            <th
+                                                class="whitespace-nowrap bg-primary-focus font-medium text-white focus:bg-primary-focus dark:bg-accent dark:focus:bg-accent-focus text-xs border font-semibold uppercase">
                                                 Dibuat Oleh
                                             </th>
                                             <th
@@ -259,6 +286,9 @@
                                                     {{ $So->firstItem() + $index }}</td>
                                                 <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['nama_so'] }}
+                                                </td>
+                                                <td class="whitespace-nowrap px-2 py-1 text-xs border">
+                                                    {{ $log['nama_telda'] }}
                                                 </td>
                                                 <td class="whitespace-nowrap px-2 py-1 text-xs border">
                                                     {{ $log['created_by'] }}
@@ -385,6 +415,34 @@
                                                                                                                 id="nama_so"
                                                                                                                 name="nama_so"
                                                                                                                 value="{{ $log['nama_so'] }}"
+                                                                                                                required />
+                                                                                                        </label>
+                                                                                                        <label
+                                                                                                            class="mt-1.5 flex -space-x-px">
+                                                                                                            <div
+                                                                                                                class="flex items-center justify-center rounded-l-lg border border-slate-300 px-3.5 font-inter dark:border-navy-450">
+                                                                                                                <span
+                                                                                                                    class="-mt-1">
+                                                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                                                        fill="none"
+                                                                                                                        viewBox="0 0 24 20"
+                                                                                                                        stroke-width="1.5"
+                                                                                                                        stroke="currentColor"
+                                                                                                                        class="size-3">
+                                                                                                                        <path
+                                                                                                                            stroke-linecap="round"
+                                                                                                                            stroke-linejoin="round"
+                                                                                                                            d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                                                                                                                    </svg>
+                                                                                                                </span>
+                                                                                                            </div>
+                                                                                                            <input
+                                                                                                                class="form-input w-full rounded-r-lg border border-slate-300 bg-transparent px-3 py-2 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                                                                                placeholder="Masukkan Nama Telda"
+                                                                                                                type="text"
+                                                                                                                id="nama_telda"
+                                                                                                                name="nama_telda"
+                                                                                                                value="{{ $log['nama_telda'] }}"
                                                                                                                 required />
                                                                                                         </label>
                                                                                                     </div>
